@@ -1,12 +1,24 @@
 ---
 title: "Why is there Math in my Archaeology?"
 subtitle: "The modern foundations of quantitative archaeology, written decades too soon"
+
+bibliography: 2023_SAA.bib
 ---
 
 Fifty years ago, what was arguably the most important paper ever written for modern work in quantitative archaeology was published in American Antiquity. Unfortunately for its author, and generations of archaeologists, it received little attention at the time. With a small number of citations, more than half of which have occurred in just the last few years, its elegance and mathematical precision went largely unappreciated -- even by the growing cohorts of computational and quantitative archaeologists whose work would have greatly benefited from John's brilliant work. In this paper, we demonstrate that John Justeson's 1973 article "Limitations of Archaeological Inference" was not only accurate and precise in its implications, but also very much still at the forefront of archaeological thought... even if the field at large doesn't yet realize it.
 
 ## Introduction
 
+At the heart of information theory is a single equation that aimed to quantify a measure of information based on the concept of *entropy* from the thermodynamics of physical systems :
+
 $$
-H = - \sum_{i=1}^{n} p(x_i) \log_2 p(x_i)
-$$ {#eq-Information_entropy}
+H(\cal{X}) = - \sum_{i=1}^{n} p(x_i) \log_2 p(x_i)
+$$ {#eq-Information_entropy_function}
+
+The total information entropy $H$ of a system $\cal{X}$, which contains some number of discrete features or attributes ($x_{1}, x_{2}, \ldots x_{n}$), is defined as the negative sum of each attribute's probability $p(x_i)$ of occurence times the log of its probability.
+
+What this does, although not immediately obvious to most of us, is to tell us the minimum number of "events" of that system that it would take before we could start detecting a pattern. The more events it would take, the less information each observation is actually giving us.
+
+One easy way to think of it is that can't reasonably predict any individual occurrence of a completely random event -- i.e., *any* outcome is equally likely -- so we are likely to be surprised each time. After *a lot* of observations, we could be able to make a fair prediction fo the outcomes over a *large* number of events but still couldn't predict any single event.
+
+Each event gives us only a *small* amount of information, so we would need a large number of observations before we could distinguish it from some other system. Conversely, it wouldn't take us too long to notice something that regularly (or never) occurs. Each event would tell us a *lot* of information.
