@@ -17,7 +17,7 @@ $$
 H(\cal{X}) = - \sum_{i=1}^{n} p(x_i) \log_2 p(x_i)
 $$ {#eq-Information_entropy_function}
 
-The total information entropy $H$ of a system $\cal{X}$, which contains some number of discrete features or attributes ($x_{1}, x_{2}, \ldots x_{n}$), is defined as the negative sum of each attribute's probability $p(x_i)$ of occurence times the log of its probability.
+The total information entropy $H$ of a system $\cal{X}$, which contains some number of discrete features or attributes ($x_{1}, x_{2}, \ldots x_{n}$), is defined as the negative sum of each attribute's probability $p(x_i)$ of occurrence, times the *log* of its probability.
 
 What this does, although not immediately obvious to most of us, is to tell us the minimum number of "events" of that system that it would take before we could start detecting a pattern. The more events it would take, the less information each observation is actually giving us.
 
