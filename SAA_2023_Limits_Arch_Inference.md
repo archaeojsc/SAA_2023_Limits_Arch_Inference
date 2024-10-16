@@ -6,31 +6,32 @@ bibliography: 2023_SAA.bib
 reference-section-title: "References Cited"
 link-citations: true
 urlcolor: blue
-nocite: '@*'
+
+# nocite: '@*'
 
 ---
 
 ## Introduction
 
-Fifty years ago, what arguably could have been one of the most important papers written for modern work in quantitative archaeology was published in American Antiquity. Unfortunately for its author, and generations of archaeologists, it received relatively little attention at the time. With few citations, more than half of which have occurred in just the last few years, its elegance and mathematical precision went largely unappreciated. That is unfortunate, since the growing cohorts of computational and quantitative archaeologists in recent decades would have greatly benefited.
 
-The article was, of course, extremely ambitious  ambitious.
+
+Fifty years ago, what arguably could have been one of the most important papers written for modern work in quantitative archaeology was published in American Antiquity. Unfortunately for its author, and generations of archaeologists, it received relatively little attention at the time. With few citations, more than half of which have occurred in just the last few years, its elegance and mathematical precision went largely unappreciated. That is unfortunate, since the growing cohorts of computational and quantitative archaeologists in recent decades might have otherwise greatly benefited.
+
+John Justeson's 1973 article "Limitations of archaeological inference: an information-theoretic approach with applications in methodology" was rather ambitious:
 
 > "A framework is established for the application of information-theoretic concepts to the study of archaeological inference, ultimately to provide an estimate of the degree to which archaeologists, or anthropologists in general, can provide legitimate answers to the questions they investigate. Particular information-theoretic measures are applied to the design elements on the ceramics of a southwestern pueblo to show the methodological utility of information theory in helping to reach closer to that limit." [@Justeson1973]
 
-John Justeson's 1973 article "Limitations of Archaeological Inference" was not only correct, even if the field at large hadn't realized it, but also still very much at the forefront of digital archaeology.
-
-<!-- ![Abstract of @Justeson1973 "The Limitations of Archaeological Inference"](Justeson_1973_abstract.png) -->
-
-The premise was actually quite straightforward -- behavioral information is "encoded" in the material artifacts deposited within an archaeological site, and the archaeologist's motive is to "decode" that information on the other end. The novelty was that John saw this "encoding-decoding" process as an information flow that could be described by what was (at the time) a relatively esoteric set of mathematical tools known as *information theory*.
+The premise was actually quite straightforward -- behavioral information is "encoded" in the material artifacts deposited within an archaeological site, and the archaeologist's goal is to "decode" that information on the other end. The novelty was that John saw this "encoding-decoding" process as an information flow that could be described by what was (at the time) a relatively esoteric set of mathematical tools known as *information theory*.
 
 The foundations of information theory were developed by @Shannon1948 as a way to analyze the transmission of information *independently* of the content of the message.
 
 > "The fundamental problem of communication is that of reproducing at one point either exactly or approximately a message selected at another point. Frequently the messages have meaning; that is they refer to or are correlated according to some system with certain physical or conceptual entities." [@Shannon1948, p.1]
 
-John saw that this theory established a quantifiable "upper limit" on how interpretable archaeological data could be. Moreover, we could actually *calculate* the that upper limit of archeological inference from the basic data we collect.
+Justeson saw that this approach might also be used to establish an "upper limit" for how interpretable archaeological data could be. Moreover, he demonstrated that we could reasonably calculate a quantifiable *measurement* for that upper limit form those data.
 
 > "If the empirically measured parameters are not consistent with the relationship between them that is required by the theory for a given material or behavioral system, then the data by which that system is to be interpreted cannot have a consistent susceptibility to decoding; that is, there will be no basis for deriving a coherent archaeological interpretation of the data that will accurately reflect the prehistoric situation." [@Justeson1973, p. 136]
+
+In other words, observed archaeological features or attributes should represent a coherent and systematic pattern of activities. 
 
 In particular, he was addressing two *inherent* limitations of the archaeological record:
 
@@ -38,6 +39,8 @@ In particular, he was addressing two *inherent* limitations of the archaeologica
 2. limitations on the interpretability of archaeological data for the cultural descriptions.
 
 The first limitation is analogous degradation of a signal due to noise or interference affecting a transmission, and the second to the encoding and decoding of that signal between sender and receiver.
+
+@Schiffer1972 had previously elaborated on the distinction between *systemic* and *archaeological* contexts, differentiating between the cultural and taphonomic processes that create the observable archaeological record. It would not be until a decade later [@Schiffer1983; @Schiffer1987] that he would formalize these as *natural* versus *cultural* transformation processes (i.e., $n$-transforms and $c$-transforms). @Justeson1973 
 
 ## A Brief Introduction to Information Theory
 
@@ -107,3 +110,32 @@ P(A|B) = &P(A \ \text{and} \ B) \div P(B) \text{, so} \\
 \end{aligned}
 $$
 
+$$
+\begin{aligned}
+\min_r \psi(r) &= \min_r P(\text{r received} \ | \ \text{r sent}) \\
+&= \min_r 1 - P(\text{r not received} \ | \ \text{r sent}) \\
+&= \max_r P(\text{r not received} \ | \ \text{r sent}) \\
+&= 1- \lambda
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\overline{\psi} &= \sum_r p_E(r) \psi(r) \\
+&= \sum_r p_E(r) \left \lbrack p(r) \div p_E(r) \right \rbrack \\
+&= \sum_r p(r) = 1
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+H' &= -\sum_{i=1}^k p(x_i) \log_2 p(x_i) \\
+&= -\sum_{i=1}^k \frac{1}{k} \log_2 \frac{1}{k} \\
+&= -\log_2 \frac{1}{k} \\
+&= \log_2 k
+\end{aligned}
+$$
+
+$$
+h = H/H' \ \text{and} \ h_E = H_E/H'_E
+$$
