@@ -1,3 +1,5 @@
+
+
 # Function to calculate Shannon entropy for a biased coin
 shannon_entropy_coin <- function(p) {
   # Handle cases where p is 0 or 1 to avoid log(0)
