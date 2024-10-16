@@ -10,28 +10,45 @@ surprisal <- function(p) {
   }
 }
 
-# Function to plot surprisal for heads and tails against biased coin probabilities
+# Function to plot surprisal for heads and tails against biased coin
+# probabilities
 plot_surprisal_vs_prob <- function() {
   # Generate a sequence of probabilities from 0 to 1
   p_values <- seq(0.01, 1, by = 0.01)
   
-  # Calculate the surprisal for heads (I(p)) and tails (I(1-p)) for each probability
+  # Calculate the surprisal for heads (I(p)) and tails (I(1-p)) for each
+  # probability
   surprisal_heads <- sapply(p_values, surprisal)
   surprisal_tails <- sapply(1 - p_values, surprisal)
   
   # Plot surprisal for heads
-  plot(p_values, surprisal_heads, type = "l", 
-       xlab = "Probability of Heads (p)", 
-       ylab = "Shannon Surprisal (I)", 
-       main = "Shannon Surprisal vs. Biased Coin Probability", 
-       col = "blue", lwd = 2, ylim = c(0, max(surprisal_heads, surprisal_tails, na.rm=TRUE)))
+  plot(
+    p_values,
+    surprisal_heads,
+    type = "l",
+    xlab = "Probability of Heads (p)",
+    ylab = "Shannon Surprisal (I)",
+    main = "Shannon Surprisal vs. Biased Coin Probability",
+    col = "blue",
+    lwd = 2,
+    ylim = c(0, max(
+      surprisal_heads, surprisal_tails, na.rm = TRUE
+    ))
+  )
   
   # Add surprisal for tails to the plot
-  lines(p_values, surprisal_tails, col = "red", lwd = 2)
+  lines(p_values,
+        surprisal_tails,
+        col = "red",
+        lwd = 2)
   
   # Add a legend
-  legend("topright", legend = c("Surprisal (Heads)", "Surprisal (Tails)"), 
-         col = c("blue", "red"), lwd = 2)
+  legend(
+    "topright",
+    legend = c("Surprisal (Heads)", "Surprisal (Tails)"),
+    col = c("blue", "red"),
+    lwd = 2
+  )
 }
 
 # Example usage to generate the plot
