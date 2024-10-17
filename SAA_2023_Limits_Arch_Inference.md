@@ -42,21 +42,29 @@ The first limitation is analogous degradation of a signal due to noise or interf
 
 @Schiffer1972 had previously elaborated on the distinction between *systemic* and *archaeological* contexts, differentiating between the cultural and taphonomic processes that create the observable archaeological record. It would not be until a decade later [@Schiffer1983; @Schiffer1987] that he would formalize these as *natural* versus *cultural* transformation processes (i.e., $n$-transforms and $c$-transforms). @Justeson1973 
 
-## A Brief Introduction to Information Theory
+## A Gentle Introduction to Information Theory
 
-At the heart of information theory is a single equation  that aimed to quantify a measure of information based on the concept of *entropy* from the thermodynamics of physical systems:
+What is now known as *Information Theory* largely began with a seminal paper written by Claude @Shannon1948, called "A Mathematical Theory of Communication" resulting from his work in cryptography at Bell Labs. At the heart of Shannon's theory was the idea that *information* is fundamentally tied to the reduction of *uncertainty*. Shannon approached information not in terms of meaning, but as a measure of the *reduction of uncertainty* within a system of communication.
+
+Specifically, he proposed a particular relationship between information and uncertainty in terms of statistical probabilities. He derived a quantitative measure of that uncertainty derived from the concept of *entropy* used to describe disorder in the thermodynamics of physical systems. Shannon, however, repurposed entropy to refer to the average uncertainty contained in a system  given by the equation:  
 
 $$
-H(\cal{X}) = - \sum_{i=1}^{n} p(x_i) \log_2 p(x_i)
+H(\cal{X}) = - \sum_{i=1}^{n} p(x_i) \ \log_2 \ p(x_i)
 $$
 
-The total information entropy $H$ of some system $\cal{X}$, which contains some number of discrete features or attributes ($x_{1}, x_{2}, \ldots x_{n}$), is defined as the negative sum over all features of each attribute's probability of occurrence $p(x_i)$ times the $\log_2$[^fn01] of that probability.
+What this equation is describing is the total entropy $H$ of some system $\cal{X}$ that contains $n$ discrete attributes or elements $(x_{1}, x_{2}, \ldots x_{n})$. This is defined as the negative sum over all features of each element's probability of occurrence $p(x_i)$ times the $\log_2$[^fn01] of that probability.
 
-[^fn01]: $\log_2$ refers to the base-2 or *binary* logarithm.
+[^fn01]: $\log_2$ refers to the base-2 logarithm.
 
-What this does is to give a measure for the minimum number of "events" of that system that it would take before we could start detecting a pattern. The more events it would take, the less information each observation is actually giving us. One easy way to think of it is that, for a high-entropy event, we could not reliably predict any individual occurrence. A high-entropy event is completely random -- i.e., *any* outcome is equally likely each time so we are likely to be *surprised* each time.
+The higher the entropy of a system, indicated by a higher value of $H$, the more uncertainty or randomness there is to the elements of $\cal{X}$. Somewhat counterintuitively, the more uncertain or random a system the more information it conveys. Remember that Shannon defines information as the reduction of uncertainty. The greater the uncertainty (i.e., high entropy), the more information the system is capable of producing because there is more uncertainty to reduce.
 
-After *a lot* of observations we could make a fair prediction of the outcomes over a *large* number of events, but still couldn't accurately predict any single event. Each individual event gives us only a *small* amount of information, so we would need a large number of observations before we could distinguish it from some other system. Conversely, it would not take long to notice something that regularly (or never) occurs. Each event provides a *lot* of information, so fewer observations would be needed to start seeing a pattern emerge.
+To see how, we need to understand what Shannon defined as *surprisal*. Surprisal, also known as self-information, is a measure of how surprising or unexpected a specific event is based on its probability. In essence, surprisal measures the information content of a specific outcome -- i.e., rare events carry more information than common ones because they are less expected. Low probability events, those that occur infrequently, are highly surprising. Conversely, high probability events are not.
+
+Consider it this way -- if an event is nearly certain to occur, you would *already* be expecting it to happen when it does. Its occurrence tells you nothing that you do not already know. It is only when something happens that we did *not* expect (i.e., we were *surprised*) that there is more information to find out.
+
+<!-- What this does is to effectively give a measure for how may observations, or "events" of that system, it would take before we could start detecting a pattern. The more events it would take, the less information each observation is actually giving us. One easy way to think of it is that, for a high-entropy event, we could not reliably predict any individual occurrence. A high-entropy event is completely random -- i.e., *any* outcome is equally likely each time so we are likely to be *surprised* each time. -->
+
+<!-- After *a lot* of observations we could make a fair prediction of the outcomes over a *large* number of events, but still couldn't accurately predict any single event. Each individual event gives us only a *small* amount of information, so we would need a large number of observations before we could distinguish it from some other system. Conversely, it would not take long to notice something that regularly (or never) occurs. Each event provides a *lot* of information, so fewer observations would be needed to start seeing a pattern emerge. -->
 
 ## Information in Archaeology
 
