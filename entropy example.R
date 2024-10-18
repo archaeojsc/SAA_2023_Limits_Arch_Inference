@@ -26,17 +26,19 @@ plot_entropy_vs_prob <- function() {
     xlab = "Probability of Heads (p)",
     ylab = "Shannon Entropy (H)",
     main = "Shannon Entropy vs. Biased Coin Probability",
-    col = "blue",
+    col = "black",
     lwd = 2
   )
   
-  abline(v = 0.5, col = 'red')
+  abline(v = 0.5, lty = "dashed")
+  
   text(
     x = 0.48,
-    y = 0.5,
+    y = 0.48,
     srt = 90,
-    labels = "Fair Coin",
-    col = "red"
+    cex = 0.8,
+    labels = "'Fair' Coin -- [p=0.5]",
+    col = "black"
   )
 }
 
