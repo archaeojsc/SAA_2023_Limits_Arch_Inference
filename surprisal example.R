@@ -29,7 +29,8 @@ plot_surprisal_vs_prob <- function() {
     xlab = "Probability of Heads (p)",
     ylab = "Shannon Surprisal (I)",
     main = "Shannon Surprisal vs. Biased Coin Probability",
-    col = "blue",
+    col = "black",
+    lty = "solid",
     lwd = 2,
     ylim = c(0, max(
       surprisal_heads, surprisal_tails, na.rm = TRUE
@@ -39,14 +40,15 @@ plot_surprisal_vs_prob <- function() {
   # Add surprisal for tails to the plot
   lines(p_values,
         surprisal_tails,
-        col = "red",
+        col = "black",
+        lty = "dotted",
         lwd = 2)
   
   # Add a legend
   legend(
     "topright",
     legend = c("Surprisal (Heads)", "Surprisal (Tails)"),
-    col = c("blue", "red"),
+    lty = c("solid", "dotted"),
     lwd = 2
   )
 }
