@@ -44,6 +44,18 @@ plot_surprisal_vs_prob <- function() {
         lty = "dotted",
         lwd = 2)
   
+  abline(v = 0.5, lty = "dashed")
+  
+  text(
+    x = 0.48,
+    y = 3,
+    srt = 90,
+    cex = 0.8,
+    labels = "'Fair' Coin -- [p=0.5]",
+    col = "black"
+  )
+  
+  
   # Add a legend
   legend(
     "topright",
