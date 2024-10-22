@@ -13,7 +13,7 @@ urlcolor: blue
 
 ## Introduction
 
-
+...
 
 Fifty years ago, what arguably could have been one of the most important papers written for modern work in quantitative archaeology was published in American Antiquity. Unfortunately for its author, and generations of archaeologists, it received relatively little attention at the time. With few citations, more than half of which have occurred in just the last few years, its elegance and mathematical precision went largely unappreciated.
 
@@ -46,35 +46,62 @@ The first limitation is analogous degradation of a signal due to noise or interf
 
 What is now known as *Information Theory* largely began with a seminal paper written by Claude Shannon, titled "A Mathematical Theory of Communication" [-@Shannon1948] resulting from his work in cryptography at Bell Labs. At the heart of Shannon's theory was the idea that *information* is fundamentally tied to the reduction of *uncertainty*. Shannon approached information not in terms of meaning, but as a measure of the *reduction of uncertainty* within a system of communication.
 
-Specifically, he proposed a particular relationship between information and uncertainty in terms of statistical probabilities. He derived a quantitative measure of that uncertainty derived from the concept of *entropy* used to describe disorder in the thermodynamics of physical systems. Shannon, however, repurposed entropy to refer to the average uncertainty contained in a system  given by the equation:  
+### Information, Entropy, and Surprisal
 
-$$
-H(\cal{X}) = - \sum_{i=1}^{n} p(x_i) \ \log_2 \ p(x_i)
-$$
+Shannon proposed a particular relationship between information and uncertainty in terms of statistical probabilities. He derived a quantitative measure of that uncertainty derived from the concept of *entropy* used to describe disorder in the thermodynamics of physical systems. Shannon, however, repurposed entropy to refer to the average uncertainty contained in a system  given by the equation:  
 
-What this equation is describing is the total entropy $H$ of some system $\cal{X}$ that contains $n$ discrete attributes or elements $(x_{1}, x_{2}, \ldots x_{n})$. This is defined as the negative sum over all features of each element's probability of occurrence $p(x_i)$ times the $\log_2$[^fn01] of that probability.
+\[
+    H(\cal{X}) = - \sum_{i=1}^{n} p(x_i) \ \log_2 \ p(x_i)
+\]
 
-[^fn01]: $\log_2$ refers to the base-2 logarithm.
+What this equation is describing is the total entropy \(H\) of some system \(\cal{X}\) that contains \(n\) discrete attributes or elements \((x_{1}, x_{2}, \ldots x_{n})\). This is defined as the negative sum over all features of each element's probability of occurrence \(p(x_i)\) times the \(\log_2\)[^fn01] of that probability.
 
-The higher the entropy of a system, indicated by a higher value of $H$, the more uncertainty or randomness there is to the elements of $\cal{X}$. Somewhat counterintuitively, the more uncertain or random a system the more information it conveys. Remember that Shannon defines information as the reduction of uncertainty. The greater the uncertainty (i.e., high entropy), the more potential information the system is capable of producing because there is more uncertainty to reduce.
+[^fn01]: \(\log_2\) refers to the base-2 logarithm.
+
+The higher the entropy of a system, indicated by a higher value of $H$, the more uncertainty or randomness there is to the elements of \(\cal{X}\). Somewhat counterintuitively, the more uncertain or random a system the more information it conveys. Remember that Shannon defines information as the reduction of uncertainty. The greater the uncertainty (i.e., high entropy), the more potential information the system is capable of producing because there is more uncertainty to reduce.
 
 To see how, we need to understand what Shannon defined as *surprisal*. Surprisal, also known as self-information, is a measure of how surprising or unexpected a specific event is based on its probability. In essence, surprisal measures the information content of a specific outcome -- i.e., rare events carry more information than common ones because they are less expected. Low probability events, those that occur infrequently, are highly surprising. Conversely, high probability events are not.
 
-Consider it this way -- if an event is nearly certain to occur, you would *already* be expecting it to happen when it does. Its occurrence tells you nothing that you did not already know. It is only when something happens that we did *not* expect (i.e., we are surprised) that it is providing *new* information. Therefore, surprisal (denoted as $I(x)$) is the potential *information* contained in a single event based on its probability $p(x)$:
+Consider it this way -- if an event is nearly certain to occur, you would *already* be expecting it to happen when it does. Its occurrence tells you nothing that you did not already know. It is only when something happens that we did *not* expect (i.e., we are surprised) that it is providing *new* information. Therefore, surprisal (denoted as \(I(x)\)) is the potential *information* contained in a single event based on its probability \(p(x)\):
 
-$$ I(x) = - \log_2 p(x) $$
+\[
+    I(x) = - \log_2 p(x)
+\]
 
-Surprisal is zero for events that are certain (i.e., the probability $p(x)=1$), and grows larger as the probability of the event decreases (Figure {#figure:surprisal_example}). Exceedingly rare events, by contrast, would be very surprising to witness and approaching "infinitely" surprising as the probability of the event goes to zero (i.e., $lim_{p(x) \to 0} \ I(x) = \infty$).
+Surprisal is zero for events that are certain (i.e., the probability \(p(x)=1\)), and grows larger as the probability of the event decreases (Figure {#figure:surprisal_example}). Exceedingly rare events, by contrast, would be very surprising to witness and approaching "infinitely" surprising as the probability of the event goes to zero (i.e., \(lim_{p(x) \to 0} \ I(x) = \infty\)).
 
-![The surprisal $I(x)$ of a coin flip $x$ (i.e., lands "heads" or "tails") as the probability ($p(x)$) of landing "heads" ranges from $0$ to $1$ for a "biased" coin. A "fair" coin would land on heads or tails with equal chances ($p(x)=0.5$).](./surprisal.png){#figure:surprisal_example}
+![The surprisal $I(x)$ of a coin flip $x$ (i.e., lands "heads" or "tails") as the probability ($p(x)$) of landing "heads" ranges from $0$ to $1$ for a "biased" coin. A "fair" coin would land on heads or tails with equal chances (\(p(x)=0.5\)).](./surprisal.png){#figure:surprisal_example}
 
 Entropy represents the *average* surprisal over all possible outcomes from a probability distribution. It quantifies the overall uncertainty or unpredictability of a system or source of information. The higher the entropy, the more information the system is capable of producing, since there is greater uncertainty about which outcome will occur.
 
 Entropy is highest when all outcomes are equally likely, and decreases as we gain more information to anticipate whether or not that event is likely to occur (Figure {#figure:entropy_example}). Information is therefore the reduction of that uncertainty or entropy when a new event is observed. We have learned more about the underlying probabilities for future events.
 
-![The overall system entropy $H(\cal{X})$ for biased coin flips as the probability ($p(x)$) of landing "heads" ranges from $0$ to $1$. A "fair" coin ($p(x)=0.5$) is the system with the most uncertainty, since either outcome ("heads" or "tails") is equally possible.](./Entropy.png){#figure:entropy_example}
+![The overall system entropy \(H(\cal{X})\) for biased coin flips as the probability (\(p(x)\)) of landing "heads" ranges from 0 to 1. A "fair" coin (\(p(x)=0.5\)) is the system with the most uncertainty, since either outcome ("heads" or "tails") is equally possible.](./Entropy.png){#figure:entropy_example}
 
 For the first time, scientists had a way to *quantify* information. Shannon had defined information in a way that made it possible to measure and *analyze* it mathematically, based solely on its statistical structure and independently of its content or meaning.
+
+Information theory has evolved over the last few decades into a highly diverse discipline in its own right with broad applications. Shannon, however, developed the theory towards one particular application -- communication. Specifically, he was looking for a way to understand how information could be efficiently and reliably transmitted across communication systems, especially in the presence of noise or interference.  
+
+### Channel, Signal, and Noise
+
+In Shannon's "A Mathematical Theory of Communication," the concepts of channel, channel capacity, signal, and noise are foundational to understanding how information is transmitted over communication systems.
+
+1. **Channel**: This refers to the medium or system through which information (in the form of signals) is sent from a sender to a receiver. A channel can be anything from a wire in a telephone system to a fiber optic line or even a wireless spectrum. Shannon modeled channels mathematically to analyze how they affect transmitted signals.
+
+2. **Signal**: The signal represents the actual information that is being communicated, whether it's voice, data, or video. In Shannon's framework, a signal is encoded as a sequence of symbols (e.g., binary digits 0s and 1s) that are transmitted over the channel.
+
+3. **Noise**: Noise refers to any unwanted interference or disturbance that distorts the signal as it passes through the channel. Noise can result from physical factors like electrical interference or from limitations in the transmission medium itself. Shannon considered this interference mathematically as random processes that alter the transmitted signals unpredictably.
+
+4. **Channel Capacity**: This is a critical concept that defines the maximum rate at which information can be reliably transmitted over a channel, given the presence of noise. Mathematically, Shannon’s formula for channel capacity \( C \) is:
+
+\[
+    C = B \log_2 \left( 1 + \frac{S}{N} \right)
+\]
+
+where \( B \) is the bandwidth of the channel (in Hz), \( S \) is the signal power, and \( N \) is the noise power. The term \( \frac{S}{N} \) represents the signal-to-noise ratio (SNR), a measure of how strong the signal is relative to the noise. The capacity \( C \) gives the maximum number of bits per second that can be transmitted with minimal error, despite the noise.
+
+In simple terms, Shannon’s theory explains how much information can be transmitted over a given channel, taking into account the inevitable noise that distorts signals, and provides a formula for maximizing the efficiency of communication systems.
+
 
 ## Information Theory in Archaeology
 
@@ -84,11 +111,15 @@ For the first time, scientists had a way to *quantify* information. Shannon had 
 
 Michael Schiffer's pioneering work [-@Schiffer1972] marked one of the earliest uses of information theory in archaeology, where he explored the disruption of information flow caused by post-depositional processes, termed as "systemic and archaeological contexts." Schiffer emphasized how the information contained within artifacts could degrade over time due to various environmental and cultural factors, introducing "noise" into the archaeological record. This idea aligned with Shannon's theory of communication, where noise distorts messages as they pass through a channel. Schiffer's subsequent work [-@Schiffer1983] on formation processes expanded on this, demonstrating how entropy, a measure of disorder, influences the amount of reliable information that survives in archaeological contexts.
 
-Michael Schiffer's seminal work "Formation Processes of the Archaeological Record" [-@Schiffer1987] is among the most influential applications of information theory concepts to archaeology, even though Schiffer did not explicitly use Shannon's framework. Schiffer introduced the idea that archaeological sites are the result of two key processes: cultural formation processes, which involve human behaviors that create and modify archaeological deposits, and natural formation processes, which are the non-human agents, such as erosion or animal activity, that affect the archaeological record. The notion of information loss in these processes echoes Shannon's concepts of entropy and noise. Schiffer's emphasis on understanding how archaeological data are transformed before and after deposition mirrors the concerns of information theory regarding how signals are distorted through transmission. By conceptualizing the archaeological record as a series of transformations from its original state, Schiffer advanced a model that paralleled information processing, where each formation process acts as a filter, introducing "noise" and altering the original "message."
+Michael Schiffer's seminal work "Formation Processes of the Archaeological Record" [-@Schiffer1987] is among the most influential applications of information theory concepts to archaeology, even though Schiffer did not explicitly use Shannon's framework. Schiffer introduced the idea that archaeological sites are the result of two key processes: cultural formation processes, which involve human behaviors that create and modify archaeological deposits, and natural formation processes, which are the non-human agents, such as erosion or animal activity, that affect the archaeological record.
+
+The notion of information loss in these processes echoes Shannon's concepts of entropy and noise. Schiffer's emphasis on understanding how archaeological data are transformed before and after deposition mirrors the concerns of information theory regarding how signals are distorted through transmission. By conceptualizing the archaeological record as a series of transformations from its original state, Schiffer advanced a model that paralleled information processing, where each formation process acts as a filter, introducing "noise" and altering the original "message."
 
 John Justeson [-@Justeson1973] applied Shannon's concepts more directly to archaeological inference, investigating the limitations of reconstructing past human behavior through fragmentary data. He focused on how entropy could quantify uncertainty and signal degradation, critiquing the oversimplification that sometimes results when human complexity is reduced to mathematical models. This early work identified the tension between abstract, quantitative frameworks and the nuances of cultural history, a critique that has persisted in the field.
 
-John Justeson's The Limitations of Archaeological Interpretation [-@Justeson1973] explicitly drew on Shannon's ideas, applying them to the challenges archaeologists face in reconstructing past human behaviors from material remains. Justeson argued that archaeological interpretation is fundamentally limited by the quantity of information that can be extracted from the archaeological record. He viewed the archaeological record as a degraded and incomplete set of signals, with each artifact or feature representing a small, noisy fraction of the original cultural system. Justeson applied Shannon's concept of entropy to assess the degree of uncertainty in archaeological interpretations, highlighting how increasing entropy in the archaeological record—due to processes such as taphonomy or excavation biases—leads to more ambiguous or unreliable interpretations.
+John Justeson's "Limitations of Archaeological Inference" [-@Justeson1973] explicitly drew on Shannon's ideas, applying them to the challenges archaeologists face in reconstructing past human behaviors from material remains. Justeson argued that archaeological interpretation is fundamentally limited by the quantity of information that can be extracted from the archaeological record.
+
+He framed the archaeological record as a degraded and incomplete set of signals, with each artifact or feature representing a small, noisy fraction of the original cultural system. Justeson applied Shannon's concept of entropy to assess the degree of uncertainty in archaeological interpretations, highlighting how increasing entropy in the archaeological record—due to processes such as taphonomy or excavation biases—leads to more ambiguous or unreliable interpretations.
 
 Justeson's work helped establish a dialogue within archaeology about the inherent limitations of inference from incomplete datasets, contributing to the development of more cautious and methodologically rigorous approaches to interpreting the archaeological record. His use of Shannon's ideas encouraged archaeologists to critically evaluate the reliability of their data and the extent to which they could justifiably infer past behaviors or cultural practices.
 
@@ -116,76 +147,76 @@ In summary, the use of Shannon's information theory in archaeology has evolved f
 
 ![Schematic representation of information transmission [Fig. 1 @Justeson1973, p. 133].](Justeson_1973_figure_1.png)
 
-$$
-\biggl \lbrace (u_1, A_1), \ldots, (u_N, A_N) \biggr \rbrace
-$$
+\[
+    \biggl \lbrace (u_1, A_1), \ldots, (u_N, A_N) \biggr \rbrace
+\]
 
-$$
-P \big \lbrace v(u_i) \in A_i \big \rbrace \geqslant 1 - \lambda, i=1, \ldots,N
-$$
+\[
+    P \big \lbrace v(u_i) \in A_i \big \rbrace \geqslant 1 - \lambda, i=1, \ldots,N
+\]
 
-$$
-C = \max_{\pi} \left\lbrace \sum_j \left\lbrack\sum_i \pi_i w(j|i) \log_2 \sum_i \pi_i w(j|i) - \sum_i \pi_i w(j|i) \log_2 \sum_i \pi_i w(j|i)\right\rbrack \right\rbrace
-$$
+\[
+    C = \max_{\pi} \left\lbrace \sum_j \left\lbrack\sum_i \pi_i w(j|i) \log_2 \sum_i \pi_i w(j|i) - \sum_i \pi_i w(j|i) \log_2 \sum_i \pi_i w(j|i)\right\rbrack \right\rbrace
+\]
 
 ## Applications
 
 ### Extrapolation of the Prehistoric Distribution of Design Elements
 
-$$
-M_t = \sum^{T}_{i=t} N_i
-$$
+\[
+    M_t = \sum^{T}_{i=t} N_i
+\]
 
-$$
-L_t = \sum^{T}_{i=t} M_i
-$$
+\[
+    L_t = \sum^{T}_{i=t} M_i
+\]
 
 ### Noise
 
 <!-- calculate noise factor for each design element -->
 
-$$
-\begin{aligned}
-    \psi(r) &= P(\text{receiving design element r given that r was sent})\\
-    &=P(\text{receiving r} \ | \ \text{r was sent})
-\end{aligned}
-$$
+\[
+    \begin{aligned}
+        \psi(r) &= P(\text{receiving design element r given that r was sent})\\
+        &=P(\text{receiving r} \ | \ \text{r was sent})
+    \end{aligned}
+\]
 
-$$
-\begin{aligned}
-P(A|B) = &P(A \ \text{and} \ B) \div P(B) \text{, so} \\ 
-&P(\text{r sent} \ | \ \text{r received}) \cdot P(\text{r received})\\
-= &P(\text{r sent and r received})\\
-= &P(\text{r received} \ | \ \text{r sent}) \cdot P(\text{r sent}) \\
-\end{aligned}
-$$
+\[
+    \begin{aligned}
+    P(A|B) = &P(A \ \text{and} \ B) \div P(B) \text{, so} \\ 
+    &P(\text{r sent} \ | \ \text{r received}) \cdot P(\text{r received})\\
+    = &P(\text{r sent and r received})\\
+    = &P(\text{r received} \ | \ \text{r sent}) \cdot P(\text{r sent}) \\
+    \end{aligned}
+\]
 
-$$
-\begin{aligned}
-\min_r \psi(r) &= \min_r P(\text{r received} \ | \ \text{r sent}) \\
-&= \min_r 1 - P(\text{r not received} \ | \ \text{r sent}) \\
-&= \max_r P(\text{r not received} \ | \ \text{r sent}) \\
-&= 1- \lambda
-\end{aligned}
-$$
+\[
+    \begin{aligned}
+    \min_r \psi(r) &= \min_r P(\text{r received} \ | \ \text{r sent}) \\
+    &= \min_r 1 - P(\text{r not received} \ | \ \text{r sent}) \\
+    &= \max_r P(\text{r not received} \ | \ \text{r sent}) \\
+    &= 1- \lambda
+    \end{aligned}
+\]
 
-$$
-\begin{aligned}
-\overline{\psi} &= \sum_r p_E(r) \psi(r) \\
-&= \sum_r p_E(r) \left \lbrack p(r) \div p_E(r) \right \rbrack \\
-&= \sum_r p(r) = 1
-\end{aligned}
-$$
+\[
+    \begin{aligned}
+    \overline{\psi} &= \sum_r p_E(r) \psi(r) \\
+    &= \sum_r p_E(r) \left \lbrack p(r) \div p_E(r) \right \rbrack \\
+    &= \sum_r p(r) = 1
+    \end{aligned}
+\]
 
-$$
-\begin{aligned}
-H' &= -\sum_{i=1}^k p(x_i) \log_2 p(x_i) \\
-&= -\sum_{i=1}^k \frac{1}{k} \log_2 \frac{1}{k} \\
-&= -\log_2 \frac{1}{k} \\
-&= \log_2 k
-\end{aligned}
-$$
+\[
+    \begin{aligned}
+    H' &= -\sum_{i=1}^k p(x_i) \log_2 p(x_i) \\
+    &= -\sum_{i=1}^k \frac{1}{k} \log_2 \frac{1}{k} \\
+    &= -\log_2 \frac{1}{k} \\
+    &= \log_2 k
+    \end{aligned}
+\]
 
-$$
-h = H/H' \ \text{and} \ h_E = H_E/H'_E
-$$
+\[
+    h = H/H' \ \text{and} \ h_E = H_E/H'_E
+\]
