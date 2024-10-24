@@ -15,6 +15,10 @@ urlcolor: blue
 
 ...
 
+* Quantitative approaches in archaeology beginning with Petrie's application of sequence dating (i.e., seriation) in 1899 [@Kendall1969].
+* It was not until the 1950s that formal statistical methods started to play a moe substantial role in archaeological methodologies [@Ammerman1992].
+* 
+
 Fifty years ago, what arguably could have been one of the most important papers written for modern work in quantitative archaeology was published in American Antiquity. Unfortunately for its author, and generations of archaeologists, it received relatively little attention at the time. With few citations, more than half of which have occurred in just the last few years, its elegance and mathematical precision went largely unappreciated.
 
 John Justeson's article "Limitations of archaeological inference: an information-theoretic approach with applications in methodology" [-@Justeson1973] was rather ambitious, as can be seen from its abstract:
@@ -80,7 +84,7 @@ Entropy is highest when all outcomes are equally likely, and decreases as we gai
 
 For the first time, scientists had a way to *quantify* information. Shannon had defined information in a way that made it possible to measure and *analyze* it mathematically, based solely on its statistical structure and independently of its content or meaning.
 
-Information theory has evolved over the last few decades into a highly diverse discipline in its own right with broad applications. Shannon, however, developed the theory towards one particular application -- communication. Specifically, he was looking for a way to understand how information could be efficiently and reliably transmitted across communication systems, especially in the presence of noise or interference.  
+Information theory has evolved over the last few decades into a highly diverse discipline in its own right, with broad applications. Shannon, however, developed the theory towards one particular application -- communication. Specifically, he was looking for a way to understand how information could be efficiently and reliably transmitted across communication systems, especially in the presence of noise or interference.  
 
 ### Channel, Signal, and Noise
 
@@ -92,7 +96,7 @@ In Shannon's "A Mathematical Theory of Communication," the concepts of channel, 
 
 3. **Noise**: Noise refers to any unwanted interference or disturbance that distorts the signal as it passes through the channel. Noise can result from physical factors like electrical interference or from limitations in the transmission medium itself. Shannon considered this interference mathematically as random processes that alter the transmitted signals unpredictably.
 
-4. **Channel Capacity**: This is a critical concept that defines the maximum rate at which information can be reliably transmitted over a channel, given the presence of noise. Mathematically, Shannon’s formula for channel capacity \( C \) is:
+4. **Channel Capacity**: This is a critical concept that defines the maximum rate at which information can be reliably transmitted over a channel, given the presence of noise. Mathematically, Shannon's formula for channel capacity \( C \) is:
 
 \[
     C = B \log_2 \left( 1 + \frac{S}{N} \right)
@@ -100,8 +104,7 @@ In Shannon's "A Mathematical Theory of Communication," the concepts of channel, 
 
 where \( B \) is the bandwidth of the channel (in Hz), \( S \) is the signal power, and \( N \) is the noise power. The term \( \frac{S}{N} \) represents the signal-to-noise ratio (SNR), a measure of how strong the signal is relative to the noise. The capacity \( C \) gives the maximum number of bits per second that can be transmitted with minimal error, despite the noise.
 
-In simple terms, Shannon’s theory explains how much information can be transmitted over a given channel, taking into account the inevitable noise that distorts signals, and provides a formula for maximizing the efficiency of communication systems.
-
+In simple terms, Shannon's theory explains how much information can be transmitted over a given channel, taking into account the inevitable noise that distorts signals, and provides a formula for maximizing the efficiency of communication systems.
 
 ## Information Theory in Archaeology
 
