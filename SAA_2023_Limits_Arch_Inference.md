@@ -16,7 +16,8 @@ urlcolor: blue
 ...
 
 * Quantitative approaches in archaeology beginning with Petrie's application of sequence dating (i.e., seriation) in 1899 [@Kendall1969].
-* It was not until the 1950s that formal statistical methods started to play a moe substantial role in archaeological methodologies [@Ammerman1992].
+* It was not until the 1950s that formal statistical methods started to play a more substantial role in archaeological methodologies [@Ammerman1992]. Early work by archaeologists such as @Brainerd1951, @Spaulding1953, and @Heizer1956 foreshadowed an emergent *computational archaeology* [@Djindjian2015].
+* By the 1970s
 * 
 
 Fifty years ago, what arguably could have been one of the most important papers written for modern work in quantitative archaeology was published in American Antiquity. Unfortunately for its author, and generations of archaeologists, it received relatively little attention at the time. With few citations, more than half of which have occurred in just the last few years, its elegance and mathematical precision went largely unappreciated.
@@ -74,19 +75,21 @@ Consider it this way -- if an event is nearly certain to occur, you would *alrea
 
 Surprisal is zero for events that are certain (i.e., the probability \(p(x)=1\)), and grows larger as the probability of the event decreases (Figure {#figure:surprisal_example}). Exceedingly rare events, by contrast, would be very surprising to witness and approaching "infinitely" surprising as the probability of the event goes to zero (i.e., \(lim_{p(x) \to 0} \ I(x) = \infty\)).
 
-![The surprisal $I(x)$ of a coin flip $x$ (i.e., lands "heads" or "tails") as the probability ($p(x)$) of landing "heads" ranges from $0$ to $1$ for a "biased" coin. A "fair" coin would land on heads or tails with equal chances (\(p(x)=0.5\)).](./surprisal.png){#figure:surprisal_example}
+![The surprisal $I(x)$ of a coin flip $x$ (i.e., lands "heads" or "tails") as the probability $p(x)$ of landing "heads" ranges from $0$ to $1$ for a "biased" coin. A "fair" coin would land on heads or tails with equal chances or \(p(x)=0.5\).](./surprisal.png){#figure:surprisal_example}
 
 Entropy represents the *average* surprisal over all possible outcomes from a probability distribution. It quantifies the overall uncertainty or unpredictability of a system or source of information. The higher the entropy, the more information the system is capable of producing, since there is greater uncertainty about which outcome will occur.
 
 Entropy is highest when all outcomes are equally likely, and decreases as we gain more information to anticipate whether or not that event is likely to occur (Figure {#figure:entropy_example}). Information is therefore the reduction of that uncertainty or entropy when a new event is observed. We have learned more about the underlying probabilities for future events.
 
-![The overall system entropy \(H(\cal{X})\) for biased coin flips as the probability (\(p(x)\)) of landing "heads" ranges from 0 to 1. A "fair" coin (\(p(x)=0.5\)) is the system with the most uncertainty, since either outcome ("heads" or "tails") is equally possible.](./Entropy.png){#figure:entropy_example}
+![The overall system entropy \(H(\cal{X})\) for biased coin flips as the probability \(p(x)\) of landing "heads" ranges from 0 to 1. A "fair" coin with \(p(x)=0.5\) is the system with the most uncertainty, since either outcome ("heads" or "tails") is equally possible.](./Entropy.png){#figure:entropy_example}
 
 For the first time, scientists had a way to *quantify* information. Shannon had defined information in a way that made it possible to measure and *analyze* it mathematically, based solely on its statistical structure and independently of its content or meaning.
 
 Information theory has evolved over the last few decades into a highly diverse discipline in its own right, with broad applications. Shannon, however, developed the theory towards one particular application -- communication. Specifically, he was looking for a way to understand how information could be efficiently and reliably transmitted across communication systems, especially in the presence of noise or interference.  
 
 ### Channel, Signal, and Noise
+
+...
 
 In Shannon's "A Mathematical Theory of Communication," the concepts of channel, channel capacity, signal, and noise are foundational to understanding how information is transmitted over communication systems.
 
@@ -110,7 +113,7 @@ In simple terms, Shannon's theory explains how much information can be transmitt
 
 <!-- ### The Evolution and Critical Debate of Information Theory in Archaeology -->
 
-<!-- The integration of information theory into archaeological research has evolved significantly since its early application in the 1970s. Inspired by Shannon's foundational ideas on information, entropy, and communication channels, archaeologists have employed these concepts to analyze the transmission of cultural traits, the integrity of artifacts, and the uncertainty inherent in archaeological data. However, the application of these ideas has sparked substantial debate regarding their limitations in addressing the complexities of human behavior and cultural evolution.
+<!-- The integration of information theory into archaeological research has evolved significantly since its early application. Inspired by Shannon's ideas, archaeologists began to employ these concepts to analyze the transmission of cultural traits, the integrity of artifacts, and the uncertainty inherent in archaeological data. However, the application of these ideas has sparked substantial debate regarding their limitations in addressing the complexities of human behavior and cultural evolution.
 
 Michael Schiffer's pioneering work [-@Schiffer1972] marked one of the earliest uses of information theory in archaeology, where he explored the disruption of information flow caused by post-depositional processes, termed as "systemic and archaeological contexts." Schiffer emphasized how the information contained within artifacts could degrade over time due to various environmental and cultural factors, introducing "noise" into the archaeological record. This idea aligned with Shannon's theory of communication, where noise distorts messages as they pass through a channel. Schiffer's subsequent work [-@Schiffer1983] on formation processes expanded on this, demonstrating how entropy, a measure of disorder, influences the amount of reliable information that survives in archaeological contexts.
 
@@ -146,7 +149,7 @@ In summary, the use of Shannon's information theory in archaeology has evolved f
 | 6  | [Raab & Goodyear (1984)](https://doi.org/10.2307/280018)                                    | Critiqued the over-reliance on middle-range theories and abstract models in capturing the complexity of human behaviors in archaeological records.          | -         |
 | 7  | [Gheorghiade et al. (2023)](https://doi.org/10.1007/s10816-023-09627-4)                    | Proposed the concept of "Entropology" to move beyond simple entropy measures, emphasizing the need to account for complexity and uncertainty in the data.    | -         | -->
 
-## Channels, Classification, and Signal
+## Evaluating Archaeological Information "Channels"
 
 ![Schematic representation of information transmission [Fig. 1 @Justeson1973, p. 133].](Justeson_1973_figure_1.png)
 
