@@ -15,10 +15,10 @@ urlcolor: blue
 
 ...
 
-* Quantitative approaches in archaeology beginning with Petrie's application of sequence dating (i.e., seriation) in 1899 [@Kendall1969].
+<!-- * Quantitative approaches in archaeology beginning with Petrie's application of sequence dating (i.e., seriation) in 1899 [@Kendall1969].
 * It was not until the 1950s that formal statistical methods started to play a more substantial role in archaeological methodologies [@Ammerman1992]. Early work by archaeologists such as @Brainerd1951, @Spaulding1953, and @Heizer1956 foreshadowed an emergent *computational archaeology* [@Djindjian2015].
 * By the 1970s
-* 
+*  -->
 
 Fifty years ago, what arguably could have been one of the most important papers written for modern work in quantitative archaeology was published in American Antiquity. Unfortunately for its author, and generations of archaeologists, it received relatively little attention at the time. With few citations, more than half of which have occurred in just the last few years, its elegance and mathematical precision went largely unappreciated.
 
@@ -32,11 +32,11 @@ The foundations of information theory were developed by Claude Shannon as a way 
 
 > "The fundamental problem of communication is that of reproducing at one point either exactly or approximately a message selected at another point. Frequently the messages have meaning; that is they refer to or are correlated according to some system with certain physical or conceptual entities." [@Shannon1948, p.1]
 
-Justeson saw that this approach might also be used to establish an "upper limit" for how interpretable archaeological data could be. Moreover, he demonstrated that we could reasonably calculate a quantifiable *measurement* for that upper limit form those data.
+Justeson saw that this approach might also be used to establish an "upper limit" for how interpretable archaeological data could be. Moreover, he demonstrated that we could reasonably calculate a quantifiable *measurement* for that upper limit from those data.
 
 > "If the empirically measured parameters are not consistent with the relationship between them that is required by the theory for a given material or behavioral system, then the data by which that system is to be interpreted cannot have a consistent susceptibility to decoding; that is, there will be no basis for deriving a coherent archaeological interpretation of the data that will accurately reflect the prehistoric situation." [@Justeson1973, p. 136]
 
-In other words, observed archaeological features or attributes should represent a coherent and systematic pattern of activities.
+In other words, observed archaeological features or attributes should represent a coherent and systematic pattern of activities. If not, then there would be no viable and supportable interpretation for that data available to archaeologists.
 
 In particular, he was addressing two *inherent* limitations of the archaeological record:
 
@@ -91,7 +91,7 @@ Information theory has evolved over the last few decades into a highly diverse d
 
 ...
 
-In Shannon's "A Mathematical Theory of Communication," the concepts of channel, channel capacity, signal, and noise are foundational to understanding how information is transmitted over communication systems.
+<!-- In Shannon's "A Mathematical Theory of Communication," the concepts of channel, channel capacity, signal, and noise are foundational to understanding how information is transmitted over communication systems.
 
 1. **Channel**: This refers to the medium or system through which information (in the form of signals) is sent from a sender to a receiver. A channel can be anything from a wire in a telephone system to a fiber optic line or even a wireless spectrum. Shannon modeled channels mathematically to analyze how they affect transmitted signals.
 
@@ -107,9 +107,55 @@ In Shannon's "A Mathematical Theory of Communication," the concepts of channel, 
 
 where \( B \) is the bandwidth of the channel (in Hz), \( S \) is the signal power, and \( N \) is the noise power. The term \( \frac{S}{N} \) represents the signal-to-noise ratio (SNR), a measure of how strong the signal is relative to the noise. The capacity \( C \) gives the maximum number of bits per second that can be transmitted with minimal error, despite the noise.
 
-In simple terms, Shannon's theory explains how much information can be transmitted over a given channel, taking into account the inevitable noise that distorts signals, and provides a formula for maximizing the efficiency of communication systems.
+In simple terms, Shannon's theory explains how much information can be transmitted over a given channel, taking into account the inevitable noise that distorts signals, and provides a formula for maximizing the efficiency of communication systems. -->
+
+<!-- ## Quantitative Analysis and Information Theory in Archaeological Methodology
+
+The integration of quantitative methods into archaeology during the 20th century marked a transformative era that would challenge, redefine, and diversify approaches to understanding the past. By the 1950s, foundational works by @Brainerd1951 and @Heizer1956 highlighted the value of statistical frameworks in chronology-building and site analysis, establishing a precedent for rigorous quantitative inquiry in archaeology. This push intensified during the 1960s with the advent of New Archaeology, championed by figures such as Lewis Binford. New Archaeology, later termed Processual Archaeology, advocated for an explicitly scientific approach grounded in hypothesis testing, formal quantification, and systems theory @Binford1981; @Raab1984]. David Clarke's *Analytical Archaeology* [-@Clarke1978] encapsulated this era's aspirations by advocating for complex statistical models and systems theory to provide explanatory frameworks in the study of past human behavior. By situating quantitative methods at the heart of analysis, Processual Archaeology sought to go beyond mere description to causal understanding, particularly through middle-range theories that sought correlations between artifacts and behavioral processes [@Schiffer1983].
+
+By the 1970s, quantitative archaeology had begun to incorporate Shannon's information theory, pioneered by Doran's [-@Doran1970] early application of systems theory and simulation. @Justeson1973 explored information-theoretic concepts as a tool for addressing inferential challenges in archaeology, positing that entropy measures could quantify cultural complexity and inform hypothesis testing. The development of computer applications further fueled this expansion, facilitating the adoption of statistical methods across archaeological contexts [@Richards1998; @Djindjian2015]. This application of information theory allowed archaeologists to assess patterns in artifact distribution and site organization with new mathematical precision, later inspiring applications in cultural transmission and inter-group interaction studies [@Dickens1984]. Through the 1980s, the critique of rigid, quantifiable approaches to cultural phenomena began to emerge, primarily from post-processual theorists who argued for subjective interpretations and a focus on agency and meaning rather than structural functionalism [@Klejn1977].
+
+Despite critiques, quantitative methods, including information-theoretic approaches, continued to evolve. In recent years, advances in entropy and information measures have been increasingly applied to lithic analysis, as seen in works such as @Paige2022 or @Rio2024, who employed entropy to examine variability in stone tool production strategies. These newer studies align with a trend towards recognizing the flexibility of quantitative tools to address a broader array of archaeological questions, marking a shift away from the purely deterministic frameworks of early Processualism towards a more nuanced integration within contemporary theoretical paradigms [@Nolan2020; @Gheorghiade2023].
+
+From the 1960s to today, the trajectory of quantitative analysis in archaeology has seen waves of theoretical support and critique. Early Processualism lauded quantitative rigor for its perceived objectivity, while post-processual scholars raised concerns about the reductionist tendencies of such models. Over time, however, quantitative methods—including applications of Shannon's information theory—have found renewed relevance as tools capable of balancing empirical rigor with interpretative flexibility, a balance increasingly valued in today's archaeological discourse. -->
+
+<!-- ### Source Analysis
+
+| No. | Source | Key Insight | Citations |
+|-----|---------|-------------|------------|
+| 1 | [Aldenderfer (1998)](https://doi.org/10.1007/bf02446161) | Reviews the development of quantitative methods and their evolution in archaeological studies. | - |
+| 2 | [Ammerman (1992)](https://doi.org/10.1146/annurev.an.21.100192.001311) | Examines the impact of quantitative methods on archaeological theory and practice since the 1960s. | - |
+| 3 | [Binford (1981)](https://doi.org/10.1086/jar.37.3.3629723) | Advocates for a scientific approach to archaeology via Processualism and middle-range theory. | - |
+| 4 | [Brainerd (1951)](https://doi.org/10.2307/276979) | Establishes statistical chronology techniques foundational to quantitative archaeology. | - |
+| 5 | [Justeson (1973)](https://doi.org/10.2307/279360) | Early application of Shannon's information theory to address archaeological inference limits. | - | -->
+
+<!-- ## The Role of Quantitative Analysis in Archaeology: A Historical Perspective
+
+The integration of quantitative analysis and mathematical models in archaeology has profoundly shaped the field, particularly within the New Archaeology and Processual Archaeology movements from the 1960s to the present. In response to dissatisfaction with traditional cultural-historical archaeology, which often emphasized descriptive and typological methods, practitioners in the New Archaeology movement sought to make archaeology more scientific and explanatory. This transformation led to the adoption of quantitative methods and mathematical models to generate empirical, testable hypotheses about past human behavior. A pioneering work in this domain, Heizer and Cook's [-@Heizer1956] exploration of the quantitative approach, laid the groundwork for these methods in archaeology, positing that numerical data and statistical analysis could lead to more objective interpretations of archaeological evidence.
+
+David Clarke's *Analytical Archaeology* [-@Clarke1978] exemplified the push for rigorous, mathematically grounded methods, highlighting how quantification could help establish generalizable patterns across different cultural contexts. Clarke's work strongly influenced subsequent theorists, such as Lewis Binford, a prominent advocate of Processual Archaeology, who argued that archaeological interpretations could be systematized through mid-range theories that bridge human behavior and material remains [@Binford1981]. Quantitative methods became a key tool in Processual Archaeology, enabling archaeologists to test hypotheses about social organization, economic systems, and technological development. Scholars like @Clark1982 provided historical perspectives on this shift, noting that the inclusion of quantitative analysis allowed for greater precision in understanding the variability in artifact distributions, settlement patterns, and environmental adaptations.
+
+During the late 20th century, statistical methods and computer modeling expanded in utility, incorporating systems theory and computer simulations to model cultural processes over time [@Doran1970]. Mark Aldenderfer [-@Aldenderfer1998] reviewed the evolution of these methods, documenting how developments in computing and software had facilitated complex simulations and analyses that were previously unattainable. Notably, the integration of Geographic Information Systems (GIS) allowed archaeologists to spatially analyze artifact distribution and settlement patterns, revealing previously hidden relationships within archaeological data [@Richards1998. Information-theoretic approaches, inspired by advancements in information science, also began to influence archaeology in this period. @Justeson1973 and @Dickens1984 used these methods to study cultural interactions and artifact variability, suggesting that information entropy could provide a framework for understanding the complexity of archaeological datasets.
+
+Despite these advances, quantitative methods have not been without critique. Post-processual archaeologists in the 1980s and 1990s argued that the quantitative focus of Processual Archaeology overlooked subjective and symbolic aspects of human culture. Critics like @Schiffer1988 contended that strict reliance on quantitative methods risked simplifying human behavior and failing to account for cultural context and agency. In response, the early 21st century saw a resurgence of interest in interpretive approaches, balancing the objectivity of quantitative analysis with an understanding of the nuanced social and symbolic dimensions of past cultures [@Djindjian2015].
+
+Recent trends in quantitative archaeology reflect a synthesis of these perspectives, integrating information theory, entropy measures, and network analysis to model archaeological data in new ways [@Gheorghiade2023; @Nolan2020]. Current research by @Paige2022 exemplifies this integration, applying entropy to understand lithic reduction strategies and revealing insights into ancient cognitive processes. These advancements indicate a broader trend towards using quantitative methods as one part of a multidisciplinary approach to archaeology, acknowledging the value of both empirical rigor and cultural interpretation.
+
+The evolution of quantitative analysis in archaeology underscores its pivotal role in transforming the field, yet it also highlights ongoing debates over objectivity, interpretation, and cultural complexity. As technology and theoretical perspectives continue to evolve, quantitative methods will likely remain an essential, though contested, part of archaeological research, bridging scientific analysis with cultural interpretation to reveal deeper insights into the human past. -->
+
+<!-- ### Source Analysis
+
+| No. | Source | Key Insight | Citations |
+|-----|---------|-------------|------------|
+| 1 | [Aldenderfer (1998)](https://doi.org/10.1007/bf02446161) | Reviews advancements in quantitative methods, noting their growing complexity with computational power | 2 |
+| 2 | [Ammerman (1992)](https://doi.org/10.1146/annurev.an.21.100192.001311) | Discusses the role of statistical methods in developing archaeological explanations | 1 |
+| 3 | [Binford (1981)](https://doi.org/10.1086/jar.37.3.3629723) | Advocates for quantitative methods in Processual Archaeology, stressing hypothesis testing | 3 |
+| 4 | Clarke (1978) | Argues for rigorous, scientific analysis in archaeology, influencing New Archaeology methods | 2 |
+| 5 | [Djindjian (2015)](https://doi.org/10.2307/jj.15135883.4) | Highlights the success of mathematical approaches in contemporary archaeology | 1 | -->
 
 ## Information Theory in Archaeology
+
+...
 
 <!-- ### The Evolution and Critical Debate of Information Theory in Archaeology -->
 
@@ -148,6 +194,8 @@ In summary, the use of Shannon's information theory in archaeology has evolved f
 | 5  | [Carrignon, Bentley & O'Brien (2023)](https://doi.org/10.1016/j.jaa.2023.101545)            | Used information theory to estimate cultural transmission rates and measure the uncertainty in archaeological data.                                        | -         |
 | 6  | [Raab & Goodyear (1984)](https://doi.org/10.2307/280018)                                    | Critiqued the over-reliance on middle-range theories and abstract models in capturing the complexity of human behaviors in archaeological records.          | -         |
 | 7  | [Gheorghiade et al. (2023)](https://doi.org/10.1007/s10816-023-09627-4)                    | Proposed the concept of "Entropology" to move beyond simple entropy measures, emphasizing the need to account for complexity and uncertainty in the data.    | -         | -->
+
+## The Limitations of Archaeological Inference
 
 ## Evaluating Archaeological Information "Channels"
 
