@@ -59,11 +59,11 @@ Shannon proposed a particular relationship between information and uncertainty i
     H(\cal{X}) = - \sum_{i=1}^{n} p(x_i) \ \log_2 \ p(x_i)
 \]
 
-What this equation is describing is the total entropy \(H\) of some system \(\cal{X}\) that contains \(n\) discrete attributes or elements \((x_{1}, x_{2}, \ldots x_{n})\). This is defined as the negative sum over all features of each element's probability of occurrence \(p(x_i)\) times the \(\log_2\)[^fn01] of that probability.
+What this equation is describing is the total entropy \(H\) of some system \(\cal{X}\) that contains \(n\) discrete attributes or elements \((x_{1}, x_{2}, \ldots x_{n})\). The entropy is equal to the negative sum, over all \(n\) features, of each element's probability of occurrence \(p(x_i)\) times the \(\log_2\)[^fn01] of that probability.
 
 [^fn01]: \(\log_2\) refers to the base-2 logarithm.
 
-The higher the entropy of a system, indicated by a higher value of $H$, the more uncertainty or randomness there is to the elements of \(\cal{X}\). Somewhat counterintuitively, the more uncertain or random a system the more information it conveys. Remember that Shannon defines information as the reduction of uncertainty. The greater the uncertainty (i.e., high entropy), the more potential information the system is capable of producing because there is more uncertainty to reduce.
+The higher the entropy of a system, indicated by a larger value for $H$, the more uncertainty or randomness there is to the elements of \(\cal{X}\). Somewhat counterintuitively, the more uncertain or random a system the more information it conveys. Remember that Shannon defines information as the reduction of uncertainty. The greater the uncertainty (i.e., high entropy), the more potential information the system is capable of producing because there is greater uncertainty to reduce.
 
 To see how, we need to understand what Shannon defined as *surprisal*. Surprisal, also known as self-information, is a measure of how surprising or unexpected a specific event is based on its probability. In essence, surprisal measures the information content of a specific outcome -- i.e., rare events carry more information than common ones because they are less expected. Low probability events, those that occur infrequently, are highly surprising. Conversely, high probability events are not.
 
@@ -89,7 +89,32 @@ Information theory has evolved over the last few decades into a highly diverse d
 
 ### Channel, Signal, and Noise
 
+Under Shannon's model of communication, the relationships between information, channel, signal, noise, and channel capacity define the core aspects for transmitting data effectively. Information represents the content or message that needs to be conveyed, which can vary in complexity. In this context, entropy is a measure of the inherent complexity of the information a message might contain -- i.e., higher entropy indicates greater variability in *potential* messages. A communication *channel* is the medium through which that information is transmitted. *Signal* refers to some system of *encoding* for the information that can be passed along the channel, which is comprised of some distinction or category to identify the unique elements or attributes of the system.
+
 ...
+
+<!-- Channels, however, are not perfect. They can introduce disturbances known as *noise*, which interferes with the signal and can alter the received message, creating a challenge in accurate data transmission. The more noise present, the harder it is to reliably convey information. Shannon introduced the concept of *channel capacity* to describe the maximum rate at which information can be transmitted over a channel with a given noise level and still be reliably decoded by the receiver. This capacity depends on both the *bandwidth* of the channel and the *signal-to-noise ratio*. Shannon's theory shows that for a channel to transmit information efficiently, the signal must be strong enough to overcome noise, but not so strong that it leads to unnecessary redundancy. This balance maximizes the channel's capacity, allowing the most efficient transfer of information while minimizing error. -->
+
+<!-- In Shannon's theory of communication, **information** represents a reduction in uncertainty, quantified through **entropy**, which measures the unpredictability of a source. Entropy, \( H(X) \), is a central concept that quantifies the average information content of messages from a source, considering the probabilities of various possible outcomes. Higher entropy indicates greater uncertainty and, thus, more potential information content per symbol. Shannon formalized entropy as 
+
+\[
+H(X) = -\sum p(x) \log p(x)
+\]
+
+where \( p(x) \) is the probability of each possible message. This value gives the expected amount of information produced by a source, reflecting the variability and richness of its output.
+
+**Channels** are the conduits through which information is transmitted from sender to receiver and are characterized by their capacity to handle information. **Channel capacity**, \( C \), represents the maximum achievable rate (in bits per second) at which information can be reliably transmitted over the channel. Shannon defined channel capacity as the upper bound on the transmission rate where information can be sent with arbitrarily low error, given by 
+
+\[
+C = \max_{p(x)} I(X; Y)
+\]
+
+where \( I(X; Y) \) is the **mutual information** between the transmitted variable \( X \) and the received variable \( Y \). This mutual information measures the amount of information shared between \( X \) and \( Y \), capturing how much of the sent signal is retained and understood at the receiving end.
+
+**Signals**, the encoded representations of information, travel through channels but are often affected by **noise**—random disturbances or fluctuations that interfere with the signal. Noise can distort or obscure the signal, increasing the probability of errors in decoding. Shannon introduced the concept of noise through the “noisy channel model,” which includes the **signal-to-noise ratio** (SNR) as a factor affecting capacity. The capacity of a noisy channel is maximized by encoding strategies that adapt to the noise level, thereby improving the reliability of transmission by maximizing mutual information despite interference.
+
+Thus, the interplay among information, entropy, channel, signal, noise, and capacity defines the limitations and possibilities for communication. The channel capacity sets a theoretical upper limit, dictated by entropy and SNR, on how much information can be sent reliably, while noise and entropy influence the encoding methods necessary to approach this capacity. Shannon’s framework demonstrates that efficient communication requires managing these relationships to optimize the flow of information within the constraints of the channel and the presence of noise.
+ -->
 
 <!-- In Shannon's "A Mathematical Theory of Communication," the concepts of channel, channel capacity, signal, and noise are foundational to understanding how information is transmitted over communication systems.
 
