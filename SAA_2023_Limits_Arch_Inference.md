@@ -91,15 +91,17 @@ Information theory has evolved over the last few decades into a highly diverse d
 
 Under Shannon's model of communication, the relationships between information, channel, signal, noise, and channel capacity define the core aspects for transmitting data effectively. Information represents the content or message that needs to be conveyed, which can vary in complexity. In this context, entropy is a measure of the inherent complexity of the information a message might contain -- i.e., higher entropy indicates greater variability in *potential* messages.
 
-A communication *channel* is the medium or system through which information is transmitted. Channels connect sender to receiver, and are characterized by their capacity to handle information. This *channel capacity* ( \( C \) ) represents that maximum rate at which information that may reliably be transmitted across that a channel. It places an upper bound on how much information can be sent through such a channel of communication with an arbitraily low rate of errors, given by:  
+A communication *channel* is the medium or system through which information is transmitted. Channels connect sender to receiver, and are characterized by their capacity to handle information. This *channel capacity* ( \( C \) ) represents that maximum rate at which information that may reliably be transmitted across that a channel. It places an upper bound on how much information can be sent through such a channel of communication with an arbitrarily low rate of errors, given by:  
 
 \[
-C = \max_{p(x)} I(X; Y)
+C = \max_{p(x)} I(X \ | \ Y)
 \]
 
-<!-- **Channel capacity**, \( C \), represents the maximum achievable rate (in bits per second) at which information can be reliably transmitted over the channel. Shannon defined channel capacity as the upper bound on the transmission rate where information can be sent with arbitrarily low error, given by 
+where \( I(X \ | \ Y) \) is the *mutual information*[^fn02] between the transmitted variable \( X \) and the received variable \( Y \). It measures the amount of information *shared* between \( X \) and \( Y \) or, put another way, how much of what was transmitted by the sender is retained and correctly understood by the receiver. The maximum possible mutual information is the capacity \( C \) for the channel.
 
-where \( I(X; Y) \) is the **mutual information** between the transmitted variable \( X \) and the received variable \( Y \). This mutual information measures the amount of information shared between \( X \) and \( Y \), capturing how much of the sent signal is retained and understood at the receiving end.
+[^fn02]: Remember, \( I(x) = - \log_2 p(x) \) is the *surprisal* value of event \( x \) that represents the information conveyed by that event. The *mutual information* between two events can be though of as the information conveyed when *both* events occur simultaneously.
+
+<!-- This 
  -->
 
 *Signal* refers to some system of *encoding* for the information that can be passed along the channel, which is comprised of some distinction or category to identify the unique elements or attributes of the system. Channels, however, are not perfect. They can introduce disturbances known as *noise*, which interferes with the signal and can alter the received message, creating a challenge in accurate data transmission. The more noise present, the harder it is to reliably convey information.
