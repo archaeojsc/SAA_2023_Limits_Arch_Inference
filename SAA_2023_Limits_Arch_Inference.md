@@ -89,9 +89,12 @@ Information theory has evolved over the last few decades into a highly diverse d
 
 ### Channel, Signal, and Noise
 
-Under Shannon's model of communication, the relationships between information, channel, signal, noise, and channel capacity define the core aspects for transmitting data effectively. Information represents the content or message that needs to be conveyed, which can vary in complexity. In this context, entropy is a measure of the inherent complexity of the information a message might contain -- i.e., higher entropy indicates greater variability in *potential* messages. A communication *channel* is the medium through which that information is transmitted. *Signal* refers to some system of *encoding* for the information that can be passed along the channel, which is comprised of some distinction or category to identify the unique elements or attributes of the system.
+Under Shannon's model of communication, the relationships between information, channel, signal, noise, and channel capacity define the core aspects for transmitting data effectively. Information represents the content or message that needs to be conveyed, which can vary in complexity. In this context, entropy is a measure of the inherent complexity of the information a message might contain -- i.e., higher entropy indicates greater variability in *potential* messages.
 
-Channels, however, are not perfect. They can introduce disturbances known as *noise*, which interferes with the signal and can alter the received message, creating a challenge in accurate data transmission. The more noise present, the harder it is to reliably convey information. Shannon introduced the concept of *channel capacity* to describe the maximum rate at which information can be transmitted over a channel with a given noise level and still be reliably decoded by the receiver. This capacity depends on both the *bandwidth* of the channel and the *signal-to-noise ratio* (often simply called "SNR"). Shannon's theory shows that for a channel to transmit information efficiently, the signal must be strong enough to overcome noise, but not so strong that it leads to unnecessary redundancy. This balance maximizes the channel's capacity, allowing the most efficient transfer of information while minimizing error.
+A communication *channel* is the medium through which that information is transmitted. *Signal* refers to some system of *encoding* for the information that can be passed along the channel, which is comprised of some distinction or category to identify the unique elements or attributes of the system. Channels, however, are not perfect. They can introduce disturbances known as *noise*, which interferes with the signal and can alter the received message, creating a challenge in accurate data transmission.
+
+The more noise present, the harder it is to reliably convey information. Shannon introduced the concept of *channel capacity* to describe the maximum rate at which information can be transmitted over a channel with a given noise level and still be reliably decoded by the receiver. 
+Capacity depends on both the *bandwidth* of the channel and the *signal-to-noise ratio* (often simply called "SNR"). Shannon's theory shows that for a channel to transmit information efficiently, the signal must be strong enough to overcome noise, but not so strong that it leads to unnecessary redundancy. This balance maximizes the channel's capacity, allowing the most efficient transfer of information while minimizing error.
 
 ...
 
@@ -146,13 +149,13 @@ From the 1960s to today, the trajectory of quantitative analysis in archaeology 
 
 <!-- ### Source Analysis
 
-| No. | Source | Key Insight | Citations |
-|-----|---------|-------------|------------|
-| 1 | [Aldenderfer (1998)](https://doi.org/10.1007/bf02446161) | Reviews the development of quantitative methods and their evolution in archaeological studies. | - |
-| 2 | [Ammerman (1992)](https://doi.org/10.1146/annurev.an.21.100192.001311) | Examines the impact of quantitative methods on archaeological theory and practice since the 1960s. | - |
-| 3 | [Binford (1981)](https://doi.org/10.1086/jar.37.3.3629723) | Advocates for a scientific approach to archaeology via Processualism and middle-range theory. | - |
-| 4 | [Brainerd (1951)](https://doi.org/10.2307/276979) | Establishes statistical chronology techniques foundational to quantitative archaeology. | - |
-| 5 | [Justeson (1973)](https://doi.org/10.2307/279360) | Early application of Shannon's information theory to address archaeological inference limits. | - | -->
+| No. | Source                                                                 | Key Insight                                                                                        | Citations |
+| --- | ---------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | --------- |
+| 1   | [Aldenderfer (1998)](https://doi.org/10.1007/bf02446161)               | Reviews the development of quantitative methods and their evolution in archaeological studies.     | -         |
+| 2   | [Ammerman (1992)](https://doi.org/10.1146/annurev.an.21.100192.001311) | Examines the impact of quantitative methods on archaeological theory and practice since the 1960s. | -         |
+| 3   | [Binford (1981)](https://doi.org/10.1086/jar.37.3.3629723)             | Advocates for a scientific approach to archaeology via Processualism and middle-range theory.      | -         |
+| 4   | [Brainerd (1951)](https://doi.org/10.2307/276979)                      | Establishes statistical chronology techniques foundational to quantitative archaeology.            | -         |
+| 5   | [Justeson (1973)](https://doi.org/10.2307/279360)                      | Early application of Shannon's information theory to address archaeological inference limits.      | -         | --> |
 
 <!-- ## The Role of Quantitative Analysis in Archaeology: A Historical Perspective
 
@@ -170,13 +173,13 @@ The evolution of quantitative analysis in archaeology underscores its pivotal ro
 
 <!-- ### Source Analysis
 
-| No. | Source | Key Insight | Citations |
-|-----|---------|-------------|------------|
-| 1 | [Aldenderfer (1998)](https://doi.org/10.1007/bf02446161) | Reviews advancements in quantitative methods, noting their growing complexity with computational power | 2 |
-| 2 | [Ammerman (1992)](https://doi.org/10.1146/annurev.an.21.100192.001311) | Discusses the role of statistical methods in developing archaeological explanations | 1 |
-| 3 | [Binford (1981)](https://doi.org/10.1086/jar.37.3.3629723) | Advocates for quantitative methods in Processual Archaeology, stressing hypothesis testing | 3 |
-| 4 | Clarke (1978) | Argues for rigorous, scientific analysis in archaeology, influencing New Archaeology methods | 2 |
-| 5 | [Djindjian (2015)](https://doi.org/10.2307/jj.15135883.4) | Highlights the success of mathematical approaches in contemporary archaeology | 1 | -->
+| No. | Source                                                                 | Key Insight                                                                                            | Citations |
+| --- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | --------- |
+| 1   | [Aldenderfer (1998)](https://doi.org/10.1007/bf02446161)               | Reviews advancements in quantitative methods, noting their growing complexity with computational power | 2         |
+| 2   | [Ammerman (1992)](https://doi.org/10.1146/annurev.an.21.100192.001311) | Discusses the role of statistical methods in developing archaeological explanations                    | 1         |
+| 3   | [Binford (1981)](https://doi.org/10.1086/jar.37.3.3629723)             | Advocates for quantitative methods in Processual Archaeology, stressing hypothesis testing             | 3         |
+| 4   | Clarke (1978)                                                          | Argues for rigorous, scientific analysis in archaeology, influencing New Archaeology methods           | 2         |
+| 5   | [Djindjian (2015)](https://doi.org/10.2307/jj.15135883.4)              | Highlights the success of mathematical approaches in contemporary archaeology                          | 1         | --> |
 
 ## Information Theory in Archaeology
 
@@ -210,15 +213,15 @@ More recently, @Gheorghiade2023 expanded Shannon's concept of entropy into a fra
 
 In summary, the use of Shannon's information theory in archaeology has evolved from early models of data degradation and cultural transmission to more sophisticated frameworks that incorporate entropy and uncertainty. Scholars like Schiffer, Justeson, and Renfrew laid the foundation, while modern researchers like Nolan, Crema, and Gheorghiade have expanded these concepts to address the challenges posed by incomplete and noisy archaeological records. However, the ongoing debate highlights the tension between the precision offered by information theory and the complex realities of human history, questioning the extent to which these mathematical models can truly capture the richness of the past.
 
-| #  | Paper                                                                                      | Key Insight                                                                                                                                              | Citations |
-|----|---------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
-| 1  | [Crema, Kandler & Shennan (2016)](https://doi.org/10.1038/srep39122)                        | Applied equilibrium and non-equilibrium models to cultural transmission, revealing cultural patterns through frequency data.                               | -         |
-| 2  | [Justeson (1973)](https://doi.org/10.2307/279360)                                           | Explored the limitations of information theory in archaeological inference, emphasizing the role of noise and uncertainty in reconstructing behavior.       | -         |
-| 3  | [Nolan (2020)](https://doi.org/10.1007/s11135-020-00980-0)                                  | Assessed entropy, noise, and channel capacity in evaluating the significance of archaeological data and its degradation over time.                         | -         |
-| 4  | [Schiffer (1972, 1983)](https://doi.org/10.2307/278203)                                     | Investigated how post-depositional processes disrupt information flow in artifacts, introducing the concept of formation processes in archaeological theory.| -         |
-| 5  | [Carrignon, Bentley & O'Brien (2023)](https://doi.org/10.1016/j.jaa.2023.101545)            | Used information theory to estimate cultural transmission rates and measure the uncertainty in archaeological data.                                        | -         |
-| 6  | [Raab & Goodyear (1984)](https://doi.org/10.2307/280018)                                    | Critiqued the over-reliance on middle-range theories and abstract models in capturing the complexity of human behaviors in archaeological records.          | -         |
-| 7  | [Gheorghiade et al. (2023)](https://doi.org/10.1007/s10816-023-09627-4)                    | Proposed the concept of "Entropology" to move beyond simple entropy measures, emphasizing the need to account for complexity and uncertainty in the data.    | -         | -->
+| #   | Paper                                                                            | Key Insight                                                                                                                                                  | Citations |
+| --- | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- |
+| 1   | [Crema, Kandler & Shennan (2016)](https://doi.org/10.1038/srep39122)             | Applied equilibrium and non-equilibrium models to cultural transmission, revealing cultural patterns through frequency data.                                 | -         |
+| 2   | [Justeson (1973)](https://doi.org/10.2307/279360)                                | Explored the limitations of information theory in archaeological inference, emphasizing the role of noise and uncertainty in reconstructing behavior.        | -         |
+| 3   | [Nolan (2020)](https://doi.org/10.1007/s11135-020-00980-0)                       | Assessed entropy, noise, and channel capacity in evaluating the significance of archaeological data and its degradation over time.                           | -         |
+| 4   | [Schiffer (1972, 1983)](https://doi.org/10.2307/278203)                          | Investigated how post-depositional processes disrupt information flow in artifacts, introducing the concept of formation processes in archaeological theory. | -         |
+| 5   | [Carrignon, Bentley & O'Brien (2023)](https://doi.org/10.1016/j.jaa.2023.101545) | Used information theory to estimate cultural transmission rates and measure the uncertainty in archaeological data.                                          | -         |
+| 6   | [Raab & Goodyear (1984)](https://doi.org/10.2307/280018)                         | Critiqued the over-reliance on middle-range theories and abstract models in capturing the complexity of human behaviors in archaeological records.           | -         |
+| 7   | [Gheorghiade et al. (2023)](https://doi.org/10.1007/s10816-023-09627-4)          | Proposed the concept of "Entropology" to move beyond simple entropy measures, emphasizing the need to account for complexity and uncertainty in the data.    | -         | --> |
 
 ## The Limitations of Archaeological Inference
 
