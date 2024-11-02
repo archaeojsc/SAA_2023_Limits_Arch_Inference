@@ -91,30 +91,24 @@ Information theory has evolved over the last few decades into a highly diverse d
 
 Under Shannon's model of communication, the relationships between information, channel, signal, noise, and channel capacity define the core aspects for transmitting data effectively. Information represents the content or message that needs to be conveyed, which can vary in complexity. In this context, entropy is a measure of the inherent complexity of the information a message might contain -- i.e., higher entropy indicates greater variability in *potential* messages.
 
-A communication *channel* is the medium through which that information is transmitted. *Signal* refers to some system of *encoding* for the information that can be passed along the channel, which is comprised of some distinction or category to identify the unique elements or attributes of the system. Channels, however, are not perfect. They can introduce disturbances known as *noise*, which interferes with the signal and can alter the received message, creating a challenge in accurate data transmission.
-
-The more noise present, the harder it is to reliably convey information. Shannon introduced the concept of *channel capacity* to describe the maximum rate at which information can be transmitted over a channel with a given noise level and still be reliably decoded by the receiver. 
-Capacity depends on both the *bandwidth* of the channel and the *signal-to-noise ratio* (often simply called "SNR"). Shannon's theory shows that for a channel to transmit information efficiently, the signal must be strong enough to overcome noise, but not so strong that it leads to unnecessary redundancy. This balance maximizes the channel's capacity, allowing the most efficient transfer of information while minimizing error.
-
-...
-
-<!-- In Shannon's theory of communication, **information** represents a reduction in uncertainty, quantified through **entropy**, which measures the unpredictability of a source. Entropy, \( H(X) \), is a central concept that quantifies the average information content of messages from a source, considering the probabilities of various possible outcomes. Higher entropy indicates greater uncertainty and, thus, more potential information content per symbol. Shannon formalized entropy as 
-
-\[
-H(X) = -\sum p(x) \log p(x)
-\]
-
-where \( p(x) \) is the probability of each possible message. This value gives the expected amount of information produced by a source, reflecting the variability and richness of its output.
-
-**Channels** are the conduits through which information is transmitted from sender to receiver and are characterized by their capacity to handle information. **Channel capacity**, \( C \), represents the maximum achievable rate (in bits per second) at which information can be reliably transmitted over the channel. Shannon defined channel capacity as the upper bound on the transmission rate where information can be sent with arbitrarily low error, given by 
+A communication *channel* is the medium or system through which information is transmitted. Channels connect sender to receiver, and are characterized by their capacity to handle information. This *channel capacity* ( \( C \) ) represents that maximum rate at which information that may reliably be transmitted across that a channel. It places an upper bound on how much information can be sent through such a channel of communication with an arbitraily low rate of errors, given by:  
 
 \[
 C = \max_{p(x)} I(X; Y)
 \]
 
-where \( I(X; Y) \) is the **mutual information** between the transmitted variable \( X \) and the received variable \( Y \). This mutual information measures the amount of information shared between \( X \) and \( Y \), capturing how much of the sent signal is retained and understood at the receiving end.
+<!-- **Channel capacity**, \( C \), represents the maximum achievable rate (in bits per second) at which information can be reliably transmitted over the channel. Shannon defined channel capacity as the upper bound on the transmission rate where information can be sent with arbitrarily low error, given by 
 
-**Signals**, the encoded representations of information, travel through channels but are often affected by **noise** -- random disturbances or fluctuations that interfere with the signal. Noise can distort or obscure the signal, increasing the probability of errors in decoding. Shannon introduced the concept of noise through the “noisy channel model,” which includes the **signal-to-noise ratio** (SNR) as a factor affecting capacity. The capacity of a noisy channel is maximized by encoding strategies that adapt to the noise level, thereby improving the reliability of transmission by maximizing mutual information despite interference.
+where \( I(X; Y) \) is the **mutual information** between the transmitted variable \( X \) and the received variable \( Y \). This mutual information measures the amount of information shared between \( X \) and \( Y \), capturing how much of the sent signal is retained and understood at the receiving end.
+ -->
+
+*Signal* refers to some system of *encoding* for the information that can be passed along the channel, which is comprised of some distinction or category to identify the unique elements or attributes of the system. Channels, however, are not perfect. They can introduce disturbances known as *noise*, which interferes with the signal and can alter the received message, creating a challenge in accurate data transmission. The more noise present, the harder it is to reliably convey information.
+
+Shannon introduced the concept of *channel capacity* to describe the maximum rate at which information can be transmitted over a channel with a given noise level and still be reliably decoded by the receiver. Capacity depends on both the *bandwidth* of the channel and the *signal-to-noise ratio* (often simply called "SNR"). Shannon's theory shows that for a channel to transmit information efficiently, the signal must be strong enough to overcome noise, but not so strong that it leads to unnecessary redundancy. This balance maximizes the channel's capacity, allowing the most efficient transfer of information while minimizing error.
+
+...
+
+<!-- **Signals**, the encoded representations of information, travel through channels but are often affected by **noise** -- random disturbances or fluctuations that interfere with the signal. Noise can distort or obscure the signal, increasing the probability of errors in decoding. Shannon introduced the concept of noise through the “noisy channel model,” which includes the **signal-to-noise ratio** (SNR) as a factor affecting capacity. The capacity of a noisy channel is maximized by encoding strategies that adapt to the noise level, thereby improving the reliability of transmission by maximizing mutual information despite interference.
 
 Thus, the interplay among information, entropy, channel, signal, noise, and capacity defines the limitations and possibilities for communication. The channel capacity sets a theoretical upper limit, dictated by entropy and SNR, on how much information can be sent reliably, while noise and entropy influence the encoding methods necessary to approach this capacity. Shannon’s framework demonstrates that efficient communication requires managing these relationships to optimize the flow of information within the constraints of the channel and the presence of noise.
  -->
