@@ -122,8 +122,6 @@ where \( B \) is the bandwidth of the channel, \( S \) is the power of the signa
 
 [^fn03]: This way to calculate channel capacity is more common (and much more practical) in telecommunication applications, such as those Shannon was studying, in which such things as "channel bandwidth" and "signal power" can be directly measured or otherwise experimentally ascertained.
 
-
-
 ## Information Theory in Archaeology
 
 ## The Limitations of Archaeological Inference
