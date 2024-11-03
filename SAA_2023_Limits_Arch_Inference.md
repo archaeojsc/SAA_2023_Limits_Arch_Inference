@@ -1,9 +1,9 @@
 ---
 title: |
-    "Why is there Math in my Archaeology?"
+    Why is there Math in my Archaeology?
 
 subtitle: |
-    "The modern foundations of quantitative archaeology, written decades too soon"
+    The modern foundations of quantitative archaeology, written decades too soon
 
 bibliography: 2023_SAA.bib
 reference-section-title: "References Cited"
@@ -14,14 +14,14 @@ urlcolor: blue
 
 ---
 
-## Introduction
+<!-- ## Introduction
 
 ...
 
-<!-- * Quantitative approaches in archaeology beginning with Petrie's application of sequence dating (i.e., seriation) in 1899 [@Kendall1969].
+* Quantitative approaches in archaeology beginning with Petrie's application of sequence dating (i.e., seriation) in 1899 [@Kendall1969].
 * It was not until the 1950s that formal statistical methods started to play a more substantial role in archaeological methodologies [@Ammerman1992]. Early work by archaeologists such as @Brainerd1951, @Spaulding1953, and @Heizer1956 foreshadowed an emergent *computational archaeology* [@Djindjian2015].
 * By the 1970s
-*  -->
+* 
 
 Fifty years ago, what arguably could have been one of the most important papers written for modern work in quantitative archaeology was published in American Antiquity. Unfortunately for its author, and generations of archaeologists, it received relatively little attention at the time. With few citations, more than half of which have occurred in just the last few years, its elegance and mathematical precision went largely unappreciated.
 
@@ -49,6 +49,7 @@ In particular, he was addressing two *inherent* limitations of the archaeologica
 The first limitation is analogous degradation of a signal due to noise or interference affecting a transmission, and the second to the encoding and decoding of that signal between sender and receiver.
 
 @Schiffer1972 had previously elaborated on the distinction between *systemic* and *archaeological* contexts, differentiating between the cultural and taphonomic processes that create the observable archaeological record. It would not be until a decade later [@Schiffer1983; @Schiffer1987] that he would formalize these as *natural* versus *cultural* transformation processes (i.e., $n$-transforms and $c$-transforms). @Justeson1973 ...
+ -->
 
 ## A Gentle Introduction to Information Theory
 
@@ -124,13 +125,13 @@ where \( B \) is the bandwidth of the channel, \( S \) is the power of the signa
 
 The influence of telecommunication and cryptography on Shannon's theories are obvious, but the underlying concepts quickly found new applications and implications in other fields of study. By linking information to uncertainty and statistical probabilities, Shannon's abstracted and highly generalized model of information and communication could be adapted to studying all manner of systems. It would not be too long after the theories described in Shannon's technical paper were expanded and republished in book-length form a year later as "The Mathematical Theory of Communication" [@Shannon1949] that they would begin to appear in disciplines ranging form physics to physiology.
 
-## Information Theory in Archaeology
+<!-- ## Information Theory in Archaeology
 
-...
+... -->
 
-## The Limitations of Archaeological Inference
+<!-- ## The Limitations of Archaeological Inference -->
 
-## Evaluating Archaeological Information "Channels"
+<!-- ## Evaluating Archaeological Information "Channels"
 
 ![Schematic representation of information transmission [Fig. 1 @Justeson1973, p. 133].](Justeson_1973_figure_1.png)
 
@@ -145,10 +146,10 @@ The influence of telecommunication and cryptography on Shannon's theories are ob
 \[
     C = \max_{\pi} \left \lbrace \sum_j \left \lbrack \sum_i \pi_i w(j|i) \log_2 \sum_i \pi_i w(j|i) - \sum_i \pi_i w(j|i) \log_2 \sum_i \pi_i w(j|i) \right \rbrack \right \rbrace
 \]
-
-## Applications
-
-### Extrapolation of the Prehistoric Distribution of Design Elements
+ -->
+<!-- ## Applications
+ -->
+<!-- ### Extrapolation of the Prehistoric Distribution of Design Elements
 
 \[
     M_t = \sum^{T}_{i=t} N_i
@@ -157,10 +158,11 @@ The influence of telecommunication and cryptography on Shannon's theories are ob
 \[
     L_t = \sum^{T}_{i=t} M_i
 \]
+ -->
 
-### Noise
+<!-- ### Noise
 
-<!-- calculate noise factor for each design element -->
+<!-- calculate noise factor for each design element
 
 \[
     \begin{aligned}
@@ -206,4 +208,4 @@ The influence of telecommunication and cryptography on Shannon's theories are ob
 
 \[
     h = H/H' \ \text{and} \ h_E = H_E/H'_E
-\]
+\] -->
