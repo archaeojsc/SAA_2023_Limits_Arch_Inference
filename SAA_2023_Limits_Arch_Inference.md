@@ -1,7 +1,7 @@
 ---
 title: |
     "Why is there Math in my Archaeology?"
-    
+
 subtitle: |
     "The modern foundations of quantitative archaeology, written decades too soon"
 
@@ -100,7 +100,7 @@ A communication *channel* is the medium or system through which information is t
 C = \max_{p(x)} I(X \ | \ Y)
 \]
 
-where \( I(X \ | \ Y) \) is the *mutual information*[^fn02] between the transmitted variable \( X \) and the received variable \( Y \). It measures the amount of information *shared* between \( X \) and \( Y \) or, put another way, how much of what was transmitted by the sender is retained and correctly understood by the receiver. The maximum possible mutual information is the capacity \( C \) for the channel.
+where \( I(X \ | \ Y) \) is the *mutual information*[^fn02] between the transmitted variable \( X \) and the received variable \( Y \). It measures the amount of information *shared* between \( X \) and \( Y \) or, put another way, how much of what was transmitted by the sender is retained and correctly *understood* by the receiver. The capacity \( C \) for the channel, then, is where maximum amount of information can be correctly transmitted with the fewest number of errors or misunderstandings by the receiver.
 
 [^fn02]: Remember, \( I(x) = - \log_2 p(x) \) is the *surprisal* value of event \( x \) that represents the information conveyed by that event. The *mutual information* between two events can be though of as the information conveyed when *both* events occur simultaneously.
 
