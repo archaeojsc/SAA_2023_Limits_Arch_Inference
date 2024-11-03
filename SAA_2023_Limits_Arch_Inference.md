@@ -118,9 +118,11 @@ This balance maximizes the channel's capacity, allowing the most efficient trans
     C = B \log_2 \left( 1 + \frac{S}{N} \right)
 \]
 
-where \( B \) is the bandwidth of the channel, \( S \) is the power of the signal, and \( N \) is the noise. The the signal-to-noise ratio (SNR) \( \frac{S}{N} \) represents, a measure of how strong the signal is relative to the noise. A noise (\( N \)) gets larger relative to signal (\( S \)), the SNR starts dropping closer towards zero. Since \( \log_2 (1 + 0) = 0 \) that means that channel's capacity \( C \) also goes towards zero as well, no matter how large its ideal original bandwidth.
+where \( B \) is the bandwidth of the channel, \( S \) is the power of the signal, and \( N \) is the noise. The the signal-to-noise ratio (SNR) \( \frac{S}{N} \) represents, a measure of how strong the signal is relative to the noise. As noise (\( N \)) gets larger relative to signal (\( S \)), the SNR starts dropping closer towards zero. Since \( \log_2 (1 + 0) = 0 \) that means that, no matter how large its ideal bandwidth, the channel's capacity \( C \) goes towards zero as well.
 
 [^fn03]: This way to calculate channel capacity is more common (and much more practical) in telecommunication applications, such as those Shannon was studying, in which such things as "channel bandwidth" and "signal power" can be directly measured or otherwise experimentally ascertained.
+
+
 
 ## Information Theory in Archaeology
 
@@ -131,15 +133,15 @@ where \( B \) is the bandwidth of the channel, \( S \) is the power of the signa
 ![Schematic representation of information transmission [Fig. 1 @Justeson1973, p. 133].](Justeson_1973_figure_1.png)
 
 \[
-    \biggl \lbrace (u_1, A_1), \ldots, (u_N, A_N) \biggr \rbrace
+    \left \lbrace (u_1, A_1), \ldots, (u_N, A_N) \right \rbrace
 \]
 
 \[
-    P \big \lbrace v(u_i) \in A_i \big \rbrace \geqslant 1 - \lambda, i=1, \ldots,N
+    P \left \lbrace v(u_i) \in A_i \right \rbrace \geqslant 1 - \lambda, i=1, \ldots,N
 \]
 
 \[
-    C = \max_{\pi} \left\lbrace \sum_j \left\lbrack\sum_i \pi_i w(j|i) \log_2 \sum_i \pi_i w(j|i) - \sum_i \pi_i w(j|i) \log_2 \sum_i \pi_i w(j|i)\right\rbrack \right\rbrace
+    C = \max_{\pi} \left \lbrace \sum_j \left \lbrack \sum_i \pi_i w(j|i) \log_2 \sum_i \pi_i w(j|i) - \sum_i \pi_i w(j|i) \log_2 \sum_i \pi_i w(j|i) \right \rbrack \right \rbrace
 \]
 
 ## Applications
@@ -167,7 +169,7 @@ where \( B \) is the bandwidth of the channel, \( S \) is the power of the signa
 
 \[
     \begin{aligned}
-    P(A|B) = &P(A \ \text{and} \ B) \div P(B) \text{, so} \\ 
+    P(A|B) = &P(A \ \text{and} \ B) \div P(B) \text{, so} \\
     &P(\text{r sent} \ | \ \text{r received}) \cdot P(\text{r received})\\
     = &P(\text{r sent and r received})\\
     = &P(\text{r received} \ | \ \text{r sent}) \cdot P(\text{r sent}) \\
