@@ -122,9 +122,11 @@ where \( B \) is the bandwidth of the channel, \( S \) is the power of the signa
 
 [^fn03]: This way to calculate channel capacity is more common (and often much more practical) in telecommunication applications, such as those Shannon was studying, in which such things as "channel bandwidth" and "signal power" can be directly measured or otherwise experimentally ascertained.
 
-The influence of telecommunication and cryptography on Shannon's theories are obvious, but the underlying concepts quickly found new application in other fields of study. 
+The influence of telecommunication and cryptography on Shannon's theories are obvious, but the underlying concepts quickly found new applications and implications in other fields of study. By linking information to uncertainty and statistical probabilities, Shannon's abstracted and highly generalized model of information and communication could be adapted to studying all manner of systems. It would not be too long after the theories described in Shannon's technical paper were expanded and republished in book-length form a year later as "The Mathematical Theory of Communication" [@Shannon1949] that they would begin to appear in disciplines ranging form physics to physiology.
 
 ## Information Theory in Archaeology
+
+...
 
 ## The Limitations of Archaeological Inference
 
