@@ -110,13 +110,17 @@ Information is transmitted across a communication channel as *signals*, which ar
 
 Channels, however, are not perfect. They can introduce disturbances known as *noise*, which interferes with the signal and can alter the received message, creating a challenge in accurate data transmission. The more noise present, the harder it is to reliably convey information. Noise is essentially random disturbances or fluctuations in the transmission of information along a channel that interfere with the signal. Noise can distort or obscure messages, increasing the probability of errors in decoding them. 
 
-Since channel capacity is the maximum rate at which information can be transmitted over a channel without errors, excess noise degrades capacity by introducing errors. So, channel capacity depends on both the *bandwidth* of the channel (i.e., its ideal capacity) and the *signal-to-noise ratio* (often simply called "SNR"). Shannon's theory shows that for a channel to transmit information efficiently, the signal must be strong enough to overcome noise, but *not* so strong that it leads to unnecessary redundancy in the message encodings. This balance maximizes the channel's capacity, allowing the most efficient transfer of information while minimizing error. This gives us another way to find a channel's capacity, given by:  
+Since channel capacity is the maximum rate at which information can be transmitted over a channel without errors, excess noise degrades capacity by introducing errors. So, channel capacity depends on both the *bandwidth* of the channel (i.e., its ideal capacity) and the *signal-to-noise ratio* (often simply called "SNR"). Shannon's theory shows that for a channel to transmit information efficiently, the signal must be strong enough to overcome noise, but *not* so strong that it leads to unnecessary redundancy in the message encodings.
+
+This balance maximizes the channel's capacity, allowing the most efficient transfer of information while minimizing error. This gives us another way[^fn03] to find a channel's capacity, given by:  
 
 \[
     C = B \log_2 \left( 1 + \frac{S}{N} \right)
 \]
 
-where \( B \) is the bandwidth of the channel, \( S \) is the power of the signal power, and \( N \) is the noise power. The the signal-to-noise ratio (SNR) \( \frac{S}{N} \) represents, a measure of how strong the signal is relative to the noise. A noise (\( N \)) gets larger relative to signal (\( S \)), the SNR starts dropping closer towards zero. Since \( \log_2 (1 + 0) = 0 \), that means that channel's capacity \( C \) also goes towards zero as well no matter how large its ideal bandwidth.
+where \( B \) is the bandwidth of the channel, \( S \) is the power of the signal, and \( N \) is the noise. The the signal-to-noise ratio (SNR) \( \frac{S}{N} \) represents, a measure of how strong the signal is relative to the noise. A noise (\( N \)) gets larger relative to signal (\( S \)), the SNR starts dropping closer towards zero. Since \( \log_2 (1 + 0) = 0 \) that means that channel's capacity \( C \) also goes towards zero as well, no matter how large its ideal original bandwidth.
+
+[^fn03]: This way to calculate channel capacity is more common (and much more practical) in telecommunication applications, such as those Shannon was studying, in which such things as "channel bandwidth" and "signal power" can be directly measured or otherwise experimentally ascertained.
 
 ...
 
