@@ -1,3 +1,19 @@
+---
+title: |
+    Notes for "Why is there Math in my Archaeology?"
+    
+subtitle: |
+    The modern foundations of quantitative archaeology, written decades too soon
+
+bibliography: 2023_SAA.bib
+reference-section-title: "References Cited"
+link-citations: true
+urlcolor: blue
+
+# nocite: '@*'
+
+
+---
 
 **Signals**, the encoded representations of information, travel through channels but are often affected by **noise** -- random disturbances or fluctuations that interfere with the signal. Noise can distort or obscure the signal, increasing the probability of errors in decoding. Shannon introduced the concept of noise through the “noisy channel model,” which includes the **signal-to-noise ratio** (SNR) as a factor affecting capacity. The capacity of a noisy channel is maximized by encoding strategies that adapt to the noise level, thereby improving the reliability of transmission by maximizing mutual information despite interference.
 
