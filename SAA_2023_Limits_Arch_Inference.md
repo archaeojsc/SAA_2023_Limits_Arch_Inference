@@ -106,9 +106,9 @@ where \( I(X \ | \ Y) \) is the *mutual information*[^fn02] between the transmit
 
 <!-- Need to expand on the descriptions for signal and encoding... -->
 
-Information is transmitted across a communication channel as *signals*, which are encoded representations of the information. To do so, there must be some *system* of encoding the information to be passed along the channel that... 
+Information is transmitted across a communication channel as *signals*, which are encoded representations of the information. To do so, there must be some *system* of encoding the information to be passed along the channel that...
 
-Channels, however, are not perfect. They can introduce disturbances known as *noise*, which interferes with the signal and can alter the received message, creating a challenge in accurate data transmission. The more noise present, the harder it is to reliably convey information. Noise is essentially random disturbances or fluctuations in the transmission of information along a channel that interfere with the signal. Noise can distort or obscure messages, increasing the probability of errors in decoding them. 
+Channels, however, are not perfect. They can introduce disturbances known as *noise*, which interferes with the signal and can alter the received message, creating a challenge in accurate data transmission. The more noise present, the harder it is to reliably convey information. Noise is essentially random disturbances or fluctuations in the transmission of information along a channel that interfere with the signal. Noise can distort or obscure messages, increasing the probability of errors in decoding them.
 
 Since channel capacity is the maximum rate at which information can be transmitted over a channel without errors, excess noise degrades capacity by introducing errors. So, channel capacity depends on both the *bandwidth* of the channel (i.e., its ideal capacity) and the *signal-to-noise ratio* (often simply called "SNR"). Shannon's theory shows that for a channel to transmit information efficiently, the signal must be strong enough to overcome noise, but *not* so strong that it leads to unnecessary redundancy in the message encodings.
 
@@ -122,11 +122,7 @@ where \( B \) is the bandwidth of the channel, \( S \) is the power of the signa
 
 [^fn03]: This way to calculate channel capacity is more common (and much more practical) in telecommunication applications, such as those Shannon was studying, in which such things as "channel bandwidth" and "signal power" can be directly measured or otherwise experimentally ascertained.
 
-...
-
 ## Information Theory in Archaeology
-
-...
 
 ## The Limitations of Archaeological Inference
 
