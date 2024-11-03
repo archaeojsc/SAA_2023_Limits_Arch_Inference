@@ -1,6 +1,9 @@
 ---
-title: "Why is there Math in my Archaeology?"
-# subtitle: "The modern foundations of quantitative archaeology, written decades too soon"
+title: |
+    "Why is there Math in my Archaeology?"
+    
+subtitle: |
+    "The modern foundations of quantitative archaeology, written decades too soon"
 
 bibliography: 2023_SAA.bib
 reference-section-title: "References Cited"
