@@ -104,9 +104,13 @@ where \( I(X \ | \ Y) \) is the *mutual information*[^fn02] between the transmit
 
 [^fn02]: Remember, \( I(x) = - \log_2 p(x) \) is the *surprisal* value of event \( x \) that represents the information conveyed by that event. The *mutual information* between two events can be though of as the information conveyed when *both* events occur simultaneously.
 
-Information is transmitted across a communication channel as *signals*, which are encoded representation of the information. Signals entail some *system* of encoding information that can be passed along the channel. Channels, however, are not perfect. They can introduce disturbances known as *noise*, which interferes with the signal and can alter the received message, creating a challenge in accurate data transmission. The more noise present, the harder it is to reliably convey information.
+<!-- Need to expand on the descriptions for signal and encoding... -->
 
-Channel capacity describes the maximum rate at which information can be transmitted over a channel with a given noise level and still be reliably decoded by the receiver. Capacity depends on both the *bandwidth* of the channel and the *signal-to-noise ratio* (often simply called "SNR"). Shannon's theory shows that for a channel to transmit information efficiently, the signal must be strong enough to overcome noise, but not so strong that it leads to unnecessary redundancy. This balance maximizes the channel's capacity, allowing the most efficient transfer of information while minimizing error.
+Information is transmitted across a communication channel as *signals*, which are encoded representations of the information. There must be some *system* of encoding the information to be passed along the channel... 
+
+Channels, however, are not perfect. They can introduce disturbances known as *noise*, which interferes with the signal and can alter the received message, creating a challenge in accurate data transmission. The more noise present, the harder it is to reliably convey information.
+
+Since channel capacity is the maximum rate at which information can be transmitted over a channel without errors, excess noise degrades capacity by introducing errors. So, channel capacity depends on both the *bandwidth* of the channel (i.e., its ideal capacity) and the *signal-to-noise ratio* (often simply called "SNR"). Shannon's theory shows that for a channel to transmit information efficiently, the signal must be strong enough to overcome noise, but *not* so strong that it leads to unnecessary redundancy in the message encodings. This balance maximizes the channel's capacity, allowing the most efficient transfer of information while minimizing error.
 
 ...
 
