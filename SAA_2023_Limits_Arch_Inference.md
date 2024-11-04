@@ -1,9 +1,8 @@
 ---
-title: |
-    Why is there Math in my Archaeology?
+title: Why is there Math in my Archaeology?
 
-subtitle: |
-    The modern foundations of quantitative archaeology, written decades too soon
+# subtitle: |
+#     The modern foundations of quantitative archaeology, written decades too soon
 
 bibliography: 2023_SAA.bib
 reference-section-title: "References Cited"
@@ -53,19 +52,19 @@ The first limitation is analogous degradation of a signal due to noise or interf
 
 ## A Gentle Introduction to Information Theory
 
-What is now known as *Information Theory* largely began with a seminal paper written by Claude Shannon, titled "A Mathematical Theory of Communication" [-@Shannon1948] resulting from his work in cryptography at Bell Labs. At the heart of Shannon's theory was the idea that *information* is fundamentally tied to the reduction of *uncertainty*. Shannon approached information not in terms of meaning, but as a measure of the *reduction of uncertainty* within a system of communication.
+What is now known as "Information Theory" began with a paper written by Claude Shannon, titled "A Mathematical Theory of Communication" [-@Shannon1948], resulting from his work in cryptography at Bell Labs. At the heart of Shannon's theory was the idea that *information* is fundamentally tied to the reduction of *uncertainty*. Shannon approached information not in terms of meaning, but as a measure of the *reduction of uncertainty* within a system of communication.
 
 ### Information, Entropy, and Surprisal
 
 Shannon proposed a particular relationship between information and uncertainty in terms of statistical probabilities. He derived a quantitative measure of that uncertainty derived from the concept of *entropy* used to describe disorder in the thermodynamics of physical systems. Shannon, however, repurposed entropy to refer to the average uncertainty contained in a system  given by the equation:  
 
 \[
-    H(\cal{X}) = - \sum_{i=1}^{n} p(x_i) \ \log_2 \ p(x_i)
+    H( \cal{X} ) = - \sum_{i=1}^{n} p(x_i) \ \log_2 \ p(x_i)
 \]
 
-What this equation is describing is the total entropy \(H\) of some system \(\cal{X}\) that contains \(n\) discrete attributes or elements \((x_{1}, x_{2}, \ldots x_{n})\). The entropy is equal to the negative sum, over all \(n\) features, of each element's probability of occurrence \(p(x_i)\) times the \(\log_2\)[^fn01] of that probability.
+What this equation is describing is the total entropy \( H \) of some system \( \cal{X} \) that contains \(n\) discrete attributes or elements \( (x_{1}, x_{2}, \ldots x_{n}) \). The entropy is equal to the negative sum, over all \(n\) features, of each element's probability of occurrence \( p(x_i) \) times the \( \log_2 \)[^fn01] of that probability.
 
-[^fn01]: \(\log_2\) refers to the base-2 logarithm.
+[^fn01]: \( \log_2 \) refers to the base-2 logarithm.
 
 The higher the entropy of a system, indicated by a larger value for $H$, the more uncertainty or randomness there is to the elements of \(\cal{X}\). Somewhat counterintuitively, the more uncertain or random a system the more information it conveys. Remember that Shannon defines information as the reduction of uncertainty. The greater the uncertainty (i.e., high entropy), the more potential information the system is capable of producing because there is greater uncertainty to reduce.
 
@@ -107,7 +106,7 @@ where \( I(X \ | \ Y) \) is the *mutual information*[^fn02] between the transmit
 
 <!-- Need to expand on the descriptions for signal and encoding... -->
 
-Information is transmitted across a communication channel as *signals*, which are encoded representations of the information. To do so, there must be some *system* of encoding the information to be passed along the channel that...
+Information is transmitted across a communication channel as *signals*, which are encoded representations of the information. A signal is is defined as the physical embodiment of information that is transmitted across a communication channel from a sender to a receiver. Shannon treats signals as mathematical entities that *encode* data using a sequence of symbols, typically binary (0s and 1s), which represent the discrete or continuous probability states of information. This encoding enables information to be manipulated, stored, and transmitted efficiently, with the ultimate goal of achieving maximum fidelity in the presence of noise or interference. Shannon’s model abstracts signals into probabilistic terms, allowing for quantification of the information.
 
 Channels, however, are not perfect. They can introduce disturbances known as *noise*, which interferes with the signal and can alter the received message, creating a challenge in accurate data transmission. The more noise present, the harder it is to reliably convey information. Noise is essentially random disturbances or fluctuations in the transmission of information along a channel that interfere with the signal. Noise can distort or obscure messages, increasing the probability of errors in decoding them.
 
@@ -125,9 +124,9 @@ where \( B \) is the bandwidth of the channel, \( S \) is the power of the signa
 
 The influence of telecommunication and cryptography on Shannon's theories are obvious, but the underlying concepts quickly found new applications and implications in other fields of study. By linking information to uncertainty and statistical probabilities, Shannon's abstracted and highly generalized model of information and communication could be adapted to studying all manner of systems. It would not be too long after the theories described in Shannon's technical paper were expanded and republished in book-length form a year later as "The Mathematical Theory of Communication" [@Shannon1949] that they would begin to appear in disciplines ranging form physics to physiology.
 
-<!-- ## Information Theory in Archaeology
+## Information Theory in Archaeology
 
-... -->
+...
 
 <!-- ## The Limitations of Archaeological Inference -->
 
