@@ -22,7 +22,7 @@ plot_shannon_surprisal <- function(output_file = "shannon_surprisal_plot.png") {
     labs(x = "Probability of Heads (p)", 
          y = "Shannon Surprisal (I)", 
          color = "", 
-         title="Shannon Surprisal vs. Biased Coin Probability") +
+         title="Shannon Surprisal vs. Probability for a Biased Coin") +
     geom_vline(xintercept = 0.5, linetype = "dashed") +
     annotate(
       "text",
