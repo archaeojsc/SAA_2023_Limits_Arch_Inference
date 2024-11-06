@@ -181,9 +181,10 @@ Ironically, the ensuing debates largely failed to recall that one of them had al
 
 ## The Limitations of Archaeological Inference
 
+![Schematic representation of information transmission [Fig. 1 @Justeson1973, p. 133].](Justeson_1973_figure_1.png)
+
 <!-- ## Evaluating Archaeological Information "Channels"
 
-![Schematic representation of information transmission [Fig. 1 @Justeson1973, p. 133].](Justeson_1973_figure_1.png)
 
 \[
     \left \lbrace (u_1, A_1), \ldots, (u_N, A_N) \right \rbrace
