@@ -181,41 +181,66 @@ Ironically, the ensuing debates largely failed to recall that one of them had al
 
 ## The Limitations of Archaeological Inference
 
+### Part I -- A Theoretical Framework
 
+...
+
+> The code joining signal to channel is a trivial construct: the input signal is the material assemblage laid down, and their laying down is the "code" that commits them to the channel.
+>
+> The "code" by which the output signals are recovered is, likewise, the process of recovery. The code joining the human behavior to its material consequents as committed to the earth is a code which is not at all trivial; it is the crucial concern of the archaeologist, since it is through it that cultural description is attempted.
+>
+> The above description of the total communication process becomes somewhat more complex if we reconsider the input signals as being primarily the inputs and outputs of a communication process that was operative within the original culture. In that case it becomes clear that the archaeologist is in the position of the code-breaker tapping a channel with whose code he is not fully familiar by means of another channel. [@Justeson1973, p.134]
 
 ![Schematic representation of information transmission [Fig. 1 @Justeson1973, p. 133].](Justeson_1973_figure_1.png)
 
-<!-- ## Evaluating Archaeological Information "Channels"
+#### Channel Classification,  Channel Properties, and Codes
 
+...
 
+> The basic distinction is between memoryless channels and channels with memory. In a memoryless channel, any transmission is unaffected by any other transmission, and the elements of the input signal are unaffected by the other elements of the signal; in a channel with memory, past history does have a bearing upon later transmissions. Another distinction is between finite and infinite input and/or output alphabets. The input alphabet is the set of symbols drawn upon to form the input signal, which the output alphabet is the set of symbols drawn upon for the output signal. The symbols of these alphabets have been mentioned earlier in this report as "elements." [@Justeson1973, p.135]
+
+...
+
+<!-- ### Evaluating Archaeological Information "Channels" -->
+
+> If the empirically measured parameters are not consistent with the relationship between them that is required by the theory for a given material or behavioral system, then the data by which that system is to be interpreted cannot have a consistent susceptibility to decoding; that is, there will be no basis for deriving a coherent archaeological interpretation of the data that will accurately reflect the prehistoric situation. Thus, the question of the existence of a code is one of primary importance for our considerations. [@Justeson1973, p.136]
+>
 \[
-    \left \lbrace (u_1, A_1), \ldots, (u_N, A_N) \right \rbrace
+    \biggl \lbrace (u_1, A_1), \ldots, (u_N, A_N) \biggr \rbrace
 \]
-
+>
 \[
-    P \left \lbrace v(u_i) \in A_i \right \rbrace \geqslant 1 - \lambda, i=1, \ldots,N
+    P \left \lbrace v(u_i) \in A_i \right \rbrace \geqslant 1 - \lambda, \ i=1,\ldots,N
 \]
-
+>
 \[
     C = \max_{\pi} \left \lbrace \sum_j \left \lbrack \sum_i \pi_i w(j|i) \log_2 \sum_i \pi_i w(j|i) - \sum_i \pi_i w(j|i) \log_2 \sum_i \pi_i w(j|i) \right \rbrack \right \rbrace
 \]
- -->
+> where \( \pi = (\pi_1, \ldots  ,\pi_k) \) is any probability distribution, \( w(j|i) \) is the probability of receiving \( j \) if \( i \) is sent -- \( j \) can be null -- and \( k \) is the number of elements in the input alphabet.
+
+### Part II -- Application of Information-Theoretic Measures
+
 <!-- ## Applications
  -->
-<!-- ### Extrapolation of the Prehistoric Distribution of Design Elements
 
+#### Extrapolation of the Prehistoric Distribution of Design Elements
+
+> The first step in using this technique is to tabulate the values of \(N_t\), the number of attributes occurring exactly t times in the sample, where the values of \(t\) range from \(1\) to \(T\), and \(T\) is the maximum number of times any attribute occurs. Then \(M_t\), the number of attributes occurring at least \(t\) times, is calculated and tabulated. \(M_t\) can be calculated from the formula:  
+>
 \[
     M_t = \sum^{T}_{i=t} N_i
 \]
-
+> \(M_1\) is the number of different design elements occurring in the sample.
+>
+> Finally, \(L_t\) is calculated and tabulated. Its formula is  
 \[
     L_t = \sum^{T}_{i=t} M_i
 \]
- -->
+> \(L_t\) has no meaning except when \(t = 1\), at which point it is the number of occurrences of attributes in the sample.
 
-<!-- ### Noise
+#### Noise Levels
 
-<!-- calculate noise factor for each design element
+<!-- calculate noise factor for each design element -->
 
 \[
     \begin{aligned}
@@ -249,6 +274,8 @@ Ironically, the ensuing debates largely failed to recall that one of them had al
     &= \sum_r p(r) = 1
     \end{aligned}
 \]
+
+#### System Dynamics
 
 \[
     \begin{aligned}
