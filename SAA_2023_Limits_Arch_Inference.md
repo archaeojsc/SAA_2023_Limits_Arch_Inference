@@ -275,6 +275,10 @@ Ironically, the ensuing debates largely failed to recall that one of them had al
     \end{aligned}
 \]
 
+#### Existence of a Code
+
+#### Information Distortion
+
 #### System Dynamics
 
 \[
@@ -288,4 +292,14 @@ Ironically, the ensuing debates largely failed to recall that one of them had al
 
 \[
     h = H/H' \ \text{and} \ h_E = H_E/H'_E
-\] -->
+\]
+
+##### Binary Coding and Its Applications
+
+> To set up the binary code for an attribute system, the attributes should first be ranked by frequency from highest to lowest; then the frequencies are divided into 2 groups with equal frequency totals, or with totals as nearly equal as is possible. The first group receives the code digit 0, and is made up of the higher-frequency elements, the second receives the digit 1 and is made up of the lower-frequency elements. Then the process is applied to each of these subgroups, and then continually to the resulting subgroups until all the attributes have been isolated in single-attribute groups. This process is represented schematically by Fig. 6. The binary codings themselves are given in Tables 1 and 2.
+>
+> Given this data we compute \(H^*\), the information content of the system in terms of binary coding, or, in other words, the maximum information retrievable for a given frequency distribution, by the formula  
+\[
+    H^* = \sum_{i=1}^k p(x_i) b(x_i)
+\]
+> where \( b(x_i) \) is the number of digits in the binary code for attribute xi, and the other quantities the formula are as in the last section. The ration \( h^* = H/H^* \) is then a measure of the coding efficiency.
