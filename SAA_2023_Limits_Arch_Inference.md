@@ -181,6 +181,10 @@ Ironically, the ensuing debates largely failed to recall that one of them had al
 
 ## The Limitations of Archaeological Inference
 
+In Justeson's 1973 article, he introduces Shannon's theory of communication theory as a means to formalize the inherent inferential limitations in archaeological interpretation. In the introduction, he firmly situates the paper within what was, at the time, a growing tension between conflicting goals within archaeology. Some were advocating for a "new" archaeology focused on "predictive behavioral science" rather than the reconstruction of "social and cultural histories" [@Justeson1973, p.131]. Justeson instead posed a slightly different question -- is there a way to determine whether or not we were actually capable of doing either, given a particular archaeological source?
+
+
+
 ### Part I -- A Theoretical Framework
 
 ...
