@@ -177,7 +177,7 @@ Another major critique of these applications, such as that by @Raab1984, concern
 
 The use of Shannon's information theory in archaeology has evolved from early models of data degradation and cultural transmission to more sophisticated frameworks that incorporate the entropy and uncertainty in teh archaeological record. Scholars like @Schiffer1972, @Justeson1973, and @Renfrew1983 laid the foundation, while modern researchers like @Nolan2020, @Crema2016, and @Gheorghiade2023 have expanded these concepts to address the challenges posed by incomplete and noisy archaeological records. However, the ongoing debate highlights the tension between the precision offered by information theory and the complex realities of human history, questioning the extent to which these mathematical models can truly capture the richness of the past.
 
-Ironically, the ensuing debates largely failed to recall that one of them had already provided a roadmap for determining *exactly* that extent quite early on in the venture.
+Ironically, the ensuing debates largely failed to recall that one of them already provided a roadmap for determining *exactly* that extent quite early on in the venture.
 
 ## The Limitations of Archaeological Inference
 
