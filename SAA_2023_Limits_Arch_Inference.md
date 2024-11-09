@@ -185,7 +185,7 @@ In Justeson's 1973 article, he introduces Shannon's theory of communication theo
 
 The article is presented in two parts. The first ("A Theoretical Framework") introduces the relevant aspects of Shannon's theory of communication and posits the analogous relationships between those processes and the nature archaeological data. He makes the argument that it is not sufficient just to describe the archaeological record as an information channel, but that is is specifically a channel of a particular *type* that allow its interpretation. The second part ("Application of Information-Theoretic Measures") illustrates how specific measures for the fidelity or integrity of the archaeological record can be derived from Shannon's model. He presents a set of formal tools through which archaeologists could calculate these specific measures from observations of artifact attributes to determine whether sufficient information existed within an assemblage to be *interpretable*.
 
-Rather than present a predominately conceptual framework, the objective of the article was far more ambitious. Working backwards from the 
+Rather than present a predominately conceptual framework, the objective of the article was far more ambitious. Working backwards from the observation that the archaeological record functioned as a communication channel, Justeson ...
 
 ### Part I -- A Theoretical Framework
 
