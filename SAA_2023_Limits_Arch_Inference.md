@@ -191,6 +191,12 @@ Rather than present a predominately conceptual framework, as previous work had d
 
 ### Part I -- A Theoretical Framework
 
+* Introduces basics of Shannon's theory:
+  * definitions for *information* and *entropy*;
+  * briefly describes the concepts of *message*, *signal*, and *transmission channel*, *codes*, and *noise*.
+* Considers the *archaeological channel* in terms of its required properties.
+* 
+
 #### Basic Concepts of Information Theory and Their Archaeological Correlates
 
 ...
