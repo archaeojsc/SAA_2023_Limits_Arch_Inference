@@ -185,7 +185,7 @@ The article is presented in two parts. The first ("A Theoretical Framework") int
 
 Rather than present a predominately conceptual framework, as previous works had done [e.g., @Doran1970; @Schiffer1972; @Clarke1973], the objectives of the article were more ambitious. Justeson aimed to use Shannon's formal models to demonstrate the specific properties and capabilities of the archaeological record to transmit information. Working backwards from the observation that the archaeological record functioned as a communication channel, he showed that such a channel must also possess the formal properties of a certain type of communication network. Furthermore, he showed that the encoding of information carried by that channel would need to take a particular form in order for it to successful convey interpretable information about the past. In essence, "...the archaeologist is in the position of the code-breaker tapping a channel with whose code he is not fully familiar by means of another channel" [@Justeson1973, p.134].
 
-### Part I -- A Theoretical Framework
+### "Part I -- A Theoretical Framework"
 
 The paper builds from the hypothesis that archaeological interpretation is fundamentally limited by the quantity of information that can be extracted from the archaeological record. Like the other early archaeological invocations of information theory, Justeson described the archaeological record as a degraded and incomplete set of signals from past behavior that are transmitted through the "channel" of the archaeological record. Each artifact or feature would represent a small, noisy fraction of the original cultural system.
 
@@ -195,10 +195,10 @@ Therefore, the inherent limit of archaeological inference is the upper limits (i
 
 ...
 
-* Introduces basics of Shannon's theory:
+<!-- * Introduces basics of Shannon's theory:
   * definitions for *information* and *entropy*;
   * briefly describes the concepts of *message*, *signal*, and *transmission channel*, *codes*, and *noise*.
-* Considers the *archaeological channel* in terms of its required properties.
+* Considers the *archaeological channel* in terms of its required properties. -->
 
 #### Basic Concepts of Information Theory and Their Archaeological Correlates
 
@@ -266,6 +266,8 @@ Therefore, the inherent limit of archaeological inference is the upper limits (i
     L_t = \sum^{T}_{i=t} M_i
 \]
 > \(L_t\) has no meaning except when \(t = 1\), at which point it is the number of occurrences of attributes in the sample.
+>
+> From the curve obtained, a value at \(t = 0\) can be extrapolated to give \(M_0\), the number of attributes occurring at least \(0\) times in the sample -- the total number of attributes in the system. Since \(L_0 = M_0 + L_1\), the extrapolation of \(L_0\) provides an alternate check on \(M_0\).
 
 #### Noise Levels
 
