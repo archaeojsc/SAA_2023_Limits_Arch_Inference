@@ -275,25 +275,25 @@ Therefore, the inherent limit of archaeological inference is the upper limits (i
 
 \[
     \begin{aligned}
-        \psi(r) &= P(\text{receiving design element r given that r was sent})\\
-        &=P(\text{receiving r} \ | \ \text{r was sent})
+        \psi(r) &= P(\text{receiving design element} \ r \ \text{given that} \ r \ \text{was sent})\\
+        &=P(\text{receiving} \ r \ | \ r \ \text{was sent})
     \end{aligned}
 \]
 
 \[
     \begin{aligned}
     P(A|B) = &P(A \ \text{and} \ B) \div P(B) \text{, so} \\
-    &P(\text{r sent} \ | \ \text{r received}) \cdot P(\text{r received})\\
-    = &P(\text{r sent and r received})\\
-    = &P(\text{r received} \ | \ \text{r sent}) \cdot P(\text{r sent}) \\
+    &P(r \ \text{sent} \ | \ r \ \text{received}) \cdot P(r \ \text{received})\\
+    = &P(r \ \text{sent and} \ r \ \text{received})\\
+    = &P(r \ \text{received} \ | \ r \ \text{sent}) \cdot P(r \ \text{sent}) \\
     \end{aligned}
 \]
 
 \[
     \begin{aligned}
-    \min_r \psi(r) &= \min_r P(\text{r received} \ | \ \text{r sent}) \\
-    &= \min_r 1 - P(\text{r not received} \ | \ \text{r sent}) \\
-    &= \max_r P(\text{r not received} \ | \ \text{r sent}) \\
+    \min_r \psi(r) &= \min_r P(r \ \text{received} \ | \ r \ \text{sent}) \\
+    &= \min_r 1 - P(r \ \text{not received} \ | \ r \ \text{sent}) \\
+    &= \max_r P(r \ \text{not received} \ | \ r\ \text{sent}) \\
     &= 1- \lambda
     \end{aligned}
 \]
