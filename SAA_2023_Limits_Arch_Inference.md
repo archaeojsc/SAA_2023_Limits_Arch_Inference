@@ -191,7 +191,7 @@ The paper builds from the hypothesis that archaeological interpretation is funda
 
 Justeson's main departure from the others was in that he applied Shannon's concept of entropy directly to the assessment of the degree of *uncertainty* that might be incorporated into archaeological interpretations simply by the *nature* of that channel. Remember, Shannon linked reduction of uncertainty to information. Justeson focused on highlighting how *noise* in the archaeological record -- due to processes such as taphonomy or excavation biases -- interacts with the inherent *entropy* entailed by the archaeological features or processes that encode past behaviors. Those interactions innately affect the *capacity* of the archaeological channel to reliable transmit information.
 
-Therefore, the inherent limitations of archaeological inference are the upper bound directly related to to  tranto more ambiguous, unreliable, or even spurious interpretations.
+Therefore, the inherent limit of archaeological inference is the upper limits (i.e., the upper bounds) of the channel's capacity. Past those limits, *de*coding the source signal (i.e. the *behavior*) becomes highly susceptible to more ambiguous, unreliable, or even spurious interpretations.
 
 ...
 
