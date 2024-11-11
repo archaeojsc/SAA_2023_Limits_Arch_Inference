@@ -191,6 +191,8 @@ Rather than present a predominately conceptual framework, as previous work had d
 
 ### Part I -- A Theoretical Framework
 
+#### Basic Concepts of Information Theory and Their Archaeological Correlates
+
 ...
 
 ![Schematic representation of information transmission [Fig. 1 @Justeson1973, p. 133].](Justeson_1973_figure_1.png)
@@ -201,7 +203,7 @@ Rather than present a predominately conceptual framework, as previous work had d
 >
 > The above description of the total communication process becomes somewhat more complex if we reconsider the input signals as being primarily the inputs and outputs of a communication process that was operative within the original culture. In that case it becomes clear that the archaeologist is in the position of the code-breaker tapping a channel with whose code he is not fully familiar by means of another channel. [@Justeson1973, p.134]
 
-#### Channel Classification,  Channel Properties, and Codes
+#### Channel Classification, Channel Properties, and Codes
 
 ...
 
