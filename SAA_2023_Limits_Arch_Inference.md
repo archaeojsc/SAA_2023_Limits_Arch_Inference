@@ -189,7 +189,9 @@ Rather than present a predominately conceptual framework, as previous works had 
 
 The paper builds from the hypothesis that archaeological interpretation is fundamentally limited by the quantity of information that can be extracted from the archaeological record. Like the other early archaeological invocations of information theory, Justeson described the archaeological record as a degraded and incomplete set of signals from past behavior that are transmitted through the "channel" of the archaeological record. Each artifact or feature would represent a small, noisy fraction of the original cultural system.
 
-Justeson's departure was in that he applied Shannon's concept of entropy directly to the assessment of the degree of uncertainty that might be incorporated into archaeological interpretations simply by the *nature* of that channel. Remember, Shannon linked reduction in uncertainty to information. Justeson focused on highlighting how increasing entropy in the archaeological record -- due to processes such as taphonomy or excavation biases -- leads to more ambiguous, unreliable, or even spurious interpretations.
+Justeson's main departure from the others was in that he applied Shannon's concept of entropy directly to the assessment of the degree of *uncertainty* that might be incorporated into archaeological interpretations simply by the *nature* of that channel. Remember, Shannon linked reduction of uncertainty to information. Justeson focused on highlighting how *noise* in the archaeological record -- due to processes such as taphonomy or excavation biases -- interacts with the inherent *entropy* entailed by the archaeological features or processes that encode past behaviors. Those interactions innately affect the *capacity* of the archaeological channel to reliable transmit information.
+
+Therefore, the inherent limitations of archaeological inference are the upper bound directly related to to  tranto more ambiguous, unreliable, or even spurious interpretations.
 
 ...
 
