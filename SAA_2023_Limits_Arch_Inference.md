@@ -189,9 +189,9 @@ Rather than present a predominately conceptual framework, as previous works had 
 
 The paper builds from the hypothesis that archaeological interpretation is fundamentally limited by the quantity of information that can be extracted from the archaeological record. Like the other early archaeological invocations of information theory, Justeson described the archaeological record as a degraded and incomplete set of signals from past behavior that are transmitted through the "channel" of the archaeological record. Each artifact or feature would represent a small, noisy fraction of the original cultural system.
 
-Justeson's main departure from the others was in that he applied Shannon's concept of entropy directly to the assessment of the degree of *uncertainty* that might be incorporated into archaeological interpretations simply by the *nature* of that channel. Remember, Shannon linked reduction of uncertainty to information. Justeson focused on highlighting how *noise* in the archaeological record -- due to processes such as taphonomy or excavation biases -- interacts with the inherent *entropy* entailed by the archaeological features or processes that encode past behaviors. Those interactions innately affect the *capacity* of the archaeological channel to reliable transmit information.
+Justeson's main departure from the others was in that he applied Shannon's concept of entropy directly to the assessment of the degree of *uncertainty* that might be incorporated into archaeological interpretations simply by the *nature* of that channel. Remember, Shannon linked reduction of uncertainty to information. Justeson focused on highlighting how *noise* in the archaeological record -- due to processes such as taphonomy or excavation biases -- interacts with the inherent *entropy* entailed by the archaeological features or processes that encode past behaviors. Those interactions innately affect the *capacity* of the archaeological channel to reliably transmit information.
 
-Therefore, the inherent limit of archaeological inference is the upper limits (i.e., the upper bounds) of the channel's capacity. Past those limits, *de*coding the source signal (i.e. the *behavior*) becomes highly susceptible to more ambiguous, unreliable, or even spurious interpretations.
+Therefore, the inherent limit of archaeological inference would be the upper limits (i.e., the upper bounds) of the channel's capacity. Past those limits, *de*coding the source signal (i.e. the *behavior*) becomes highly susceptible to more ambiguous, unreliable, or even spurious interpretations.
 
 ...
 
@@ -273,31 +273,37 @@ Therefore, the inherent limit of archaeological inference is the upper limits (i
 
 <!-- calculate noise factor for each design element -->
 
+> To calculate the noise factor for each design element [\( \psi(r) \), where \(r\) is the rank by decreasing frequency of the design element and \(p(r)\) is the frequency of the element of rank \(r\)] (*sic*), let
 \[
     \begin{aligned}
         \psi(r) &= P(\text{receiving design element} \ r \ \text{given that} \ r \ \text{was sent})\\
         &=P(\text{receiving} \ r \ | \ r \ \text{was sent})
     \end{aligned}
 \]
-
+>
+> But \( P(A|B) = P(A \ \text{and} \ B) \div P(B) \)[^fn05], so  
+>
 \[
     \begin{aligned}
-    P(A|B) = &P(A \ \text{and} \ B) \div P(B) \text{, so} \\
-    &P(r \ \text{sent} \ | \ r \ \text{received}) \cdot P(r \ \text{received})\\
-    = &P(r \ \text{sent and} \ r \ \text{received})\\
-    = &P(r \ \text{received} \ | \ r \ \text{sent}) \cdot P(r \ \text{sent}) \\
+    P(r \ \text{sent and} \ r \ \text{received}) &= P(r \ \text{sent} \ | \ r \ \text{received}) \cdot P(r \ \text{received}) \\
+    &= P(r \ \text{received} \ | \ r \ \text{sent}) \cdot P(r \ \text{sent}) \\
     \end{aligned}
 \]
-
+>
+> But \(P(r \ \text{received} \ | \ r \ \text{sent}) = \psi(r)\); \(P(r \ \text{sent}) = p_E(r)\), the extrapolated frequency for the design
+element \(r\); \(P(r \ \text{sent} \ | \ r \ \text{received}) = 1\); and \(P(r \ \text{received}) = p(r)\). Thus, \(\psi(r) = p(r)/p_E(r)\). To find the parameter \(\lambda\) of our code we must find the minimum of the \(\psi(r)\) values,
+>
 \[
     \begin{aligned}
-    \min_r \psi(r) &= \min_r P(r \ \text{received} \ | \ r \ \text{sent}) \\
+    \min_r \ \psi(r) &= \min_r P(r \ \text{received} \ | \ r \ \text{sent}) \\
     &= \min_r 1 - P(r \ \text{not received} \ | \ r \ \text{sent}) \\
     &= \max_r P(r \ \text{not received} \ | \ r\ \text{sent}) \\
     &= 1- \lambda
     \end{aligned}
 \]
-
+>
+> ... the observed values should never be higher than the extrapolated, and that the mean value should be \(1\), since  
+>
 \[
     \begin{aligned}
     \overline{\psi} &= \sum_r p_E(r) \psi(r) \\
@@ -305,6 +311,8 @@ Therefore, the inherent limit of archaeological inference is the upper limits (i
     &= \sum_r p(r) = 1
     \end{aligned}
 \]
+
+[^fn05]: This is known as the *conditional probability* of an event. In other words, what is the probability of event \(A\) if we know event \(B\) has happened (i.e., \(p(A|B)\) or "probability of \(A\) *given* \(B\)"), which is equal to the probability that \(A\) and \(B\) occur together (\(P(A \ \text{and} \ B)\) or \(P(A \cup B)\)) divided by the probability the \(B\) happens (\(P(B)\)).
 
 #### Existence of a Code
 
