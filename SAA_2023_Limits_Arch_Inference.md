@@ -334,3 +334,4 @@ Therefore, the inherent limit of archaeological inference is the upper limits (i
     H^* = \sum_{i=1}^k p(x_i) b(x_i)
 \]
 > where \( b(x_i) \) is the number of digits in the binary code for attribute xi, and the other quantities the formula are as in the last section. The ration \( h^* = H/H^* \) is then a measure of the coding efficiency.
+>
