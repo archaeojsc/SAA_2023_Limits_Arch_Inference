@@ -200,7 +200,9 @@ Therefore, the inherent limit of archaeological inference would be the limits (i
 
 #### Basic Concepts of Information Theory and Their Archaeological Correlates
 
-Whereas Shannon described information in terms of the reduction of uncertainty, Justeson notes that information can also be thought of in terms of *contrasts*. That is, information can be seen as a way we are able to distinguish the qualities or attributes of one type of thing from those of another. Information, then, is how we determine categories. In that case, information reduces the uncertainty of correctly assigning a thing or event to a given category. 
+Whereas Shannon described information in terms of the reduction of uncertainty, Justeson notes that information can also be thought of in terms of *contrasts*. That is, information can be seen as a way we are able to distinguish the qualities or attributes of one type of thing from those of another. Information, then, is how we determine categories. In that case, information reduces the uncertainty of correctly assigning a thing or event to a given category.
+
+
 
 ![Schematic representation of information transmission [Fig. 1 @Justeson1973, p. 133].](Justeson_1973_figure_1.png)
 
