@@ -202,9 +202,9 @@ Therefore, the inherent limit of archaeological inference would be the limits (i
 
 Whereas Shannon described information in terms of the reduction of uncertainty, Justeson notes that information can also be thought of in terms of *contrasts*. That is, information can be seen as a way we are able to distinguish the qualities or attributes of one type of thing from those of another. Information, then, is how we determine categories. In that case, information reduces the uncertainty of correctly assigning a thing or event to a given category.
 
+That information is, in the archaeological case, *encoded* through the expression of material traits that reflect past behaviors as an input  message or source *signal*. That message or signal is transmitted across a channel, which has particular characteristics and limitations. These properties allow for the introduction of *noise* that may affect the input signal and alter or obscure the original message.
 
-
-![Schematic representation of information transmission [Fig. 1 @Justeson1973, p. 133].](Justeson_1973_figure_1.png)
+![Schematic representation of information transmission ["Fig. 1" in @Justeson1973, p. 133].](Justeson_1973_figure_1.png){#figure:info-channel-schema}
 
 > The code joining signal to channel is a trivial construct: the input signal is the material assemblage laid down, and their laying down is the "code" that commits them to the channel.
 >
