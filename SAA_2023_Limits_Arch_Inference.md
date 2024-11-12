@@ -189,11 +189,9 @@ Rather than present a predominately conceptual framework, as previous works had 
 
 The paper builds from the hypothesis that archaeological interpretation is fundamentally limited by the quantity of information that can be extracted from the archaeological record. Like the other early archaeological invocations of information theory, Justeson described the archaeological record as a degraded and incomplete set of signals from past behavior that are transmitted through the "channel" of the archaeological record. Each artifact or feature would represent a small, noisy fraction of the original cultural system.
 
-Justeson's main departure from the others was in that he applied Shannon's concept of entropy directly to the assessment of the degree of *uncertainty* that might be incorporated into archaeological interpretations simply by the *nature* of that channel. Remember, Shannon linked reduction of uncertainty to information. Justeson focused on highlighting how *noise* in the archaeological record -- due to processes such as taphonomy or excavation biases -- interacts with the inherent *entropy* entailed by the archaeological features or processes that encode past behaviors. Those interactions innately affect the *capacity* of the archaeological channel to reliably transmit information.
+Justeson's main departure from the others was in that he applied Shannon's concept of entropy *directly* to the assessment of the degree of uncertainty that might be incorporated into archaeological interpretations simply by the nature of that channel. Remember, Shannon linked reduction of uncertainty to information. Justeson focused on highlighting how *noise* in the archaeological record -- due to processes such as taphonomy or excavation biases -- interacts with the inherent *entropy* entailed by the archaeological features or processes that *encode* past behaviors. Those interactions innately affect the *capacity* of the archaeological channel to reliably transmit information.
 
-Therefore, the inherent limit of archaeological inference would be the upper limits (i.e., the upper bounds) of the channel's capacity. Past those limits, *de*coding the source signal (i.e. the *behavior*) becomes highly susceptible to more ambiguous, unreliable, or even spurious interpretations.
-
-...
+Therefore, the inherent limit of archaeological inference would be the limits (i.e., the "upper bound" in mathematical terms) of the channel's capacity given a certain amount of noise. Past those limits, *de*coding the source signal (i.e. the *behavior*) would become highly susceptible to more ambiguous, unreliable, or even spurious interpretations. To find -- and *calculate* -- that limit, Justeson needed to specify the nature of the transmission channel and its properties and identify (and prove) the existence of a coherent system of encoding.
 
 <!-- * Introduces basics of Shannon's theory:
   * definitions for *information* and *entropy*;
@@ -202,7 +200,7 @@ Therefore, the inherent limit of archaeological inference would be the upper lim
 
 #### Basic Concepts of Information Theory and Their Archaeological Correlates
 
-...
+Whereas Shannon described information in terms of the reduction of uncertainty, Justeson notes that information can also be thought of in terms of *contrasts*. That is, information can be seen as a way we are able to distinguish the qualities or attributes of one type of thing from those of another. Information, then, is how we determine categories. In that case, information reduces the uncertainty of correctly assigning a thing or event to a given category. 
 
 ![Schematic representation of information transmission [Fig. 1 @Justeson1973, p. 133].](Justeson_1973_figure_1.png)
 
@@ -315,6 +313,8 @@ element \(r\); \(P(r \ \text{sent} \ | \ r \ \text{received}) = 1\); and \(P(r \
 [^fn05]: This is known as the *conditional probability* of an event. In other words, what is the probability of event \(A\) if we know event \(B\) has happened (i.e., \(p(A|B)\) or "probability of \(A\) *given* \(B\)"), which is equal to the probability that \(A\) and \(B\) occur together (\(P(A \ \text{and} \ B)\) or \(P(A \cup B)\)) divided by the probability the \(B\) happens (\(P(B)\)).
 
 #### Existence of a Code
+
+> The value of \(C - \epsilon\) must be less than \(1\) to be at all restrictive, since \(2^n\) is the number of different combinations than can be gotten from \(n\) elements, so that there will always be at most \(2^n\) code words. Since the value of \(\epsilon\) must lie between \(0\) and \(C\), our range of values for \(N = 2^{n(C - \epsilon)}\) is not limited any further. There will, therefore, at least if \(C > 1\), be a value of \(\epsilon\) for which the actual value of \(N\) is achieved, so that a code does exist in this case.
 
 #### Information Distortion
 
