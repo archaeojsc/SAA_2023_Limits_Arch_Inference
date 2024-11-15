@@ -187,12 +187,24 @@ That leaves the specification of what an archaeological *code* might look like, 
 
 The requirements for the code are deceptively simple:  
 
-1. it must allow *uniquely* distinguishable (i.e., "disjoint") sequences of symbols, attributes, or events to be sent; and
-2. the probability that the message received over the channel is the same as the unique sequence that was sent must be \(\geq 0\).
+1. it must allow *uniquely* distinguishable (i.e., "disjoint") sequences of symbols, attributes, or events to be sent and received; and
+2. the probability that any given message received over the channel is the same as the unique sequence that was sent must be \(\geq 0\).
 
-...
+The first requirement (i.e., *uniqueness*) means that any given sequence of symbols, whether sent or received, can only encode and be decoded as one (and only one) message. The same sequence of symbols cannot have multiple possible decodings. In mathematical terms, then, a signal consists of \(N\) combinations (i.e., "ordered pairs") of unique input sequences \(u_i\) (sent) and unique output sequences \(A_i\) (received), where \(i=1,...,N\). This is written as  
 
----
+\[
+    \biggl \lbrace (u_1, A_1), \ldots, (u_N, A_N) \biggr \rbrace
+\]
+
+The second requirement brings in the probabilistic aspect of information theory. There must be a way to describe a *probability* for whether a sequence sent (\(u_i\)) will be the one received and that it matches the correct *de*coding (\(A_i\)). This is given by  
+
+\[
+    P \left \lbrace v(u_i) \in A_i \right \rbrace \geqslant 1 - \lambda, \ i=1,\ldots,N
+\]
+
+...where \(v(u_i)\) is what is *actually* received when \(u_i\) is sent, and \(1-\lambda \geq 0\) (i.e., to be a probability, \(\lambda > 0\) and \(\leq 1\)).
+
+If those requirements are both met, then it is considered a legitimate code with parameters \(n\) (the length of sequences), \(N\) (the number of sequences or messages), and \(\lambda\) (the measure of probabilities). In the archaeological case, we don't have the source or input sequence \(u_i\), but we do have the output \(A_i\). If we can find a way to determine those three parameters, and they meet the two theoretical requirements, then we are able to identify that there *is* an underlying code and channel to the archaeological assemblage that can be decoded and interpreted.
 
 The point that is easy to miss in this part of the paper is that Justeson's goal here is to provide a way to determine analytically whether or not an archaeological assemblage *meets those minimum requirements* to be considered a code *at all*. If not, "... there is really no basis for speaking of the existence of a channel" [@Justeson1973, p. 136]. This, above all else in the paper, represents Justeson's true theoretical and methodological challenge to the ambitions of the "New Archaeology" as a project. He is saying that unless we can *prove* that there is an *analytically* feasible code entailed by archeological data, there can *be* no supportable interpretation of it.
 
