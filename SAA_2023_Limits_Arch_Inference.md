@@ -59,7 +59,9 @@ Surprisal is zero for events that are certain (i.e., the probability \(p(x)=1\))
 
 ![The surprisal $I(x)$ of a coin flip $x$ (i.e., lands "heads" or "tails") as the probability $p(x)$ of landing "heads" ranges from $0$ to $1$ for a "biased" coin. A "fair" coin would land on heads or tails with equal chances or \(p(x)=0.5\).](./shannon_surprisal_plot.png){#figure:surprisal_example}
 
-Entropy represents the *average* surprisal over all possible outcomes from a probability distribution. It quantifies the overall uncertainty or unpredictability of a system or source of information. The higher the entropy, the more information the system is capable of producing, since there is greater uncertainty about which outcome will occur.
+Entropy represents the *average* surprisal over all possible outcomes from a probability distribution.[^fn001] It quantifies the overall uncertainty or unpredictability of a system or source of information. The higher the entropy, the more information the system is capable of producing, since there is greater uncertainty about which outcome will occur.
+
+[^fn001]: 
 
 Entropy is highest when all outcomes are equally likely, and decreases as we gain more information to anticipate whether or not that event is likely to occur (Figure {#figure:entropy_example}). Information is therefore the reduction of that uncertainty or entropy when a new event is observed. We have learned more about the underlying probabilities for future events.
 
@@ -179,7 +181,7 @@ To actually *model* the archaeological record as a communications channel, and t
 
 The first is whether or not the channel has what is referred to, in statistical terms, as *memory*. In a channel without memory, the elements of any signal or message are unaffected by any other or prior signals. Each transmitted signal is *independent* from any others. In probabilistic terms, this implies that each element or symbol in a message's transmission has a fixed probability distribution unaffected by earlier transmissions. This would make them statistically equivalent to a sequence of independent, identically distributed events. Conversely, in a channel with memory each transmission would potentially be altered by the conditional probability based on prior messages.
 
-The second property is related to the allowable encoding of signals. These are distinguished by whether the set of symbols or elements used to form (i.e., encode) the signal are *finite* or *infinite*. This distinction is somewhat moot in the archaeological case since, as Justeson points out, "...the number of meaningful attributes in any material system is finite, and since both the input and output signals are material systems, then we can say that both the input and output alphabets are finite" [@Justeson1973, p.135]. Since there are a finite number of possible elements used to encode archaeological signals, the channel is described as *discrete* (as opposed to *continuous*). This primarily has the effect, for the purposes of analysis, of limiting the possible types of probability distributions involved. For archaeological assemblages, these would most often be attribute- or type-frequency probabilities. It also places certain constraints on the *memory* of the channel as well.
+The second property is related to the allowable encoding of signals. These are distinguished by whether the set of symbols or elements used to form (i.e., encode) the signal are *finite* or *infinite*. This distinction is somewhat moot in the archaeological case since, as Justeson points out, "...the number of meaningful attributes in any material system is finite, and since both the input and output signals are material systems, then we can say that both the input and output alphabets [*i.e., set of symbols or elements*] are finite" [@Justeson1973, p.135]. Since there are a finite number of possible elements used to encode archaeological signals, the channel is described as *discrete* (as opposed to *continuous*). This primarily has the effect, for the purposes of analysis, of limiting the possible types of probability distributions involved. For archaeological assemblages, these would most often be attribute- or type-frequency probabilities. It also places certain constraints on the *memory* of the channel as well.
 
 The memory of a discrete archaeological channel therefore requires a bit more consideration. In a discrete *memoryless* channel, the presence or absence of any given element or attribute would by definition be *independent* of the presence or absence of any other. That would mean, though, that "...their signals are undecipherable from our vantage point since, being independently transmitted, they show no differentiation or special clustering on any level; independence implies only random associations" [@Justeson1973, p.135]. Justeson also observes, however, that the memory of an archaeological channel would also have to be finite. Otherwise, the accumulation of noise within the channel over time would eventually render any subsequent signals uninterpretable.
 
@@ -194,11 +196,13 @@ The requirements for a code are deceptively simple:
 1. it must allow *uniquely* distinguishable (i.e., "disjoint") sequences of symbols, attributes, or events to be sent and received; and
 2. the probability that any given message received over the channel is the same as the unique sequence that was sent must be \(\geq 0\).
 
-The first requirement (i.e., *uniqueness*) means that any given sequence of symbols, whether sent or received, can only encode and be decoded as one (and only one) message. The same sequence of symbols cannot have multiple possible decodings, nor can one decoding come form different input sequences. In mathematical terms, then, a signal consists of \(N\) combinations (i.e., "ordered pairs") of unique input sequences \(u_i\) (sent) and unique output sequences \(A_i\) (received), where \(i=1,...,N\). This is written as  
+The first requirement (i.e., *uniqueness*) means that any given sequence of symbols, whether sent or received, can only encode and be decoded as one (and only one) message. The same sequence of symbols cannot have multiple possible decodings, nor can one decoding come from different input sequences. In mathematical terms, then, a signal consists of \(N\) combinations (i.e., "ordered pairs") of unique input sequences \(u_i\) (sent) and unique output sequences \(A_i\) (received), where \(i=1,...,N\). This is written as  
 
 \[
     \biggl \lbrace (u_1, A_1), \ldots, (u_N, A_N) \biggr \rbrace
 \]
+
+Each input \(u_i\) and output \(A_i\) signal comprised of \(n\) symbols used for the encoding -- e.g, letters in an alphabet, binary digits, or some other uniquely identifying attribute or feature.
 
 The second requirement brings in the probabilistic aspect of information theory. There must be a way to describe a *probability* for whether a sequence sent (\(u_i\)) will match the correct *de*coding (\(A_i\)). This is given by  
 
@@ -208,38 +212,45 @@ The second requirement brings in the probabilistic aspect of information theory.
 
 where \(v(u_i)\) is what is *actually* received when \(u_i\) is sent, \(P \lbrace v(u_i) \in A_i \rbrace\) is the probability that \(v(u_i)\) matches the correct decoding \(A_i\), and \(1-\lambda \geq 0\) is the allowed range of probabilities (i.e., to be a probability at all, \(\lambda > 0\) and \(\leq 1\)).
 
-As long as those two requirements are both met, then it is a legitimate code with parameters \(n\) (the length of sequences), \(N\) (the number of sequences or messages), and \(\lambda\) (the measure of probabilities).
+As long as those two requirements are both met, then it is a legitimate code with parameters \(n\) (the lengths of sequences), \(N\) (the number of sequences or messages), and \(\lambda\) (the measure of probabilities).
 
-If we can find a way to determine or estimate those three parameters (\(n\),\(N\),\(\lambda\)), and they meet the two theoretical requirements, then we are able to identify that there *is* an underlying code and channel to the archaeological assemblage that can be decoded and interpreted. In the archaeological case, though, we don't have the source or input sequence \(u_i\), which means we do not yet have a way to find \(\lambda\). We do have the output signals \(A_i\) (i.e., the observed archaeological data), meaning we have at least an observation of what the *minimum* vales for \(n\) (e.g., how many observable symbols, attributes, features, etc.) and \(N\) (effectively, the sample population) could be. Logically, if we expect potential loss in a signal due to noise (i.e., some symbols or messages are dropped) then the input parameters should be *at least* the values observed from the output.
+If we can find a way to determine or estimate those three parameters (\(n\),\(N\),\(\lambda\)), and they meet the two theoretical requirements, then we are able to identify that there *is* an underlying code and channel to the archaeological assemblage that can be decoded and interpreted. In the archaeological case, though, we don't have the source or input sequence \(u_i\), which means we do not yet have a way to find \(\lambda\).
+
+We do have the output signals \(A_i\) (i.e., the observed archaeological data), meaning we have at least an observation of what the *minimum* vales for \(n\) (e.g., how many observable symbols, attributes, features, etc.) and \(N\) (effectively, the sample population) could be. Logically, if we expect potential loss in a signal due to noise (i.e., some symbols or messages are dropped) then the input parameters should be *at least* the values observed from the output. What we still need to find is their *upper* limits.
 
 Now we get back to why it was important to figure out the *type* of channel we are dealing with. For a *discrete finite-memory channel*, the values of \(n\) and \(N\) have a very specific relationship between them given by  
+
 \[
     N = 2^{n(C-\epsilon)}
 \]
 
-where we have two new variables. The first is the channel capacity from Shannon's information theory \(C\), and a positive constant \(\epsilon\) that basically represents some amount of signal loss.
+in which we have two new variables. The first is the channel capacity from Shannon's information theory \(C\), and the second a positive constant \(\epsilon\) that basically represents some amount of signal loss.
 
-The maximum *possible* number of unique combinations for the elements of any set (e.g., an alphabet), without repeating any elements, is \(2^n\) where \(n\) is how many things there are *in* the set.[^fn07] This relationship between \(n\) and \(N\) defines the nature of this type of channel, and tells us that the signals received \(N\) depend on the length of the sequences \(n\) weighted by how much of the channel's capacity is left after losses to noise, interference, or mistranslation \(C-\epsilon\). As long as the parameters that we can derive from our observed output signals (i.e., the archaeological record) don't violate that relationship, then we have a legitimate code and channel that can be decoded and interpreted. Next we need to be able to figure out or estimate our channel capacity.
+This relationship between \(n\) and \(N\) defines the nature of this type of channel, and tells us that the signals received \(N\) depend on the length of the sequences \(n\) weighted by how much of the channel's capacity is left after losses to noise, interference, or mistranslation \(C-\epsilon\). As long as the parameters that we can derive from our observed output signals (i.e., the archaeological record) don't violate that relationship, then we have a legitimate code and channel that can be decoded and interpreted.
+
+The maximum *possible* number of unique combinations for the elements of any set (e.g., an alphabet), without repeating any elements, is \(2^n\) where \(n\) is how many things there are *in* the set.[^fn07] For \((C - \epsilon)\) to constrain the resulting value for \(N\) below that[^fn08] its value would have to be greater than zero and less than one.
 
 [^fn07]: This can obviously get very big, very quickly. For example the english alphabet, with 26 letters, has \(2^{26}\) or \(67,108,864\) possible unique combinations if you are only using any letter only once in any sequence!
 
-Recall that Shannon defined channel capacity as the maximum of the mutual information between signals sent and received \(C = \max_{p(x)} I(X|Y)\). Justeson uses slightly different notation (e.g., \(\pi\) instead of \(p(x)\), etc.)
+[^fn08]: Remember, the channel capacity is an *upper limit* for transmission along the channel.
+
+Next we need to be able to figure out or estimate our channel capacity. Recall that Shannon defined channel capacity as the maximum of the mutual information between signals sent and received \(C = \max_{p(x)} I(X|Y)\). Justeson substitutes the appropriate equation of mutual information for discrete probabilities in finite sets:  
 
 \[
-    C = \max_{\pi} \left \lbrace \sum_j \left \lbrack \sum_i \pi_i w(j|i) \log_2 \sum_i \pi_i w(j|i) - \sum_i \pi_i w(j|i) \log_2 \ \pi_i w(j|i) \right \rbrack\ \right \rbrace
+    C = \max_{\pi} \left \lbrace \sum_j \left \lbrack \sum_i \pi_i \omega(j|i) \log_2 \sum_i \pi_i \omega(j|i) - \sum_i \pi_i \omega(j|i) \log_2 \ \pi_i \omega(j|i) \right \rbrack\ \right \rbrace
 \]
 
----
+where \(\pi = (\pi_1, \ldots  ,\pi_k)\) is the probability distribution for each of the \(k\) symbols of the input encoding, and \(\omega(j|i)\) is the probability of receiving \(j\) if \(i\) is sent (\(j\) can also be be null).[^fn09] Justeson notes that we can calculate \(C\) "...often only with great labor..." [-@Justeson1973, p.136], and used a more computationally efficient method for finding its upper limit from @Helgert1967.[^fn10]
 
-> In particular, the value of \(N\) is related to that of \(n\) by the formula \(N = 2^{n(C-\epsilon)}\), where \(C\) is the *channel capacity* -- a measure of the ability of the channel to transmit information -- and \(\epsilon\) is a positive constant. \(C\) may be determined, often only with great labor, from the relation
->
-\[
-    C = \max_{\pi} \left \lbrace \sum_j \left \lbrack \sum_i \pi_i w(j|i) \log_2 \sum_i \pi_i w(j|i) - \sum_i \pi_i w(j|i) \log_2 \ \pi_i w(j|i) \right \rbrack\ \right \rbrace
-\]
-> where \( \pi = (\pi_1, \ldots  ,\pi_k) \) is any probability distribution, \( w(j|i) \) is the probability of receiving \( j \) if \( i \) is sent -- \( j \) can be null -- and \( k \) is the number of elements in the input alphabet. alphabet. A simple method for calculating an upper bound for the capacity may be found in @Helgert1967; it would require too much discussion for presentation here.
->
+[^fn09]: The notation used for this equation may be somewhat confusing, in part because the notation is different from that used previously to describe codes. In the second equation, \(j\) would be the same as \(A_i\) and \(i\) would be \(u_i\). The expression \(\omega(j|i)\) is another way to express each probability in \(P \lbrace v(u_i) \in A_i \rbrace\).
 
-<!-- ### "Part II -- Application of Information-Theoretic Measures" -->
+[^fn10]: It isn't really necessary to understand all of what is going on in this rather complex formula, only that it is an analytical way to calculate a specific value for capacity from the tabulation of observable probabilities.
+
+Advances in both the power of computers and the development of optimized methods for handling large systems of equations now make these calculations relatively straightforward matters, but we are left with our archaeological problem -- we do not have access to the source signals, only the outputs, so we do not know *what* was sent. We do now know what we are looking for in order to determine if our archaeological data is a legitimate and interpretable code and prove that the archaeological record constitutes a viable channel to transmit that code.
+
+The second part of @Justeson1973 shows us how to go about finding it.
+
+### "Part II -- Application of Information-Theoretic Measures"
 
 <!-- ## Applications
  -->
