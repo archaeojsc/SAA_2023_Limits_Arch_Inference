@@ -202,7 +202,7 @@ The second requirement brings in the probabilistic aspect of information theory.
     P \left \lbrace v(u_i) \in A_i \right \rbrace \geqslant 1 - \lambda, \ i=1,\ldots,N
 \]
 
-...where \(v(u_i)\) is what is *actually* received when \(u_i\) is sent, and \(1-\lambda \geq 0\) (i.e., to be a probability, \(\lambda > 0\) and \(\leq 1\)).
+...where \(v(u_i)\) is what is *actually* received when \(u_i\) is sent, \(P \lbrace v(u_i) \in A_i \rbrace\) is the probability that \(v(u_i)\) matches the correct decoding \(A_i\), and \(1-\lambda \geq 0\) is the allowed range of probabilities (i.e., to be a probability at all, \(\lambda > 0\) and \(\leq 1\)).
 
 If those requirements are both met, then it is considered a legitimate code with parameters \(n\) (the length of sequences), \(N\) (the number of sequences or messages), and \(\lambda\) (the measure of probabilities). In the archaeological case, we don't have the source or input sequence \(u_i\), but we do have the output \(A_i\). If we can find a way to determine those three parameters, and they meet the two theoretical requirements, then we are able to identify that there *is* an underlying code and channel to the archaeological assemblage that can be decoded and interpreted.
 
@@ -212,7 +212,7 @@ The point that is easy to miss in this part of the paper is that Justeson's goal
 
 ---
 
-> Knowing what type of channel is being dealt with is simply a preliminary to the study of channel properties. It is important to know now what properties of channels are important to consider archaeologically. The major thing to look at here is the code. The code is defined mathematically as a system of \(N\) ordered pairs consisting each of an input sequence \(u_i\) of \(n\) alphabetic symbols and a set \(A_i\) of output sequences, where the \(N\) sets of output sequences do not have any members in common, and where the probability that the sequence received when \(u_i\) is transmitted will be among the members of the set \(A_i\) will always be greater than or equal to \(1-\lambda\) where \(\lambda\) is greater than \(0\) and less than or equal to \( 1 \). In symbols, it is "a system  
+<!-- > Knowing what type of channel is being dealt with is simply a preliminary to the study of channel properties. It is important to know now what properties of channels are important to consider archaeologically. The major thing to look at here is the code. The code is defined mathematically as a system of \(N\) ordered pairs consisting each of an input sequence \(u_i\) of \(n\) alphabetic symbols and a set \(A_i\) of output sequences, where the \(N\) sets of output sequences do not have any members in common, and where the probability that the sequence received when \(u_i\) is transmitted will be among the members of the set \(A_i\) will always be greater than or equal to \(1-\lambda\) where \(\lambda\) is greater than \(0\) and less than or equal to \( 1 \). In symbols, it is "a system  
 >
 \[
     \biggl \lbrace (u_1, A_1), \ldots, (u_N, A_N) \biggr \rbrace
@@ -234,7 +234,7 @@ The point that is easy to miss in this part of the paper is that Justeson's goal
 > where \( \pi = (\pi_1, \ldots  ,\pi_k) \) is any probability distribution, \( w(j|i) \) is the probability of receiving \( j \) if \( i \) is sent -- \( j \) can be null -- and \( k \) is the number of elements in the input alphabet. alphabet. A simple method for calculating an upper bound for the capacity may be found in @Helgert1967; it would require too much discussion for presentation here.
 >
 
->
+> -->
 
 <!-- ### "Part II -- Application of Information-Theoretic Measures" -->
 
