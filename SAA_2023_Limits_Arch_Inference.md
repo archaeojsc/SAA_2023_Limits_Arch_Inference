@@ -157,6 +157,10 @@ Justeson's main departure from the others was in that he applied Shannon's conce
 
 Therefore, the inherent limit of archaeological inference would be the limits (i.e., the "upper bound" in mathematical terms) of the channel's capacity given a certain amount of noise. Past those limits, *de*coding the source signal (i.e. the *behavior*) would become highly susceptible to more ambiguous, unreliable, or even spurious interpretations. To find -- and *calculate* -- that limit, Justeson needed to specify the nature of the transmission channel and its properties and identify (and prove) the existence of a coherent system of encoding.
 
+The point that is easy to miss in this part of the paper is that Justeson's goal here is to provide a way to determine analytically whether or not an archaeological assemblage *meets those minimum requirements* to be considered a code *at all*. If not, "... there is really no basis for speaking of the existence of a channel" [@Justeson1973, p. 136]. This, above all else in the paper, represents Justeson's true theoretical and methodological challenge to the ambitions of the "New Archaeology" as a project. He is saying that unless we can *prove* that there is an *analytically* feasible code entailed by archeological data, there can *be* no supportable interpretation of it.
+
+> If the empirically measured parameters are not consistent with the relationship between them that is required by the theory for a given material or behavioral system, then the data by which that system is to be interpreted cannot have a consistent susceptibility to decoding; that is, there will be no basis for deriving a coherent archaeological interpretation of the data that will accurately reflect the prehistoric situation. Thus, the question of the existence of a code is one of primary importance for our considerations. [@Justeson1973, p.136]
+
 #### "Basic Concepts of Information Theory and Their Archaeological Correlates"
 
 Whereas Shannon described information in terms of the reduction of uncertainty, Justeson notes that information can also be thought of in terms of *contrasts*. That is, information can be seen as a way we are able to distinguish the qualities or attributes of one type of thing from those of another. Information, then, is how we determine categories by reducing the uncertainty of correctly assigning a thing or event to a given category.
@@ -181,60 +185,59 @@ The memory of a discrete archaeological channel therefore requires a bit more co
 
 Instead, he suggests, the more appropriate channel type would be a discrete *decreasing-memory* channel, in which prior events have less influence over time. Channels with decreasing memory are often analyzed through the lens of *ergodic processes* and *Markov models*, which help in quantifying the rate at which the influence of the past diminishes. These models would be beneficial in applications where the channel environment evolves slowly over time, where the channel state may vary due to factors like mobility or environmental changes [@Cover2001]. Unless, however, the rate of decreasing memory is constant -- i.e., they are *stationary*, which Justeson notes is not an appropriate assumption for human behavior -- such models are highly complex and computationally difficult to analyze.
 
-That leaves the specification of what an archaeological *code* might look like, and it is here where Justeson *really* starts to take a deep dive into the mathematical details.[^fn06] The definition for a code that Justeson presents is derived from @Wolfowitz1961, which requires some explanation. Given that a channel is a discrete channel with finite memory, the code has to conform to certain minimum requirements for it to be predictably encoded and decoded as a signal.
+That leaves the specification of what an archaeological *code* might look like, and it is here where Justeson *really* starts to take a deep dive into the mathematical details.[^fn06] The definition for a code that Justeson presents is derived from @Wolfowitz1961, which requires some explanation. A code has to conform to certain minimum requirements for it to be predictably encoded and decoded as a signal.
 
 [^fn06]: This is also the point, we expect, that many people (including this chapter's authors) might originally have had some difficulty in following the logic of the article. It requires a certain level of comfort with mathematical and set notation, some basic understanding of set theory, background in statistical and graphical analysis, and a general familiarity with rhetorical style of how mathematical models and proofs are presented. John himself had been a dual-major in anthropology and probability theory as an undergraduate at U.C. Berkeley, so was already well-versed in the "language" so to speak.
 
-The requirements for the code are deceptively simple:  
+The requirements for a code are deceptively simple:  
 
 1. it must allow *uniquely* distinguishable (i.e., "disjoint") sequences of symbols, attributes, or events to be sent and received; and
 2. the probability that any given message received over the channel is the same as the unique sequence that was sent must be \(\geq 0\).
 
-The first requirement (i.e., *uniqueness*) means that any given sequence of symbols, whether sent or received, can only encode and be decoded as one (and only one) message. The same sequence of symbols cannot have multiple possible decodings. In mathematical terms, then, a signal consists of \(N\) combinations (i.e., "ordered pairs") of unique input sequences \(u_i\) (sent) and unique output sequences \(A_i\) (received), where \(i=1,...,N\). This is written as  
+The first requirement (i.e., *uniqueness*) means that any given sequence of symbols, whether sent or received, can only encode and be decoded as one (and only one) message. The same sequence of symbols cannot have multiple possible decodings, nor can one decoding come form different input sequences. In mathematical terms, then, a signal consists of \(N\) combinations (i.e., "ordered pairs") of unique input sequences \(u_i\) (sent) and unique output sequences \(A_i\) (received), where \(i=1,...,N\). This is written as  
 
 \[
     \biggl \lbrace (u_1, A_1), \ldots, (u_N, A_N) \biggr \rbrace
 \]
 
-The second requirement brings in the probabilistic aspect of information theory. There must be a way to describe a *probability* for whether a sequence sent (\(u_i\)) will be the one received and that it matches the correct *de*coding (\(A_i\)). This is given by  
+The second requirement brings in the probabilistic aspect of information theory. There must be a way to describe a *probability* for whether a sequence sent (\(u_i\)) will match the correct *de*coding (\(A_i\)). This is given by  
 
 \[
     P \left \lbrace v(u_i) \in A_i \right \rbrace \geqslant 1 - \lambda, \ i=1,\ldots,N
 \]
 
-...where \(v(u_i)\) is what is *actually* received when \(u_i\) is sent, \(P \lbrace v(u_i) \in A_i \rbrace\) is the probability that \(v(u_i)\) matches the correct decoding \(A_i\), and \(1-\lambda \geq 0\) is the allowed range of probabilities (i.e., to be a probability at all, \(\lambda > 0\) and \(\leq 1\)).
+where \(v(u_i)\) is what is *actually* received when \(u_i\) is sent, \(P \lbrace v(u_i) \in A_i \rbrace\) is the probability that \(v(u_i)\) matches the correct decoding \(A_i\), and \(1-\lambda \geq 0\) is the allowed range of probabilities (i.e., to be a probability at all, \(\lambda > 0\) and \(\leq 1\)).
 
-If those requirements are both met, then it is considered a legitimate code with parameters \(n\) (the length of sequences), \(N\) (the number of sequences or messages), and \(\lambda\) (the measure of probabilities). In the archaeological case, we don't have the source or input sequence \(u_i\), but we do have the output \(A_i\). If we can find a way to determine those three parameters, and they meet the two theoretical requirements, then we are able to identify that there *is* an underlying code and channel to the archaeological assemblage that can be decoded and interpreted.
+As long as those two requirements are both met, then it is a legitimate code with parameters \(n\) (the length of sequences), \(N\) (the number of sequences or messages), and \(\lambda\) (the measure of probabilities).
 
-The point that is easy to miss in this part of the paper is that Justeson's goal here is to provide a way to determine analytically whether or not an archaeological assemblage *meets those minimum requirements* to be considered a code *at all*. If not, "... there is really no basis for speaking of the existence of a channel" [@Justeson1973, p. 136]. This, above all else in the paper, represents Justeson's true theoretical and methodological challenge to the ambitions of the "New Archaeology" as a project. He is saying that unless we can *prove* that there is an *analytically* feasible code entailed by archeological data, there can *be* no supportable interpretation of it.
+If we can find a way to determine or estimate those three parameters (\(n\),\(N\),\(\lambda\)), and they meet the two theoretical requirements, then we are able to identify that there *is* an underlying code and channel to the archaeological assemblage that can be decoded and interpreted. In the archaeological case, though, we don't have the source or input sequence \(u_i\), which means we do not yet have a way to find \(\lambda\). We do have the output signals \(A_i\) (i.e., the observed archaeological data), meaning we have at least an observation of what the *minimum* vales for \(n\) (e.g., how many observable symbols, attributes, features, etc.) and \(N\) (effectively, the sample population) could be. Logically, if we expect potential loss in a signal due to noise (i.e., some symbols or messages are dropped) then the input parameters should be *at least* the values observed from the output.
 
-> If the empirically measured parameters are not consistent with the relationship between them that is required by the theory for a given material or behavioral system, then the data by which that system is to be interpreted cannot have a consistent susceptibility to decoding; that is, there will be no basis for deriving a coherent archaeological interpretation of the data that will accurately reflect the prehistoric situation. Thus, the question of the existence of a code is one of primary importance for our considerations. [@Justeson1973, p.136]
+Now we get back to why it was important to figure out the *type* of channel we are dealing with. For a *discrete finite-memory channel*, the values of \(n\) and \(N\) have a very specific relationship between them given by  
+\[
+    N = 2^{n(C-\epsilon)}
+\]
+
+where we have two new variables. The first is the channel capacity from Shannon's information theory \(C\), and a positive constant \(\epsilon\) that basically represents some amount of signal loss.
+
+The maximum *possible* number of unique combinations for the elements of any set (e.g., an alphabet), without repeating any elements, is \(2^n\) where \(n\) is how many things there are *in* the set.[^fn07] This relationship between \(n\) and \(N\) defines the nature of this type of channel, and tells us that the signals received \(N\) depend on the length of the sequences \(n\) weighted by how much of the channel's capacity is left after losses to noise, interference, or mistranslation \(C-\epsilon\). As long as the parameters that we can derive from our observed output signals (i.e., the archaeological record) don't violate that relationship, then we have a legitimate code and channel that can be decoded and interpreted. Next we need to be able to figure out or estimate our channel capacity.
+
+[^fn07]: This can obviously get very big, very quickly. For example the english alphabet, with 26 letters, has \(2^{26}\) or \(67,108,864\) possible unique combinations if you are only using any letter only once in any sequence!
+
+Recall that Shannon defined channel capacity as the maximum of the mutual information between signals sent and received \(C = \max_{p(x)} I(X|Y)\). Justeson uses slightly different notation (e.g., \(\pi\) instead of \(p(x)\), etc.)
+
+\[
+    C = \max_{\pi} \left \lbrace \sum_j \left \lbrack \sum_i \pi_i w(j|i) \log_2 \sum_i \pi_i w(j|i) - \sum_i \pi_i w(j|i) \log_2 \ \pi_i w(j|i) \right \rbrack\ \right \rbrace
+\]
 
 ---
 
-<!-- > Knowing what type of channel is being dealt with is simply a preliminary to the study of channel properties. It is important to know now what properties of channels are important to consider archaeologically. The major thing to look at here is the code. The code is defined mathematically as a system of \(N\) ordered pairs consisting each of an input sequence \(u_i\) of \(n\) alphabetic symbols and a set \(A_i\) of output sequences, where the \(N\) sets of output sequences do not have any members in common, and where the probability that the sequence received when \(u_i\) is transmitted will be among the members of the set \(A_i\) will always be greater than or equal to \(1-\lambda\) where \(\lambda\) is greater than \(0\) and less than or equal to \( 1 \). In symbols, it is "a system  
->
-\[
-    \biggl \lbrace (u_1, A_1), \ldots, (u_N, A_N) \biggr \rbrace
-\]
->
-> where the \(u_i\) are \(n\)-sequences, the \(A_i\) are disjoint sets of \(n\)-sequences and  
->
-\[
-    P \left \lbrace v(u_i) \in A_i \right \rbrace \geqslant 1 - \lambda, \ i=1,\ldots,N
-\]
->
-> ... we shall call it a code \( (n, N, \lambda) \)" [@Wolfowitz1961, p.51-52]. The expression \(v(u_i)\) represents the signal received when \(u_i\) is sent, while the term *n-sequence* is an input or output signal of length \(n\).
->
-> The parameters \(n\), \(N\), and \(\lambda\) therefore specify the code for the channel. Without such a code we cannot really speak of information being transmitted or received, hence there is really no basis for speaking of the existence of a channel. We can find out if there is a code for he archeological channel by finding if values we compute for \(N\), \(n\), and \(\lambda\) are consistent with the requirements of a code for a discrete finite-memory channel. In particular, the value of \(N\) is related to that of \(n\) by the formula \(N = 2^{n(C-\epsilon)}\), where \(C\) is the *channel capacity* -- a measure of the ability of the channel to transmit information -- and \(\epsilon\) is a positive constant. \(C\) may be determined, often only with great labor, from the relation
+> In particular, the value of \(N\) is related to that of \(n\) by the formula \(N = 2^{n(C-\epsilon)}\), where \(C\) is the *channel capacity* -- a measure of the ability of the channel to transmit information -- and \(\epsilon\) is a positive constant. \(C\) may be determined, often only with great labor, from the relation
 >
 \[
     C = \max_{\pi} \left \lbrace \sum_j \left \lbrack \sum_i \pi_i w(j|i) \log_2 \sum_i \pi_i w(j|i) - \sum_i \pi_i w(j|i) \log_2 \ \pi_i w(j|i) \right \rbrack\ \right \rbrace
 \]
 > where \( \pi = (\pi_1, \ldots  ,\pi_k) \) is any probability distribution, \( w(j|i) \) is the probability of receiving \( j \) if \( i \) is sent -- \( j \) can be null -- and \( k \) is the number of elements in the input alphabet. alphabet. A simple method for calculating an upper bound for the capacity may be found in @Helgert1967; it would require too much discussion for presentation here.
 >
-
-> -->
 
 <!-- ### "Part II -- Application of Information-Theoretic Measures" -->
 
