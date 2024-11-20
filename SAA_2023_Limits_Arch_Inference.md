@@ -210,7 +210,7 @@ The second requirement brings in the probabilistic aspect of information theory.
     P \left \lbrace v(u_i) \in A_i \right \rbrace \geqslant 1 - \lambda, \ i=1,\ldots,N
 \]
 
-where \(v(u_i)\) is what is *actually* received when \(u_i\) is sent, \(P \lbrace v(u_i) \in A_i \rbrace\) is the probability that \(v(u_i)\) matches the correct decoding \(A_i\), and \(1-\lambda \geq 0\) is the allowed range of probabilities (i.e., to be a probability at all, \(\lambda > 0\) and \(\leq 1\)).
+where \(v(u_i)\) is what is *actually* received when \(u_i\) is sent, \(P \lbrace v(u_i) \in A_i \rbrace\) is the probability that \(v(u_i)\) matches the correct decoding \(A_i\), and \(1-\lambda \geq 0\) is the allowed range of probabilities (i.e., to be a probability at all, \(\lambda \geq 0\) and \(\leq 1\)).
 
 As long as those two requirements are both met, then it is a legitimate code with parameters \(n\) (the lengths of sequences), \(N\) (the number of sequences or messages), and \(\lambda\) (the measure of probabilities).
 
@@ -244,13 +244,17 @@ where \(\pi = (\pi_1, \ldots  ,\pi_k)\) is the probability distribution for each
 
 [^fn09]: The notation used for this equation may be somewhat confusing, in part because the notation is different from that used previously to describe codes. In the second equation, \(j\) would be the same as \(A_i\) and \(i\) would be \(u_i\). The expression \(\omega(j|i)\) is another way to express each probability in \(P \lbrace v(u_i) \in A_i \rbrace\).
 
-[^fn10]: It isn't really necessary to understand all of what is going on in this rather complex formula, only that it is an analytical way to calculate a specific value for capacity from the tabulation of observable probabilities.
+[^fn10]: It isn't really necessary to understand all of what is going on in this rather complex equation, only that it is an analytical way to calculate a specific value for capacity from the tabulation of observable probabilities.
 
 Advances in both the power of computers and the development of optimized methods for handling large systems of equations now make these calculations relatively straightforward matters, but we are left with our archaeological problem -- we do not have access to the source signals, only the outputs, so we do not know *what* was sent. We do now know what we are looking for in order to determine if our archaeological data is a legitimate and interpretable code and prove that the archaeological record constitutes a viable channel to transmit that code.
 
 The second part of @Justeson1973 shows us how to go about finding it.
 
 ### "Part II -- Application of Information-Theoretic Measures"
+
+By way of demonstration, the second part of @Justeson1973 applies the principles of information theory to a specific archaeological assemblage. This is essentially a "proof of concept" application of information measures to see whether a real collection of artifacts can be shown to reflect an underlying "code" and "signal" under their formal definitions. He chose to analyze the design elements for a collection of pottery sherds, since differences in such design and decorative elements are typically considered to distinguish between particular systems of cultural traditions and practices. They should, therefore, be an ideal test case to see if they can be shown to be a coherent system for encoding behavioral information in the formal sense.
+
+
 
 <!-- ## Applications
  -->
