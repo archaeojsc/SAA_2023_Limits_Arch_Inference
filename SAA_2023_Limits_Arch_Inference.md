@@ -254,13 +254,13 @@ The second part of @Justeson1973 shows us how to go about finding it.
 
 By way of demonstration, the second part of @Justeson1973 applies the principles of information theory to a specific archaeological assemblage. This is essentially a "proof of concept" application of quantitative measures to see whether a real collection of artifacts can be shown to reflect an underlying "code" and "signal" under the formal definitions of information theory. He chose to analyze the design elements for a collection of pottery sherds, since differences in such design and decorative elements are typically considered to distinguish between particular systems of cultural traditions and practices. They should, therefore, be an ideal test case to see if they can be shown to be a coherent system for encoding behavioral information in the formal sense. The sample assemblage came from the 1970 excavations at the Joint Site in Arizona, a large 36-room pueblo occupied form roughly 1100 to 1300 A.D. [@Justeson1973, p. 136].
 
-If the theory holds, then an analysis of the design elements should show that they constitute a coherent code by which to encode a signal. That, in turn, would prove that the archaeological record constitutes a viable channel for the transmission of such codes as  archaeological signals from past behavioral systems. If, however, no such code can be proven then one of those underlying assumptions is mistaken. In other words, archaeological interpretation is inherently limited by whether or not there is sufficient information in the observed elements or attributes of the archaeological data to identify the mere existence of a code a all. If not, then there is not enough information to discriminate patterns in the data -- without consistent patterns, no feasibly legitimate interpretations. Without a code, there is *nothing to decode*.
+If the theory holds, then analysis of the design elements should show that they constitute a coherent code by which to encode a signal. That, in turn, would prove that the archaeological record constitutes a viable channel for the transmission of such codes as  archaeological signals from past behavioral systems. If, however, no such code can be proven then one of those underlying assumptions is mistaken. In other words, archaeological interpretation is inherently limited by whether or not there is sufficient information in the observed elements or attributes of the archaeological data to identify the mere existence of a code a all. If not, then there is not enough information to discriminate patterns in the data -- without consistent patterns, no feasibly legitimate interpretations. Without a code, there is *nothing to decode*.
 
 #### "Extrapolation of the Prehistoric Distribution of Design Elements"
 
-Before the existence of a code can be determined, though, we have to figure out how many symbols or tokens there are in the system that we suspect *could* be a code. In Justeson's example, that means finding a way to determine how many distinct design elements of pottery there are. Archaeologically, we likely only have a sample or *subset* of the original array of design elements -- we can never be quite sure that we have examples of *all* of them. Instead, we need to *estimate* how many there were (i.e., the original "population" of elements) by extrapolating from the observable sample that we do have. Moreover, we need to also estimate how common each element was likely to occur. Estimating a population from a sample is, of course, a common statistical problem.
+Before the existence of a code can be determined, though, we have to figure out how many symbols or tokens there are in the system that we suspect *could* be a code. In Justeson's example, that means finding a way to extrapolate how many distinct design elements of pottery there are. Archaeologically, we likely only have a sample or *subset* of the original array of design elements -- we can never be quite sure that we have examples of *all* of them. Instead, we need to *estimate* how many there were (i.e., the original "population" of elements) by extrapolating from the observable sample that we do have. Moreover, we need to also estimate how common each element was likely to occur. Estimating a population from a sample is, of course, a common statistical problem.
 
-Justeson adapted a method from Mackay's [-@Mackay1965] technique for estimating the number of symbols there were in an unknown script from the characters found on the Phaistos Disc.[^fn11] It is simply based on how frequently each of the attributes occur in the sample (in this case, pottery design elements). The estimates are based on the distribution of the *frequencies* rather than the attributes themselves. By adding up the *number* of elements \(N\) that occur exactly \(t\) times, we get the number of elements that occur *at least* \(t\) times (\(M_t\)) in the assemblage. This is expressed mathematically as:  
+Justeson adapted a method from Mackay's [-@Mackay1965] technique used to estimate the number of symbols there were in an unknown script from the characters found on the Phaistos Disc.[^fn11] It is simply based on how frequently each of the attributes occur in the sample (in this case, pottery design elements). The estimates are based on the distribution of the *frequencies* rather than the attributes themselves. By adding up the *number* of elements \(N\) that occur exactly \(t\) times, we get the number of elements that occur *at least* \(t\) times (\(M_t\)) in the assemblage. This is expressed mathematically as:  
 
 [^fn11]: This technique is simple to implement and provides quick and reasonably accurate estimates. The reason, statistically, is that it leverages a common (though not fully understood) attribute of rank-frequency distributions that they tend to follow an exponential or power law distribution -- e.g., Zipf's law or a Pareto distribution. Basically, if you made 100 observations of 20 attributes, all 20 would occur at least once but very few would be likely to occur all 100 times. There are more robust and accurate methods of estimating these sorts of distributions available now, but the basic principle still holds true -- if events or attributes are not random, their frequency of occurrence will decay exponentially.
 
@@ -268,15 +268,24 @@ Justeson adapted a method from Mackay's [-@Mackay1965] technique for estimating 
     M_t = \sum^{T}_{i=t} N_i
 \]
 
-We do this for \(t=1\) (every element is observed at least once) up to the frequency of the most common element (\(T\)). For \(t=1\), \(M_1\) will equal the total number of elements observed in the sample. What we are trying to extrapolate for is \(M_0\), or the total number of elements in the original population *including* ones that we have not seen.
+We do this for \(t=1\) (every element is observed at least once) up to the frequency of the most common element \(T\) (i.e., the largest count of any element). For \(t=1\), \(M_1\) will equal the total number of elements observed in the sample. What we are trying to extrapolate or estimate is \(M_0\), or the total number of elements in the *original* population including the ones that we have *not* seen.
 
-Next, we want to calculate the total number of *observations* of elements that have occurred at least \(t\) times (\(L_t\)). 
+Next, we want to calculate the total number of *observations* of elements that have occurred at least \(t\) times (\(L_t\)). This is a cumulative sum as well, so we add up every value of \(M\) from \(t\) to \(T\):  
+
+\[
+    L_t = \sum^{T}_{i=t} M_i
+\]
+
+
 
 <!-- ## Applications
  -->
 
-
 <!-- > The first step in using this technique is to tabulate the values of \(N_t\), the number of attributes occurring exactly t times in the sample, where the values of \(t\) range from \(1\) to \(T\), and \(T\) is the maximum number of times any attribute occurs. Then \(M_t\), the number of attributes occurring at least \(t\) times, is calculated and tabulated. \(M_t\) can be calculated from the formula:  
+>
+\[
+    M_t = \sum^{T}_{i=t} N_i
+\]
 >
 > \(M_1\) is the number of different design elements occurring in the sample.
 >
