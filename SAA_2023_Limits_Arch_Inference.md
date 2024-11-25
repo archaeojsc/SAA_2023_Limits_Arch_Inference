@@ -282,7 +282,9 @@ Again, \(L_1\) is equal to the total number of observations in the sample. In ge
 
 You will note that \(N_i\), \(M_t\), and \(L_t\) all remove any link or reference to the original attributes or encodings. Information theory, by *design*, is only concerned with the statistical and probabilistic  properties of signals and channels. It is, effectively, a *meaning-* or *content-free* analysis of the transfer of information between source and receiver, irrespective of the meaningful content of those signals and messages. The goal is, instead, to ascertain the mere *existence* of viable information and transfer. Justeson's goal is to show that a code and channel are viable and sufficient to transmit archaeological information -- i.e., to *reduce the uncertainty* regarding the past behaviors encoded by the archaeologic record.
 
-To those ends, it is *frequency* of occurrences -- rather than the codes themselves -- that is the the object of the analysis. The empirical determination for the distributions of \(M\) and \(L\) form the basis from which to make reasonable inferences about the the original (i.e., the unobserved) system. We are working towards estimating the parameters needed to calculate the overall channel capacity and determine the noise affecting the signal. Without the source signal's probabilities, we have to effectively "reverse engineer" the channel from the receiving end.
+To those ends, the *frequency* of occurrences -- rather than the codes themselves -- are the object of the analysis. Empirical distributions of \(M\) and \(L\) form the basis from which to make reasonable inferences about the the original (i.e., the unobserved) system. We are working towards estimating the parameters needed to calculate the overall channel capacity and determine the noise affecting the signal. Without the source signal's probabilities, we have to effectively "reverse engineer" the channel from the receiving end.
+
+The last thing we need then is to estimate the distribution of those frequencies.
 
 <!-- ## Applications
  -->
