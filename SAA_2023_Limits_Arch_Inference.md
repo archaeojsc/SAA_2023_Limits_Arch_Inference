@@ -270,7 +270,9 @@ The estimates are based on the distribution of the *frequencies* rather than the
     M_t = \sum^{T}_{i=t} N_i
 \]
 
-We do this for \(t=1\) (every element is observed at least once) up to the frequency of the most common element \(T\) (i.e., the largest count of any element). For \(t=1\), \(M_1\) will equal the total number of elements observed in the sample. What we are trying to extrapolate or estimate is \(M_0\), or the total number of elements in the *original* population including the ones that we have *not* seen.
+We do this for \(t=1\) (every element is observed at least once) up to the frequency of the most common element \(T\) (i.e., the largest count of any element). For \(t=1\), \(M_1\) will equal the total number of elements observed in the sample. What we are trying to extrapolate or estimate is a value for \(M_0\), or the expected total number of elements in the *original* population including the ones that we have *not* seen.
+
+![\(M_0\) extrapolation.](./plotM.png)
 
 Next, we want to calculate the total number of *observations* of elements that have occurred at least \(t\) times (\(L_t\)). This is a cumulative sum as well, so we add up every value of \(M\) from \(t\) to \(T\):  
 
@@ -280,11 +282,17 @@ Next, we want to calculate the total number of *observations* of elements that h
 
 Again, \(L_1\) is equal to the total number of observations in the sample. In general, the exact value for \(L_t\) is interesting only inasmuch as it describes the overall distribution of observations. Technically, the value indicates the remaining number of observations if \(t -1\) observations were removed from each of the \(N_i\) frequencies [from @Mackay1965, described above].
 
+![\(L_0\) extrapolation.](./plotL.png)
+
 You will note that \(N_i\), \(M_t\), and \(L_t\) all remove any link or reference to the original attributes or encodings. Information theory, by *design*, is only concerned with the statistical and probabilistic  properties of signals and channels. It is, effectively, a *meaning-* or *content-free* analysis of the transfer of information between source and receiver, irrespective of the meaningful content of those signals and messages. The goal is, instead, to ascertain the mere *existence* of viable information and transfer. Justeson's goal is to show that a code and channel are viable and sufficient to transmit archaeological information -- i.e., to *reduce the uncertainty* regarding the past behaviors encoded by the archaeologic record.
 
-To those ends, the *frequency* of occurrences -- rather than the codes themselves -- are the object of the analysis. Empirical distributions of \(M\) and \(L\) form the basis from which to make reasonable inferences about the the original (i.e., the unobserved) system. We are working towards estimating the parameters needed to calculate the overall channel capacity and determine the noise affecting the signal. Without the source signal's probabilities, we have to effectively "reverse engineer" the channel from the receiving end.
+To those ends, the *frequency* of occurrences -- rather than the codes themselves -- are the object of the analysis. Empirical distributions of \(M\) and \(L\) form the basis from which to extrapolate \(M_0\) (the full systems number of feature attributes) to make reasonable inferences about the distribution of those attributes in the original (i.e., the unobserved) system. We are working towards estimating the parameters needed to calculate the overall channel capacity and determine the noise affecting the signal. Without the source signal's probabilities, we have to effectively "reverse engineer" the channel from the receiving end.
 
-The last thing we need then is to estimate the distribution of those frequencies.
+The last thing we need then is to estimate the distribution of those frequencies across all of the system's elements. To do this we compare the ordered ranking (from \(1\) to \(M_1\)) of those frequencies (\(r\)) to the observed frequencies for each ranked element (\(p(r)\)).[^fn12] We needed a value for \(M_0\) to be able to "fix" one end of the distribution of those frequencies (\(p(M_0+1)\) = 0) so that we can estimate the ideal or natural frequency distribution of the system.
+
+[^fn12]: The frequencies of the elements were scaled by the minimum and maximum values to be between 0 and 1.
+
+![Rank-frequncy graph.](./plot_rank_frequency.png)
 
 
 <!-- #### Noise Levels -->
