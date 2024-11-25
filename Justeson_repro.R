@@ -6,17 +6,21 @@ M <- c(
 
 M <- c(M, rep(1, 808)) # make L[1] = 2,317
 
-codes <- c(1:100)
+codes <- c(1:max(M))
 
 # Extract frequency of codes from M
-code_fq <- rep(1, 100)
+code_fq <- rep(1, codes)
 
 for (i in 2:length(M)) {
   code_fq <- c(
     code_fq[1:(length(code_fq) - M[i])], 
-    code_fq[((length(code_fq) - M[i]) + 1):100] + 1
+    code_fq[((length(code_fq) - M[i]) + 1):length(code_fq)] + 1
     )
 }
+
+# Feature scaling p(r)
+alpha <- 0.01
+code_fq_scaled <- (code_fq - min(code_fq)) / (max(code_fq) - min(code_fq)) + alpha
 
 # Extract N from code frequencies
 
@@ -28,7 +32,7 @@ for(i in 1:length(M)) {
 
 # Get t
 
-t <- c(1:max(code_fq))
+t <- c(1:M[0])
 
 # Calculate L
 
@@ -38,19 +42,31 @@ for (t in 1:length(M)) {
   L[t] <- sum(M[t:length(M)])
 }
 
-plot(1:length(M),
+plot(t,
      M,
      type = "o",
      log = "y",
-     xlim = c(0, 70))
+     xlim = c(0, 55))
 
-plot(1:length(L),
+plot(t,
      L,
      type = "o",
      log = "y",
-     xlim = c(0, 70))
+     xlim = c(0, 70),
+     ylim = c(500,3000))
 
 (L[1] ^ 2 / (L[1] - M[1])) - L[1]
 
-r <- rank(-code_fq, ties.method = "average")
+
+r <- rank(-code_fq_scaled, ties.method = "average")
+
+plot(code_fq_scaled-0.01,
+     r,
+     log = "xy",
+     # xlim = c(0,0.1),
+     ylim = c(1,150),
+     xlab = "p(r)",
+     ylab = "r",
+     type = "o")
+
 
