@@ -286,24 +286,6 @@ To those ends, the *frequency* of occurrences -- rather than the codes themselve
 
 The last thing we need then is to estimate the distribution of those frequencies.
 
-<!-- ## Applications
- -->
-
-<!-- > The first step in using this technique is to tabulate the values of \(N_t\), the number of attributes occurring exactly t times in the sample, where the values of \(t\) range from \(1\) to \(T\), and \(T\) is the maximum number of times any attribute occurs. Then \(M_t\), the number of attributes occurring at least \(t\) times, is calculated and tabulated. \(M_t\) can be calculated from the formula:  
->
-\[
-    M_t = \sum^{T}_{i=t} N_i
-\]
->
-> \(M_1\) is the number of different design elements occurring in the sample.
->
-> Finally, \(L_t\) is calculated and tabulated. Its formula is  
-\[
-    L_t = \sum^{T}_{i=t} M_i
-\]
-> \(L_t\) has no meaning except when \(t = 1\), at which point it is the number of occurrences of attributes in the sample.
->
-> From the curve obtained, a value at \(t = 0\) can be extrapolated to give \(M_0\), the number of attributes occurring at least \(0\) times in the sample -- the total number of attributes in the system. Since \(L_0 = M_0 + L_1\), the extrapolation of \(L_0\) provides an alternate check on \(M_0\). -->
 
 <!-- #### Noise Levels -->
 
