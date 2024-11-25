@@ -278,9 +278,10 @@ Next, we want to calculate the total number of *observations* of elements that h
     L_t = \sum^{T}_{i=t} M_i
 \]
 
-Again, \(L_1\) is equal to the total number of observations in the sample. In general, the exact value for \(L_t\) is interesting only inasmuch as it describes the overall distribution of observations. Technically, the value indicates the remaining number of observations if \(t -1\) observations were removed from each of the \(N_i\) frequencies [described above, from @Mackay1965].
+Again, \(L_1\) is equal to the total number of observations in the sample. In general, the exact value for \(L_t\) is interesting only inasmuch as it describes the overall distribution of observations. Technically, the value indicates the remaining number of observations if \(t -1\) observations were removed from each of the \(N_i\) frequencies [from @Mackay1965, described above].
 
-You will note that \(N_i\), \(M_t\), and \(L_t\) all remove any link or reference to the original attributes or encodings. Information theory, by *design*, is only concerned with the statistical and probabilistic  characteristics of signals and channels. It is, effectively, a *meaning-* or *content-free* analysis of the transfer of information between source and receiver, irrespective of the meaningful content of those signals and messages. The goal is, instead, to ascertain the mere *existence* of viable information and transfer. Justeson's approach, and goal, is to show that a code and channel is viable and sufficient to transmit archaeological information -- i.e., to *reduce the uncertainty* regarding the past behaviors encoded by the archaeologic record.
+You will note that \(N_i\), \(M_t\), and \(L_t\) all remove any link or reference to the original attributes or encodings. Information theory, by *design*, is only concerned with the statistical and probabilistic  characteristics of signals and channels. It is, effectively, a *meaning-* or *content-free* analysis of the transfer of information between source and receiver, irrespective of the meaningful content of those signals and messages. The goal is, instead, to ascertain the mere *existence* of viable information and transfer. Justeson's goal is to show that a code and channel is viable and sufficient to transmit archaeological information -- i.e., to *reduce the uncertainty* regarding the past behaviors encoded by the archaeologic record.
+
 
 
 <!-- ## Applications
