@@ -61,9 +61,15 @@ plot(t,
 (L[1] ^ 2 / (L[1] - M[1])) - L[1]
 
 
-r <- rank(-code_fq_scaled, ties.method = "max")
+# r <- rank(-code_fq_scaled, ties.method = "max")
+r <- rank(-code_fq_scaled, ties.method = "average")
+# r <- rank(-code_fq_scaled, ties.method = "min")
 
 rlm <- lm(c(0, code_fq_scaled[1:99]) ~ poly(c(123, r[1:99]), 2, raw = TRUE))
+rlm3 <- lm(c(0, code_fq_scaled[1:99]) ~ poly(c(123, r[1:99]), 3, raw = TRUE))
+rlm4 <- lm(c(0, code_fq_scaled[1:99]) ~ poly(c(123, r[1:99]), 4, raw = TRUE))
+
+
 
 wt <- 1 / lm(abs(rlm$residuals) ~ rlm$fitted.values)$fitted.values ^ 2
 
