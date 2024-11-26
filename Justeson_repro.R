@@ -19,7 +19,7 @@ for (i in 2:length(M)) {
 }
 
 # Feature scaling p(r)
-alpha <- 0.01
+alpha <- 0.001
 code_fq_scaled <- (code_fq - min(code_fq)) / (max(code_fq) - min(code_fq)) + alpha
 
 # Extract N from code frequencies
@@ -42,11 +42,14 @@ for (t in 1:length(M)) {
   L[t] <- sum(M[t:length(M)])
 }
 
-plot(t,
-     M,
+plot(t[1:55],
+     M[1:55],
      type = "o",
      log = "y",
-     xlim = c(0, 55))
+     xlim = c(0, 55),
+     ylim = c(1, 200),
+     xlab = "t",
+     ylab = "M")
 
 plot(t,
      L,
@@ -58,11 +61,18 @@ plot(t,
 (L[1] ^ 2 / (L[1] - M[1])) - L[1]
 
 
-r <- rank(-code_fq_scaled, ties.method = "average")
+r <- rank(-code_fq_scaled, ties.method = "max")
 
-plot(code_fq_scaled-0.01,
-     r,
-     log = "xy",
+rlm <- lm(c(0, code_fq_scaled[1:99]) ~ poly(c(123, r[1:99]), 2, raw = TRUE))
+
+wt <- 1 / lm(abs(rlm$residuals) ~ rlm$fitted.values)$fitted.values ^ 2
+
+rlm_wt <- lm(c(0, code_fq_scaled[1:99]) ~ poly(c(123, r[1:99]), 2, raw = TRUE), weights = wt)
+
+
+plot(c(0, code_fq_scaled[1:99]),
+     c(123, r[1:99]),
+     log = "y",
      # xlim = c(0,0.1),
      ylim = c(1,150),
      xlab = "p(r)",
