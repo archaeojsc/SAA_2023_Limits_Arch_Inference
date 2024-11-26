@@ -210,7 +210,7 @@ The second requirement brings in the probabilistic aspect of information theory.
     P \left \lbrace v(u_i) \in A_i \right \rbrace \geqslant 1 - \lambda, \ i=1,\ldots,N
 \]
 
-where \(v(u_i)\) is what is *actually* received when \(u_i\) is sent, \(P \lbrace v(u_i) \in A_i \rbrace\) is the probability that \(v(u_i)\) matches the correct decoding \(A_i\), and \(1-\lambda \geq 0\) is the allowed range of probabilities (i.e., to be a probability at all, \(\lambda \geq 0\) and \(\leq 1\)).
+where \(v(u_i)\) is what is *actually* received when \(u_i\) is sent, \(P \lbrace v(u_i) \in A_i \rbrace\) is the probability that \(v(u_i)\) matches the correct decoding \(A_i\), and \(1-\lambda \geq 0\) is a constraint on the allowed range of probabilities (i.e., to be a probability at all, \(\lambda \geq 0\) and \(\leq 1\)).
 
 As long as those two requirements are both met, then it is a legitimate code with parameters \(n\) (the lengths of sequences), \(N\) (the number of sequences or messages), and \(\lambda\) (the measure of probabilities).
 
@@ -284,18 +284,27 @@ Again, \(L_1\) is equal to the total number of observations in the sample. In ge
 
 ![\(L_0\) extrapolation.](./plotL.png)
 
-You will note that \(N_i\), \(M_t\), and \(L_t\) all remove any link or reference to the original attributes or encodings. Information theory, by *design*, is only concerned with the statistical and probabilistic  properties of signals and channels. It is, effectively, a *meaning-* or *content-free* analysis of the transfer of information between source and receiver, irrespective of the meaningful content of those signals and messages. The goal is, instead, to ascertain the mere *existence* of viable information and transfer. Justeson's goal is to show that a code and channel are viable and sufficient to transmit archaeological information -- i.e., to *reduce the uncertainty* regarding the past behaviors encoded by the archaeologic record.
+You will note that \(N_i\), \(M_t\), and \(L_t\) all remove any link or reference to the original attributes or encodings. Information theory, by *design*, is only concerned with the statistical and probabilistic  properties of signals and channels. It is, effectively, a *meaning-* or *content-free* analysis of the transfer of information between source and receiver, irrespective of the meaningful content of those signals and messages. The goal is, instead, to ascertain the mere *existence* of viable information and transfer. Justeson's goal was to show that a code and channel are viable and sufficient to transmit archaeological information -- i.e., to *reduce the uncertainty* regarding the past behaviors encoded by the archaeologic record.
 
 To those ends, the *frequency* of occurrences -- rather than the codes themselves -- are the object of the analysis. Empirical distributions of \(M\) and \(L\) form the basis from which to extrapolate \(M_0\) (the full systems number of feature attributes) to make reasonable inferences about the distribution of those attributes in the original (i.e., the unobserved) system. We are working towards estimating the parameters needed to calculate the overall channel capacity and determine the noise affecting the signal. Without the source signal's probabilities, we have to effectively "reverse engineer" the channel from the receiving end.
 
-The last thing we need then is to estimate the distribution of those frequencies across all of the system's elements. To do this we compare the ordered ranking (from \(1\) to \(M_1\)) of those frequencies (\(r\)) to the observed frequencies for each ranked element (\(p(r)\)).[^fn12] We needed a value for \(M_0\) to be able to "fix" one end of the distribution of those frequencies (\(p(M_0+1)\) = 0) so that we can estimate the ideal or natural frequency distribution of the system.
+The last thing we need then is to estimate the distribution of those frequencies across all of the system's elements. To do this we compare the ranking of those frequencies (\(r\)) -- ordered from highest frequency to lowest -- and the observed frequencies for each element \(p(r)\).[^fn12] We needed a value for \(M_0\) to be able to "fix" one end of the distribution of those frequencies with a point \(p(M_0+1)\) = 0 so that we can estimate the *ideal* or natural frequency distribution of the system \(p_E(r)\).[^fn13]
 
-[^fn12]: The frequencies of the elements were scaled by the minimum and maximum values to be between 0 and 1.
+[^fn12]: The frequencies of the elements were scaled by the overall minimum and maximum values to be between 0 and 1.
 
-![Rank-frequncy graph.](./plot_rank_frequency.png)
+[^fn13]: If we expect that there are \(M_0\) elements in the system, then the frequency of an element with a rank greater than \(M_0\) would logically have to be zero.
+
+![Rank-frequency graph.](./plot_rank_frequency.png)
+
+From here, it is a matter of fitting a curve to each of these empirical distributions to find the extrapolated values for \(M_0\) and \(L_0\). Once we have those, we can generate an estimate for the distribution of values in the source signal's rank-frequency distribution \(p_E(r)\).
+
+These days, it is a relatively straightforward matter to fit a curve or distribution to data points using statistical software on just about any available computer. At the time the article was written, however, it required manually fitting from a physical template of ideal curves, which would be laid over the points plotted onto graph paper to find the best fit. Arguably a bit subjective, but in practice nearly as accurate and (with a large enough sheet of graph paper) surprisingly precise.
+
+The goal of all of this effort was, in fact, to *find* that estimated distribution \(p_E(r)\). It represents our "best guess" as to what the original distribution of elements might have in the past, sight unseen. With that in hand, we now have a reasonable approximation for the *source* encoding and signal of the original archaeological deposition. That allows us to (finally) begin applying information theory proper to find out whether there is too much "noise" in the archaeological channel to transmit a reliable signal and if what we have is a feasible code.
+
+#### Noise Levels
 
 
-<!-- #### Noise Levels -->
 
 <!-- calculate noise factor for each design element -->
 
