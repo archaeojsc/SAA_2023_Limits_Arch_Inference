@@ -308,7 +308,7 @@ The goal of all of this effort was, in fact, to *find* that estimated distributi
 
 <!-- calculate noise factor for each design element -->
 
-<!-- > To calculate the noise factor for each design element [\( \psi(r) \), where \(r\) is the rank by decreasing frequency of the design element and \(p(r)\) is the frequency of the element of rank \(r\)] (*sic*), let
+> To calculate the noise factor for each design element [\( \psi(r) \), where \(r\) is the rank by decreasing frequency of the design element and \(p(r)\) is the frequency of the element of rank \(r\)], let
 \[
     \begin{aligned}
         \psi(r) &= P(\text{receiving design element} \ r \ \text{given that} \ r \ \text{was sent})\\
@@ -316,7 +316,7 @@ The goal of all of this effort was, in fact, to *find* that estimated distributi
     \end{aligned}
 \]
 >
-> But \( P(A|B) = P(A \ \text{and} \ B) \div P(B) \)[^fn05], so  
+> But \( P(A|B) = P(A \ \text{and} \ B) \div P(B) \), so  
 >
 \[
     \begin{aligned}
@@ -325,14 +325,16 @@ The goal of all of this effort was, in fact, to *find* that estimated distributi
     \end{aligned}
 \]
 >
-> But \(P(r \ \text{received} \ | \ r \ \text{sent}) = \psi(r)\); \(P(r \ \text{sent}) = p_E(r)\), the extrapolated frequency for the design
-element \(r\); \(P(r \ \text{sent} \ | \ r \ \text{received}) = 1\); and \(P(r \ \text{received}) = p(r)\). Thus, \(\psi(r) = p(r)/p_E(r)\). To find the parameter \(\lambda\) of our code we must find the minimum of the \(\psi(r)\) values,
+
+This is known as the *conditional probability* of an event. In other words, what is the probability of event \(A\) if we know event \(B\) has happened (i.e., \(p(A|B)\) or "probability of \(A\) *given* \(B\)"), which is equal to the probability that \(A\) and \(B\) occur together (\(P(A \ \text{and} \ B)\) or \(P(A \cup B)\)) divided by the probability the \(B\) happens (\(P(B)\)).
+
+> But [we know that] \(P(r \ \text{received} \ | \ r \ \text{sent}) = \psi(r)\); \(P(r \ \text{sent}) = p_E(r)\), the extrapolated frequency for the design element \(r\); \(P(r \ \text{sent} \ | \ r \ \text{received}) = 1\); and \(P(r \ \text{received}) = p(r)\). Thus, \(\psi(r) = p(r)/p_E(r)\). To find the parameter \(\lambda\) of our code we must find the minimum of the \(\psi(r)\) values,
 >
 \[
     \begin{aligned}
-    \min_r \ \psi(r) &= \min_r P(r \ \text{received} \ | \ r \ \text{sent}) \\
-    &= \min_r 1 - P(r \ \text{not received} \ | \ r \ \text{sent}) \\
-    &= \max_r P(r \ \text{not received} \ | \ r\ \text{sent}) \\
+    \min_r \ \psi(r) &= \min_r \biggl \lbrack P(r \ \text{received} \ | \ r \ \text{sent}) \biggr \rbrack \\
+    &= \min_r \biggl \lbrack 1 - P(r \ \text{not received} \ | \ r \ \text{sent}) \biggr \rbrack \\
+    &= \max_r \biggl \lbrack P(r \ \text{not received} \ | \ r\ \text{sent}) \biggr \rbrack\\
     &= 1- \lambda
     \end{aligned}
 \]
@@ -346,8 +348,6 @@ element \(r\); \(P(r \ \text{sent} \ | \ r \ \text{received}) = 1\); and \(P(r \
     &= \sum_r p(r) = 1
     \end{aligned}
 \]
-
-[^fn05]: This is known as the *conditional probability* of an event. In other words, what is the probability of event \(A\) if we know event \(B\) has happened (i.e., \(p(A|B)\) or "probability of \(A\) *given* \(B\)"), which is equal to the probability that \(A\) and \(B\) occur together (\(P(A \ \text{and} \ B)\) or \(P(A \cup B)\)) divided by the probability the \(B\) happens (\(P(B)\)). -->
 
 <!-- #### Existence of a Code -->
 
