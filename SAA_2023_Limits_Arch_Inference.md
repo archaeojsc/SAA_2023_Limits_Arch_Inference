@@ -356,7 +356,7 @@ Since \(\psi(r)\) is equivalent to \(p \lbrace v(u_i) \in A_i \rbrace \), which 
     \lambda \leq 1 - \min_r \psi(r)
 \]  
 
-In other words, the bigger the difference between our observed frequencies at rank \(r\) and the estimated frequency the more noise has prevented accurate decoding.
+In other words, the bigger the difference between our observed frequencies at rank \(r\) and its estimated frequency the more noise has prevented accurate decoding. Like a chain, our potential code is only as good as its weakest link so the smallest (i.e., worst) value of \(\psi(r)\) is our benchmark.
 
 We now have an estimate for one of the parameters to determine if the archaeological sample constitutes a code. Actually, we have estimates for *two* of the parameters now. By extrapolating \(M_0\), the number of elements in the source encoding, we also have an estimate for the second parameter out of the three (\(n\)) as well.
 
