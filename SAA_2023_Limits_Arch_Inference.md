@@ -362,6 +362,14 @@ In other words, the bigger the difference between our observed frequencies at ra
 
 We now have an estimate for one of the parameters to determine if the archaeological sample constitutes a code. Actually, we have estimates for *two* of the parameters now. By extrapolating \(M_0\), the number of elements in the source encoding, we also have an estimate for the second parameter out of the three (\(n\)) as well.
 
+We also now have the way to calculate the upper bound on our archaeological channel. Justeson referred to Helgert's [-@Helgert1967] simple method for finding the bound, but noted that it would take too much discussion to explain. That is true here as well, but it boils down the channel capacity \(C\) is equal to the sum of all the probabilities that the code received was the one sent times the \(\log_2\) of the number of codes. The number of codes is simply our extrapolated \(M_0\), and the probability that we received what was sent is just \(\psi(r)\). This gives us a version of Helgert's method  
+
+\[
+    C \leq (1 - \sum_r \psi(r)) \times \log_2(M_0)
+\]  
+
+In Justeson's sample that works out to \(C \leq 6.6438\), providing us with a metric of the upper *limit* for the channel capacity (i.e., has to be "less than or equal to...").
+
 [^fn15]: This is a logical assumption, "...since we do not expect to find different design elements in any instance than those that were applied by the prehistoric painter" [@Justeson1973, p. 140]. It is not a trivial one, though. It is conceivable that post-deposition processes might result in something that *appears* to be a design element, but is not in fact. While this scenario would be considered an effect of noise in the channel, its implications should also be considered in archaeological interpretations.
 
 <!-- >
