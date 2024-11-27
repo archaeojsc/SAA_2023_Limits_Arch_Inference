@@ -334,7 +334,7 @@ The rather convenient result of this is that
 
 \[
     P(r \ \text{received} \ | \ r \ \text{sent}) \times P(r \ \text{sent}) = P(r \ \text{sent} \ | \ r \ \text{received}) \times P(r \ \text{received})
-\]
+\]  
 
 which means  
 
