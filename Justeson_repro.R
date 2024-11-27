@@ -6,10 +6,10 @@ M <- c(
 
 M <- c(M, rep(1, 808)) # make L[1] = 2,317
 
-codes <- c(1:max(M))
+codes <- c(1:(max(M)))
 
 # Extract frequency of codes from M
-code_fq <- rep(1, codes)
+code_fq <- rep(1, length(codes))
 
 for (i in 2:length(M)) {
   code_fq <- c(
