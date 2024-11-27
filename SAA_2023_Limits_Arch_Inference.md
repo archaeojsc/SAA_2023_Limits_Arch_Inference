@@ -306,29 +306,31 @@ The goal of all of this effort was, in fact, to *find* that estimated distributi
 
 #### Noise Levels
 
+Now that we have an empirical estimate for the source code's rank-frequency distribution, we have the means to evaluate the *noise* incurred by passing the signal through our archaeological channel. To do so, we need to compare the ranked frequencies of the signal received \(p(r)\) with our extrapolation of the signal sent \(P_E(r)\). Noise is simply any interference between source and received signal, so all that we are doing is evaluating what proportion of what was observed to what we expect was sent. Justeson uses the definition for conditional probability, and a few simple and reasonable assumptions, to define a measure for the noise \(\phi(r)\) related to each ranked element \(r\).
 
-
-<!-- calculate noise factor for each design element -->
-
-> To calculate the noise factor for each design element [\( \psi(r) \), where \(r\) is the rank by decreasing frequency of the design element and \(p(r)\) is the frequency of the element of rank \(r\)], let
 \[
     \begin{aligned}
         \psi(r) &= P(\text{receiving design element} \ r \ \text{given that} \ r \ \text{was sent})\\
         &=P(\text{receiving} \ r \ | \ r \ \text{was sent})
     \end{aligned}
 \]
->
-> But \( P(A|B) = P(A \ \text{and} \ B) \div P(B) \), so  
->
+
+We don't actually know that probability of receiving what was sent yet, though. We only know that we received element \(r\), and (the simple assumption) we would not have *unless* \(r\) was sent (i.e., we have \(P(r \ \text{sent and} \ r \ \text{received})\)).[^fn15] It may seem a subtle distinction, but it actually does change the mathematics of the probabilities involved. Luckily, there is an easy solution provided by the following definition:  
+
+\[
+    P(A|B) = P(A \ \text{and} \ B) \div P(B)
+\]
+
+This is known as the *conditional probability* of an event. In other words, it is the probability \(P\) of event \(A\) if we know event \(B\) has already happened (i.e., \(p(A|B)\) or "probability of \(A\) *given* \(B\)"). This is equal to the probability that \(A\) and \(B\) occur together (\(P(A \ \text{and} \ B)\) or \(P(A \cup B)\)) divided by the probability the \(B\) happens (\(P(B)\)). This means, by this definition fo conditional probability, that:  
+
 \[
     \begin{aligned}
-    P(r \ \text{sent and} \ r \ \text{received}) &= P(r \ \text{sent} \ | \ r \ \text{received}) \cdot P(r \ \text{received}) \\
-    &= P(r \ \text{received} \ | \ r \ \text{sent}) \cdot P(r \ \text{sent}) \\
+    P(r \ \text{sent and} \ r \ \text{received}) &= P(r \ \text{sent} \ | \ r \ \text{received}) \times P(r \ \text{received}) \\
+    &= P(r \ \text{received} \ | \ r \ \text{sent}) \times P(r \ \text{sent}) \\
     \end{aligned}
 \]
->
 
-This is known as the *conditional probability* of an event. In other words, what is the probability of event \(A\) if we know event \(B\) has happened (i.e., \(p(A|B)\) or "probability of \(A\) *given* \(B\)"), which is equal to the probability that \(A\) and \(B\) occur together (\(P(A \ \text{and} \ B)\) or \(P(A \cup B)\)) divided by the probability the \(B\) happens (\(P(B)\)).
+[^fn15]: This is a logical assumption, "...since we do not expect to find different design elements in any instance than those that were applied by the prehistoric painter" [@Justeson1973, p. 140]. It is not a trivial one, though. It is conceivable that post-deposition processes might result in something that *appears* to be a design element, but is not in fact. While this scenario would be considered an aspect of noise in the channel, its implications should be considered in archaeological interpretations.
 
 > But [we know that] \(P(r \ \text{received} \ | \ r \ \text{sent}) = \psi(r)\); \(P(r \ \text{sent}) = p_E(r)\), the extrapolated frequency for the design element \(r\); \(P(r \ \text{sent} \ | \ r \ \text{received}) = 1\); and \(P(r \ \text{received}) = p(r)\). Thus, \(\psi(r) = p(r)/p_E(r)\). To find the parameter \(\lambda\) of our code we must find the minimum of the \(\psi(r)\) values,
 >
