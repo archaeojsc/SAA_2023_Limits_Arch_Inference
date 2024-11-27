@@ -321,19 +321,42 @@ We don't actually know that probability of receiving what was sent yet, though. 
     P(A|B) = P(A \ \text{and} \ B) \div P(B)
 \]
 
-This is known as the *conditional probability* of an event. In other words, it is the probability \(P\) of event \(A\) if we know event \(B\) has already happened (i.e., \(p(A|B)\) or "probability of \(A\) *given* \(B\)"). This is equal to the probability that \(A\) and \(B\) occur together (\(P(A \ \text{and} \ B)\) or \(P(A \cup B)\)) divided by the probability the \(B\) happens (\(P(B)\)). This means, by this definition fo conditional probability, that:  
+This is known as the *conditional probability* of an event. In other words, it is the probability \(P\) of event \(A\) if we know event \(B\) has already happened (i.e., \(p(A|B)\) or "probability of \(A\) *given* \(B\)"). This is equal to the probability that \(A\) and \(B\) occur together (\(P(A \ \text{and} \ B)\) or \(P(A \cup B)\)) divided by the probability the \(B\) happens (\(P(B)\)). This means, by this definition for conditional probability, that:  
 
 \[
     \begin{aligned}
-    P(r \ \text{sent and} \ r \ \text{received}) &= P(r \ \text{sent} \ | \ r \ \text{received}) \times P(r \ \text{received}) \\
+    P(r \ \text{sent and} \ r \ \text{received}) &= P(r \ \text{sent} \ | \ r \ \text{received}) \times P(r \ \text{received}) \text{, or alternatively} \\
     &= P(r \ \text{received} \ | \ r \ \text{sent}) \times P(r \ \text{sent}) \\
     \end{aligned}
 \]
 
+The rather convenient result of this is that  
+
+\[
+    P(r \ \text{received} \ | \ r \ \text{sent}) \times P(r \ \text{sent}) = P(r \ \text{sent} \ | \ r \ \text{received}) \times P(r \ \text{received})
+\]
+
+which means  
+
+\[
+    P(r \ \text{received} \ | \ r \ \text{sent}) = \frac{P(r \ \text{sent} \ | \ r \ \text{received}) \times P(r \ \text{received})}{P(r \ \text{sent})}
+\]
+
+Justeson defined our noise factor \(\psi(r)\) as \(P(r \ \text{received} \ | \ r \ \text{sent})\), and we're making the assumption that we don't receive an element unless it was sent, so \(P(r \ \text{sent} \ | \ r \ \text{received})=1\). \(P(r \ \text{received})\) is our observed rank-frequency \(p(r)\), and \(P(r \ \text{sent})\) is just the extrapolated rank-frequency \(p_E(r)\). Substituting the terms leaves us with our measure for noise  
+
+\[
+    \psi(r) = p(r) \div p_E(r)
+\]
+
+You might be wondering, at this point, why it is necessary to go through so much trouble to measure noise. Remember that for something to constitute a legitimate code it has to have a reasonable chance to be *de*coded. In the earlier definition of a code, this is the parameter \(\lambda\). The probability of accurate decoding, \(p \lbrace v(u_i) \in A_i \rbrace \), has to be greater than or equal to \(1-\lambda\). The larger \(\lambda\) is, the less chance of accurate decoding. In our case, that means finding the smallest ratio of \(p(r)\) to \(p_E(r)\), or \(\min_r \psi(r)\), which basically represents the "worst" decoding in our observations. 
+
+Since \(\psi(r)\) is equivalent to \(p \lbrace v(u_i) \in A_i \rbrace \), which must be \(\geq 1-\lambda\), then it must be that \(\lambda \leq 1 - \min_r \psi(r)\).
+
+We now have an estimate for one of the parameters to determine if the archaeological sample constitutes a code. Actually, we have estimates for *two* of the parameters now. By extrapolating \(M_0\), the number of elements in the source encoding, we also have an estimate for the second parameter out of the three (\(n\)) as well.
+
 [^fn15]: This is a logical assumption, "...since we do not expect to find different design elements in any instance than those that were applied by the prehistoric painter" [@Justeson1973, p. 140]. It is not a trivial one, though. It is conceivable that post-deposition processes might result in something that *appears* to be a design element, but is not in fact. While this scenario would be considered an aspect of noise in the channel, its implications should be considered in archaeological interpretations.
 
-> But [we know that] \(P(r \ \text{received} \ | \ r \ \text{sent}) = \psi(r)\); \(P(r \ \text{sent}) = p_E(r)\), the extrapolated frequency for the design element \(r\); \(P(r \ \text{sent} \ | \ r \ \text{received}) = 1\); and \(P(r \ \text{received}) = p(r)\). Thus, \(\psi(r) = p(r)/p_E(r)\). To find the parameter \(\lambda\) of our code we must find the minimum of the \(\psi(r)\) values,
->
+<!-- >
 \[
     \begin{aligned}
     \min_r \ \psi(r) &= \min_r \biggl \lbrack P(r \ \text{received} \ | \ r \ \text{sent}) \biggr \rbrack \\
@@ -351,7 +374,7 @@ This is known as the *conditional probability* of an event. In other words, it i
     &= \sum_r p_E(r) \left \lbrack p(r) \div p_E(r) \right \rbrack \\
     &= \sum_r p(r) = 1
     \end{aligned}
-\]
+\] -->
 
 #### Existence of a Code
 
