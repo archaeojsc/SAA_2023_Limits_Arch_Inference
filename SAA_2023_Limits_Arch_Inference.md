@@ -306,7 +306,7 @@ The goal of all of this effort was, in fact, to *find* that estimated distributi
 
 #### Noise Levels
 
-Now that we have an empirical estimate for the source code's rank-frequency distribution, we have the means to evaluate the *noise* incurred by passing the signal through our archaeological channel. To do so, we need to compare the ranked frequencies of the signal received \(p(r)\) with our extrapolation of the signal sent \(P_E(r)\). Noise is simply any interference between source and received signal, so all that we are doing is evaluating what proportion of what was observed to what we expect was sent. Justeson uses the definition for conditional probability, and a few simple and reasonable assumptions, to define a measure for the noise \(\phi(r)\) related to each ranked element \(r\).
+Now that we have an empirical estimate for the source code's rank-frequency distribution, we have the means to evaluate the *noise* incurred by passing the signal through our archaeological channel. To do so, we need to compare the ranked frequencies of the signal received \(p(r)\) with our extrapolation of the signal sent \(p_E(r)\). Noise is simply any interference between source and received signal, so all that we are doing is evaluating what proportion of what was observed to what we expect was sent. Justeson uses the definition for conditional probability, and a few simple and reasonable assumptions, to define a measure for the noise \(\psi(r)\) related to each ranked element \(r\).
 
 \[
     \begin{aligned}
@@ -345,16 +345,22 @@ which means
 Justeson defined our noise factor \(\psi(r)\) as \(P(r \ \text{received} \ | \ r \ \text{sent})\), and we're making the assumption that we don't receive an element unless it was sent, so \(P(r \ \text{sent} \ | \ r \ \text{received})=1\). \(P(r \ \text{received})\) is our observed rank-frequency \(p(r)\), and \(P(r \ \text{sent})\) is just the extrapolated rank-frequency \(p_E(r)\). Substituting the terms leaves us with our measure for noise  
 
 \[
-    \psi(r) = p(r) \div p_E(r)
+    \psi(r) = \frac{p(r)}{p_E(r)}
 \]
 
-You might be wondering, at this point, why it is necessary to go through so much trouble to measure noise. Remember that for something to constitute a legitimate code it has to have a reasonable chance to be *de*coded. In the earlier definition of a code, this is the parameter \(\lambda\). The probability of accurate decoding, \(p \lbrace v(u_i) \in A_i \rbrace \), has to be greater than or equal to \(1-\lambda\). The larger \(\lambda\) is, the less chance of accurate decoding. In our case, that means finding the smallest ratio of \(p(r)\) to \(p_E(r)\), or \(\min_r \psi(r)\), which basically represents the "worst" decoding in our observations. 
+You might be wondering, at this point, why it is necessary to go through so much trouble to measure noise. Remember that for something to constitute a valid code it has to have a reasonable chance to be *de*coded. In the earlier definition of a code, this is the parameter \(\lambda\). The probability of accurate decoding, \(p \lbrace v(u_i) \in A_i \rbrace \), has to be greater than or equal to \(1-\lambda\). The larger \(\lambda\) is, the less chance of accurate decoding. In our case, that means finding the smallest ratio of \(p(r)\) to \(p_E(r)\), or \(\min_r \psi(r)\), which basically represents the "worst" decoding in our observations.
 
-Since \(\psi(r)\) is equivalent to \(p \lbrace v(u_i) \in A_i \rbrace \), which must be \(\geq 1-\lambda\), then it must be that \(\lambda \leq 1 - \min_r \psi(r)\).
+Since \(\psi(r)\) is equivalent to \(p \lbrace v(u_i) \in A_i \rbrace \), which must be \(\geq 1-\lambda\), then it must be that  
+
+\[
+    \lambda \leq 1 - \min_r \psi(r)
+\]  
+
+In other words, the bigger the difference between our observed frequencies at rank \(r\) and the estimated frequency the more noise has prevented accurate decoding.
 
 We now have an estimate for one of the parameters to determine if the archaeological sample constitutes a code. Actually, we have estimates for *two* of the parameters now. By extrapolating \(M_0\), the number of elements in the source encoding, we also have an estimate for the second parameter out of the three (\(n\)) as well.
 
-[^fn15]: This is a logical assumption, "...since we do not expect to find different design elements in any instance than those that were applied by the prehistoric painter" [@Justeson1973, p. 140]. It is not a trivial one, though. It is conceivable that post-deposition processes might result in something that *appears* to be a design element, but is not in fact. While this scenario would be considered an aspect of noise in the channel, its implications should be considered in archaeological interpretations.
+[^fn15]: This is a logical assumption, "...since we do not expect to find different design elements in any instance than those that were applied by the prehistoric painter" [@Justeson1973, p. 140]. It is not a trivial one, though. It is conceivable that post-deposition processes might result in something that *appears* to be a design element, but is not in fact. While this scenario would be considered an effect of noise in the channel, its implications should also be considered in archaeological interpretations.
 
 <!-- >
 \[
