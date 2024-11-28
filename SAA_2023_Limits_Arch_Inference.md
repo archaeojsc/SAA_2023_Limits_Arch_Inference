@@ -348,7 +348,7 @@ Justeson defined our noise factor \(\psi(r)\) as \(P(r \ \text{received} \ | \ r
     \psi(r) = \frac{p(r)}{p_E(r)}
 \]
 
-You might be wondering, at this point, why it is necessary to go through so much trouble to measure noise. Remember that for something to constitute a valid code it has to have a reasonable chance to be *de*coded. In the earlier definition of a code, this is the parameter \(\lambda\). The probability of accurate decoding, \(p \lbrace v(u_i) \in A_i \rbrace \), has to be greater than or equal to \(1-\lambda\). The larger \(\lambda\) is, the less chance of accurate decoding. In our case, that means finding the smallest ratio of \(p(r)\) to \(p_E(r)\), or \(\min_r \psi(r)\), which basically represents the "worst" decoding in our observations.
+You might be wondering, at this point, why it is necessary to go through so much trouble to measure noise. Remember that for something to constitute a valid code it has to have a reasonable chance to be *de*coded. In the earlier definition of a code, this is the parameter \(\lambda\). The probability of accurate decoding, \(p \lbrace v(u_i) \in A_i \rbrace \), has to be greater than or equal to \(1-\lambda\). The larger \(\lambda\), the less chance of accurate decoding. In our case, that means finding the smallest ratio of \(p(r)\) to \(p_E(r)\), or \(\min_r \psi(r)\), which basically represents the "worst" decoding in our observations.
 
 Since \(\psi(r)\) is equivalent to \(p \lbrace v(u_i) \in A_i \rbrace \), which must be \(\geq 1-\lambda\), then it must be that  
 
@@ -362,7 +362,7 @@ In other words, the bigger the difference between our observed frequencies at ra
 
 We now have an estimate for one of the parameters to determine if the archaeological sample constitutes a code. Actually, we have estimates for *two* of the parameters now. By extrapolating \(M_0\), the number of elements in the source encoding, we also have an estimate for the second parameter out of the three (\(n\)) as well.
 
-We also now have the way to calculate the upper bound on our archaeological channel. Justeson referred to Helgert's [-@Helgert1967] simple method for finding the bound, but noted that it would take too much discussion to explain. That is true here as well, but it boils down the channel capacity \(C\) is equal to the sum of all the probabilities that the code received was the one sent times the \(\log_2\) of the number of codes. The number of codes is simply our extrapolated \(M_0\), and the probability that we received what was sent is just \(\psi(r)\). This gives us a version of Helgert's method  
+We also now have the way to calculate the upper bound on our archaeological channel. Justeson referred to Helgert's [-@Helgert1967] simple method for finding the bound, but noted that it would take too much discussion to explain. That is true here as well, but it boils down to the channel capacity \(C\) is equal to the sum of the probabilities that a code received was the one sent times the \(\log_2\) of the number of codes. The number of codes is simply our extrapolated \(M_0\), and the probability that we received what was sent is just \(\psi(r)\). This gives us a version of Helgert's method  
 
 \[
     C \leq (1 - \sum_r \psi(r)) \times \log_2(M_0)
