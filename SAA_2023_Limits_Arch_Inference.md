@@ -304,7 +304,7 @@ These days, it is a relatively straightforward matter to fit a curve or distribu
 
 The goal of all of this effort was, in fact, to *find* that estimated distribution \(p_E(r)\). It represents our "best guess" as to what the original distribution of elements might have in the past, sight unseen. With that in hand, we now have a reasonable approximation for the *source* encoding and signal of the original archaeological deposition. That allows us to (finally) begin applying information theory proper to find out whether there is too much "noise" in the archaeological channel to transmit a reliable signal and if what we have is ultimately a feasible code.
 
-#### Noise Levels
+#### "Noise Levels"
 
 Now that we have an empirical estimate for the source code's rank-frequency distribution, we have the means to evaluate the *noise* incurred by passing the signal through our archaeological channel. To do so, we need to compare the ranked frequencies of the signal received \(p(r)\) with our extrapolation of the signal sent \(p_E(r)\). Noise is simply any interference between source and received signal, so all that we are doing is evaluating what proportion of what was observed to what we expect was sent. Justeson uses the definition for conditional probability, and a few simple and reasonable assumptions, to define a measure for the noise \(\psi(r)\) related to each ranked element \(r\).
 
@@ -358,19 +358,21 @@ Since \(\psi(r)\) is equivalent to \(p \lbrace v(u_i) \in A_i \rbrace \), which 
     \lambda \leq 1 - \min_r \psi(r)
 \]  
 
-In other words, the bigger the difference between our observed frequencies at rank \(r\) and its estimated frequency the more noise has prevented accurate decoding. Like a chain, our potential code is only as good as its weakest link so the smallest (i.e., worst) value of \(\psi(r)\) is our benchmark.[^fn16]
+In other words, the bigger the difference between our observed frequencies at rank \(r\) and its estimated frequency the more noise has prevented accurate decoding. Like a chain, our potential code is only as good as its weakest link so the smallest (i.e., worst) value of \(\psi(r)\) is our benchmark.[^fn16] In the design element data for the Joint site, \(\min_r \psi(r) = 0.5059\) and so \(\lambda = 0.4941\).
 
 [^fn16]: @Justeson1973 provides a more rigorous proof of \(\min_r \psi(r) = 1-\lambda\), but we have opted for a more intuitive description of the logic.
 
-We now have an estimate for one of the parameters to determine if the archaeological sample constitutes a code. Actually, we have estimates for *two* of the parameters now. By extrapolating \(M_0\), the number of elements in the source encoding, we also have an estimate for the second parameter out of the three (\(n\)) as well.
+We now have an estimate for one of the parameters to determine if the archaeological sample constitutes a code. Actually, we have estimates for *two* of the parameters now. By extrapolating \(M_0=122\), the number of elements in the source's encoding, we have an estimate for the second parameter out of the three (\(n\)) as well.
 
-We also now have the way to calculate the upper bound on our archaeological channel. Justeson referred to Helgert's [-@Helgert1967] simple method for finding the bound, but noted that it would take too much discussion to explain. That is true here as well, but it boils down to the channel capacity \(C\) is equal to the sum of the probabilities that a code received was the one sent times the \(\log_2\) of the number of codes. The number of codes is simply our extrapolated \(M_0\), and the probability that we received what was sent is just \(\psi(r)\). This gives us a version of Helgert's method  
+At this point, we are also able calculate the upper bound on our archaeological channel. Justeson referred to Helgert's [-@Helgert1967] method for finding the bound, but noted that it would take too much discussion to explain. That is true here as well, but in short the channel capacity \(C\) is equal to the sum of the probabilities that a code received was the one sent times the \(\log_2\) of the number of codes.[^fn17] The number of codes is simply our extrapolated \(M_0\), and the probability that we received what was sent is just \(\psi(r)\). This gives us a version of Helgert's method  
 
 \[
     C \leq \left ( 1 - \sum_r \psi(r) \right ) \times \log_2(M_0)
 \]  
 
-In Justeson's sample that works out to \(C \leq 6.6438\), providing us with a metric of the upper *limit* for the channel capacity (i.e., has to be "less than or equal to...").
+In Justeson's sample, that works out to \(C \leq 6.6438\) providing us with a metric of the upper *limit* for the channel capacity (i.e., has to be "less than or equal to...").
+
+[^fn17]: Helgert's method is based in linear algebra and some special properties of matrices, which in this particular case greatly simplifies the calculations because of the way \(\psi(r)\) is defined.
 
 <!-- >
 \[
@@ -392,7 +394,11 @@ In Justeson's sample that works out to \(C \leq 6.6438\), providing us with a me
     \end{aligned}
 \] -->
 
-#### Existence of a Code
+#### "Existence of a Code"
+
+We have now been able to extrapolate or estimate two of the code parameters (\(\lambda, n\)), estimates of both the rank-frequencies and noise factors (\(p_E(r), \psi(r)\)), and calculated the channel capacity. To determine whether or not this represents a valid code, we still need the one remaining parameter \(N\). Recall that \(N\) represents the number of \(n\)-length sequences available in the code, and that the maximum possible number of combinations of \(n\) symbols is \(2^n\). Finally, we have Wolfowitz's definition [-@Wolfowitz1961] of the relationship between \(n\) and \(N\) for a discrete finite-memory channel as \(N=2^{n(C-\epsilon)}\).
+
+Here, we run into a bit of an archaeological problem due to the nature of the sample -- i.e., we don't have a way to extrapolate or estimate \(N\) directly. The sample of design elements from the Joint site come from pottery sherds rather than whole vessels, which means that each observation is *not* a complete sequence. The question instead is whether there is a combination of values, given what we know, for which some value of \(N\) is even feasible.
 
 <!-- > The value of \(C - \epsilon\) must be less than \(1\) to be at all restrictive, since \(2^n\) is the number of different combinations than can be gotten from \(n\) elements, so that there will always be at most \(2^n\) code words. Since the value of \(\epsilon\) must lie between \(0\) and \(C\), our range of values for \(N = 2^{n(C - \epsilon)}\) is not limited any further. There will, therefore, at least if \(C > 1\), be a value of \(\epsilon\) for which the actual value of \(N\) is achieved, so that a code does exist in this case. -->
 
