@@ -262,15 +262,15 @@ Before the existence of a code can be determined, though, we have to figure out 
 
 Justeson adapted a method from Mackay's [-@Mackay1965] technique used to estimate the number of symbols there were in an unknown script from the characters found on the Phaistos Disc.[^fn11] It is simply based on how frequently each of the attributes occur in the sample (in this case, pottery design elements). This allows an extrapolation, from observed data, to estimate the number of total attributes in the source's system of codes. As an extrapolation, it does entail an initial assumption the the observable frequencies reflect a consistent and predictable underlying distribution.
 
-The estimates are based on the distribution of the *frequencies* rather than the attributes themselves. By adding up the *number* of elements \(N\) that occur exactly \(t\) times, we get the number of elements that occur *at least* \(t\) times (\(M_t\)) in the assemblage. This is expressed mathematically as:  
-
-[^fn11]: This technique is simple to implement and provides quick and reasonably accurate estimates. The reason, statistically, is that it leverages a common (though not fully understood) attribute of rank-frequency distributions that they tend to follow an exponential or power law distribution -- e.g., Zipf's law or a Pareto distribution. Basically, if you made 100 observations of 20 attributes, all 20 would occur at least once but very few would be likely to occur all 100 times. There are more robust and accurate methods of estimating these sorts of distributions available now, but the basic principle still holds true -- if events or attributes are not random, their frequency of occurrence will decay exponentially.
+The estimates are based on the distribution of the *frequencies* rather than the attributes themselves. By adding up the *number* of elements \(N_t\) that occur exactly \(t\) times, we get the number of elements that occur *at least* \(t\) times (\(M_t\)) in the assemblage. This is expressed mathematically as:  
 
 \[
     M_t = \sum^{T}_{i=t} N_i
-\]
+\]  
 
-We do this for \(t=1\) (every element is observed at least once) up to the frequency of the most common element \(T\) (i.e., the largest count of any element). For \(t=1\), \(M_1\) will equal the total number of elements observed in the sample. What we are trying to extrapolate or estimate is a value for \(M_0\), or the expected total number of elements in the *original* population including the ones that we have *not* seen.
+[^fn11]: This technique is simple to implement and provides quick and reasonably accurate estimates. The reason, statistically, is that it leverages a common (though not fully understood) attribute of rank-frequency distributions that they tend to follow an exponential or power law distribution -- e.g., Zipf's law or a Pareto distribution. Basically, if you made 100 observations of 20 attributes, all 20 would occur at least once but very few would be likely to occur all 100 times. There are more robust and accurate methods of estimating these sorts of distributions available now, but the basic principle still holds true -- if events or attributes are not random, their frequency of occurrence will decay exponentially.
+
+We do this for \(t=1\) (every element is observed at least once) up to the frequency of the most common element \(T\) (i.e., the largest count of any element). For \(t=1\), \(M_1\) will equal the total number of elements observed in the sample. What we are trying to extrapolate or estimate is a value for \(M_0\), or the expected total number of elements in the original *population* including the ones that we have not seen.
 
 ![\(M_0\) extrapolation.](./plotM.png)
 
@@ -280,11 +280,11 @@ Next, we want to calculate the total number of *observations* of elements that h
     L_t = \sum^{T}_{i=t} M_i
 \]
 
-Again, \(L_1\) is equal to the total number of observations in the sample. In general, the exact value for \(L_t\) is interesting only inasmuch as it describes the overall distribution of observations. Technically, the value indicates the remaining number of observations if \(t -1\) observations were removed from each of the \(N_i\) frequencies [from @Mackay1965, described above].
+Again, \(L_1\) is equal to the total number of observations in the sample. In general, the exact value for \(L_t\) is interesting only inasmuch as it describes the overall distribution of observations. Technically, the value indicates the remaining number of observations if \(t - 1\) observations were removed from each of the \(N_i\) frequencies [from @Mackay1965, described above].
 
 ![\(L_0\) extrapolation.](./plotL.png)
 
-You will note that \(N_i\), \(M_t\), and \(L_t\) all remove any link or reference to the original attributes or encodings. Information theory, by *design*, is only concerned with the statistical and probabilistic  properties of signals and channels. It is, effectively, a *meaning-* or *content-free* analysis of the transfer of information between source and receiver, irrespective of the meaningful content of those signals and messages. The goal is, instead, to ascertain the mere *existence* of viable information and transfer. Justeson's goal was to show that a code and channel are viable and sufficient to transmit archaeological information -- i.e., to *reduce the uncertainty* regarding the past behaviors encoded by the archaeologic record.
+You will note that \(N_i\), \(M_t\), and \(L_t\) all remove any link or reference to the original attributes or encodings. Information theory is, by *design*, only concerned with the statistical and probabilistic  properties of signals and channels. It is, effectively, a *meaning-* or *content-free* analysis of the transfer of information between source and receiver, irrespective of the meaningful content of those signals and messages. The goal is, instead, to ascertain the mere *existence* of viable information and transfer. Justeson's goal was to show that a code and channel are viable and sufficient to transmit archaeological information -- i.e., to *reduce the uncertainty* regarding the past behaviors encoded by the archaeologic record.
 
 To those ends, the *frequency* of occurrences -- rather than the codes themselves -- are the object of the analysis. Empirical distributions of \(M\) and \(L\) form the basis from which to extrapolate \(M_0\) (the full systems number of feature attributes) to make reasonable inferences about the distribution of those attributes in the original (i.e., the unobserved) system. We are working towards estimating the parameters needed to calculate the overall channel capacity and determine the noise affecting the signal. Without the source signal's probabilities, we have to effectively "reverse engineer" the channel from the receiving end.
 
@@ -313,22 +313,22 @@ Now that we have an empirical estimate for the source code's rank-frequency dist
         \psi(r) &= P(\text{receiving design element} \ r \ \text{given that} \ r \ \text{was sent})\\
         &=P(\text{receiving} \ r \ | \ r \ \text{was sent})
     \end{aligned}
-\]
+\]  
 
 We don't actually know that probability of receiving what was sent yet, though. We only know that we received element \(r\), and (the simple assumption) we would not have *unless* \(r\) was sent (i.e., we have \(P(r \ \text{sent and} \ r \ \text{received})\)).[^fn15] It may seem a subtle distinction, but it actually does change the mathematics of the probabilities involved. Luckily, there is an easy solution provided by the following definition:  
 
 \[
     P(A|B) = P(A \ \text{and} \ B) \div P(B)
-\]
+\]  
 
-This is known as the *conditional probability* of an event. In other words, it is the probability \(P\) of event \(A\) if we know event \(B\) has already happened (i.e., \(p(A|B)\) or "probability of \(A\) *given* \(B\)"). This is equal to the probability that \(A\) and \(B\) occur together (\(P(A \ \text{and} \ B)\) or \(P(A \cup B)\)) divided by the probability the \(B\) happens (\(P(B)\)). This means, by this definition for conditional probability, that:  
+This is known as the *conditional probability* of an event. In other words, it is the probability \(P\) of event \(A\) if we know event \(B\) has already happened (i.e., \(p(A|B)\) or "probability of \(A\) *given* \(B\)"). This is equal to the probability that \(A\) and \(B\) occur together (\(P(A \ \text{and} \ B)\) or \(P(A \cup B)\)) divided by the probability that \(B\) happens (\(P(B)\)). This means, by this definition for conditional probability, that:  
 
 \[
     \begin{aligned}
     P(r \ \text{sent and} \ r \ \text{received}) &= P(r \ \text{sent} \ | \ r \ \text{received}) \times P(r \ \text{received}) \text{, or alternatively} \\
     &= P(r \ \text{received} \ | \ r \ \text{sent}) \times P(r \ \text{sent}) \\
     \end{aligned}
-\]
+\]  
 
 The rather convenient result of this is that  
 
@@ -340,13 +340,13 @@ which means
 
 \[
     P(r \ \text{received} \ | \ r \ \text{sent}) = \frac{P(r \ \text{sent} \ | \ r \ \text{received}) \times P(r \ \text{received})}{P(r \ \text{sent})}
-\]
+\]  
 
 Justeson defined our noise factor \(\psi(r)\) as \(P(r \ \text{received} \ | \ r \ \text{sent})\), and we're making the assumption that we don't receive an element unless it was sent, so \(P(r \ \text{sent} \ | \ r \ \text{received})=1\). \(P(r \ \text{received})\) is our observed rank-frequency \(p(r)\), and \(P(r \ \text{sent})\) is just the extrapolated rank-frequency \(p_E(r)\). Substituting the terms leaves us with our measure for noise  
 
 \[
     \psi(r) = \frac{p(r)}{p_E(r)}
-\]
+\]  
 
 You might be wondering, at this point, why it is necessary to go through so much trouble to measure noise. Remember that for something to constitute a valid code it has to have a reasonable chance to be *de*coded. In the earlier definition of a code, this is the parameter \(\lambda\). The probability of accurate decoding, \(p \lbrace v(u_i) \in A_i \rbrace \), has to be greater than or equal to \(1-\lambda\). The larger \(\lambda\), the less chance of accurate decoding. In our case, that means finding the smallest ratio of \(p(r)\) to \(p_E(r)\), or \(\min_r \psi(r)\), which basically represents the "worst" decoding in our observations.
 
@@ -365,7 +365,7 @@ We now have an estimate for one of the parameters to determine if the archaeolog
 We also now have the way to calculate the upper bound on our archaeological channel. Justeson referred to Helgert's [-@Helgert1967] simple method for finding the bound, but noted that it would take too much discussion to explain. That is true here as well, but it boils down to the channel capacity \(C\) is equal to the sum of the probabilities that a code received was the one sent times the \(\log_2\) of the number of codes. The number of codes is simply our extrapolated \(M_0\), and the probability that we received what was sent is just \(\psi(r)\). This gives us a version of Helgert's method  
 
 \[
-    C \leq (1 - \sum_r \psi(r)) \times \log_2(M_0)
+    C \leq \left ( 1 - \sum_r \psi(r) \right ) \times \log_2(M_0)
 \]  
 
 In Justeson's sample that works out to \(C \leq 6.6438\), providing us with a metric of the upper *limit* for the channel capacity (i.e., has to be "less than or equal to...").
