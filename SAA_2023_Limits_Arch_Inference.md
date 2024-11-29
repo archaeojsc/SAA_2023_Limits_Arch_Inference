@@ -321,6 +321,8 @@ We don't actually know that probability of receiving what was sent yet, though. 
     P(A|B) = P(A \ \text{and} \ B) \div P(B)
 \]  
 
+[^fn15]: This is a logical assumption, "...since we do not expect to find different design elements in any instance than those that were applied by the prehistoric painter" [@Justeson1973, p. 140]. It is not a trivial one, though. It is conceivable that post-deposition processes might result in something that *appears* to be a design element, but is not in fact. While this scenario would be considered an effect of noise in the channel, its implications should also be considered in archaeological interpretations.
+
 This is known as the *conditional probability* of an event. In other words, it is the probability \(P\) of event \(A\) if we know event \(B\) has already happened (i.e., \(p(A|B)\) or "probability of \(A\) *given* \(B\)"). This is equal to the probability that \(A\) and \(B\) occur together (\(P(A \ \text{and} \ B)\) or \(P(A \cup B)\)) divided by the probability that \(B\) happens (\(P(B)\)). This means, by this definition for conditional probability, that:  
 
 \[
@@ -369,8 +371,6 @@ We also now have the way to calculate the upper bound on our archaeological chan
 \]  
 
 In Justeson's sample that works out to \(C \leq 6.6438\), providing us with a metric of the upper *limit* for the channel capacity (i.e., has to be "less than or equal to...").
-
-[^fn15]: This is a logical assumption, "...since we do not expect to find different design elements in any instance than those that were applied by the prehistoric painter" [@Justeson1973, p. 140]. It is not a trivial one, though. It is conceivable that post-deposition processes might result in something that *appears* to be a design element, but is not in fact. While this scenario would be considered an effect of noise in the channel, its implications should also be considered in archaeological interpretations.
 
 <!-- >
 \[
