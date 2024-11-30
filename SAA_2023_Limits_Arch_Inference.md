@@ -404,7 +404,8 @@ Wolfowitz's definition [-@Wolfowitz1961] of the relationship between \(n\) and \
 
 For values of channel capacity \(C\) and \(\epsilon\) to reduce \(N\) below that \(2^n\) maximum (i.e., be "restrictive"), \((C-\epsilon)\) would have to be \(\geq 0\) and less than \(1\). That value of \(\epsilon\) has to be between \(0\) and \(C\) so, as long as \(C\) is greater than \(1\), all of the possible values for \(\epsilon\) would result in a valid potential value for a real (albeit unknown) \(N\) and we have a legitimate code.
 
-The calculated upper bound for our channel's capacity from the Joint site was \(6.6438\), so the design elements found on the pottery sherds qualify as a legitimate code and signal. 
+The calculated upper bound for our channel's capacity from the Joint site was \(6.6438\), so the design elements found on the pottery sherds qualify as a legitimate code and signal. Justeson refers to this as a "rather convenient result, since the design element tabulations were made
+from sherds, which did not allow a determination of this empirical \(N\)" [-@Justeson1973, p. 141]. This is something of an understatement -- it actually demonstrated that incomplete data, with a substantial error rate of decoding, and transmitted along a noisy channel may *still* convey sufficient information to constitute a signal that can be decoded and interpreted. 
 
 <!-- > The value of \(C - \epsilon\) must be less than \(1\) to be at all restrictive, since \(2^n\) is the number of different combinations than can be gotten from \(n\) elements, so that there will always be at most \(2^n\) code words. Since the value of \(\epsilon\) must lie between \(0\) and \(C\), our range of values for \(N = 2^{n(C - \epsilon)}\) is not limited any further. There will, therefore, at least if \(C > 1\), be a value of \(\epsilon\) for which the actual value of \(N\) is achieved, so that a code does exist in this case. -->
 
