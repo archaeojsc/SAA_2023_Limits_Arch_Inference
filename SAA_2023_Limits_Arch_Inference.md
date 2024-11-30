@@ -398,7 +398,7 @@ In Justeson's sample, that works out to \(C \leq 6.6438\) providing us with a me
 
 We have now been able to extrapolate or estimate two of the code parameters (\(\lambda, n\)), estimates of both the rank-frequencies and noise factors (\(p_E(r), \psi(r)\)), and calculated the channel capacity. To determine whether or not this represents a valid code, we still need the one remaining parameter \(N\). Recall that \(N\) represents the number of \(n\)-length sequences available in the code, and that the maximum possible number of combinations of \(n\) symbols is \(2^n\). Finally, we have Wolfowitz's definition [-@Wolfowitz1961] of the relationship between \(n\) and \(N\) for a discrete finite-memory channel as \(N=2^{n(C-\epsilon)}\).
 
-Here, we run into a bit of an archaeological problem due to the nature of the sample -- i.e., we don't have a way to extrapolate or estimate \(N\) directly. The sample of design elements from the Joint site come from pottery sherds rather than whole vessels, which means that each observation is *not* a complete sequence.
+Here, we run into a bit of an archaeological problem due to the nature of the sample -- i.e., we don't have a way to extrapolate or estimate \(N\) directly. The sample of design elements from the Joint site come from pottery sherds rather than whole vessels, which means that each observation is *not* a complete sequence. 
 
 The question instead is whether there is a combination of values, given what we know, for which some value of \(N\) is even feasible. For values of channel capacity \(C\) and \(\epsilon\) to reduce \(N\) below the \(2^n\) maximum, \((C-\epsilon)\) would have to be less than \(1\). 
 
