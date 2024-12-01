@@ -406,9 +406,7 @@ For values of channel capacity \(C\) and \(\epsilon\) to reduce \(N\) below that
 
 Justeson refers to this as a "rather convenient result, since the design element tabulations were made from sherds, which did not allow a determination of this empirical \(N\)" [-@Justeson1973, p. 141]. This is something of an understatement -- it actually demonstrated that incomplete data, with a substantial error rate of decoding, and transmitted along a noisy channel may *still* convey sufficient information to constitute a signal that can be decoded and interpreted. That is a crucial result, considering the inherent nature of the archaeological record. It means that not only is the commonly fragmentary evidence of past behaviors susceptible to decoding, but that we have methods that can quantitatively evaluate the interpretive *capacity* of that evidence.
 
-<!-- #### Information Distortion -->
-
-<!-- #### System Dynamics -->
+#### "Information Distortion" and "System Dynamics"
 
 <!-- \[
     \begin{aligned}
