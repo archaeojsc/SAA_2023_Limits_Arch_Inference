@@ -410,22 +410,41 @@ Justeson refers to this as a "rather convenient result, since the design element
 
 Once we have established that a code exists, we can apply Shannon's concepts of entropy and surprisal to explore just how *much* information is available in our system. The existence of a code just means that a system is *interpretable*, but there still needs to be enough information represented *by* the code to have something to interpret. @Justeson1973 describes two such measures, which in combination characterize the quality and quantity of that information.
 
-The first is to see how whether and how much the information received has been *distorted* by the inherent noise in the channel. The second tells us how *informative* that information is by measuring whether the system encodes distinguishing features that can discriminate between uniquely identified aspects or attributes of the system. These, then, provide a way to measure the actual *limits* of our ability to interpret the information.
+The first is to see how whether and how much the information received has been *distorted* by the inherent noise in the channel. The second tells us how *informative* that information is by measuring whether the system encodes distinguishing features that can discriminate between uniquely identified aspects or attributes of the system. These, then, provide a way to measure the actual *limits* of our ability to interpret the information. Both measures use Shannon's equation for system entropy.
 
-<!-- \[
+The measure of *information distortion* is just the ratio of entropy of the system as observed \(H\) to the entropy of the system as expected \(H_E\) (i.e., \(H \div H_E\)). Remember, Shannon's entropy equation provides a measure of the potential information content of the system \(\cal{X}\) given by  
+
+\[
+    H( \cal{X} ) = - \sum_{i=1}^{n} p(x_i) \ \log_2 \ p(x_i)
+\]
+
+The observed system's entropy is calculated using \(p(r)\), and the expected entropy by \(p_E(r)\). If the ratio is less than \(1\), the the noise has resulted in an overall information loss. That would limit the ability of the observed information to support subsequent interpretations, but tells us how much we have lost in terms of the sample's representation of the original system. Conversely, a ratio greater than \(1\) says that signal loss has resulted in spurious patterns in the observed data.
+
+Furthermore, we can determine the significance of those effects by applying a Chi-squared test to see if the difference in the two entropy values is within what might be expected by random chance. In the case of Justeson's sample from the Joint site the observed entropy was \(H=5.3082\) and the expected was \(H_E = 5.4180\), giving a ratio of \(0.9797\) and a \(\chi^2\) value of \(0.0022\) (significant at \(p=0.02\)), suggesting the distortion was not necessarily significant.
+
+To measure how informative the system is, we need to see if the coding schema (e.g., a functional typology of attributes) is adequately representing real distinctions within the observations or if some codes are redundant or equivalent. We know from the rank-frequencies that some attributes occur much more frequently and, according to Shannon's definition of information, therefore less informative than are the more rare attributes. To find out, we first see what the system's entropy would be if all attributes occurred with *equal* frequency. If we have \(k\) attributes with equal probability \(p(k) = \frac{1}{k}\), then  
+
+\[
     \begin{aligned}
     H' &= -\sum_{i=1}^k p(x_i) \log_2 p(x_i) \\
     &= -\sum_{i=1}^k \frac{1}{k} \log_2 \frac{1}{k} \\
-    &= -\log_2 \frac{1}{k} \\
-    &= \log_2 k
+    &= -\log_2 \frac{1}{k} = \log_2 k
     \end{aligned}
 \]
+
+In the above, the sum of all \(\sum_k \frac{1}{k}\) just equals \(k \times \frac{1}{k}\), which equals \(1\), so we are left with \(H'= \log_2 k\). All that remains is to calculate the relative entropy for the observed and expected systems  
 
 \[
     h = H/H' \ \text{and} \ h_E = H_E/H'_E
 \]
 
-##### Binary Coding and Its Applications
+To find how much *redundancy* \(R\) exists in the attributes is just \(R = 1 - h\) by definition, since it assumes that all attributes are interchangeable (i.e., equal probability) and so effectively the same.
+
+The values for the Joint site's sample comes out to \(h=0.7990\) (\(R=0.2010\)) for teh observed and \(h_E = 0.7956\) (\(R_E = 0.2044\)). The values are too low for a \(\chi^2\) test, but they are obviously quite close to each other. More importantly, redundancy is relatively low compared to the entropy values. This, in effect, means that the rank-frequency distribution reflects *differential* selection of attributes rather than random selection among them.
+
+Again, Justeson does not overly highlight the *implications* of that finding, but it is really quite significant. By applying these entropy measures, we can essentially quantify the degree of *intentionality* behind the distribution of attributes. This allows us to directly measure, evaluate, and compare the effects of of systematic choices and intentions -- i.e., *purpose* [@LoughmillerCardinal2020] -- within the diversity of an assemblage.
+
+<!-- ##### Binary Coding and Its Applications
 
 > To set up the binary code for an attribute system, the attributes should first be ranked by frequency from highest to lowest; then the frequencies are divided into 2 groups with equal frequency totals, or with totals as nearly equal as is possible. The first group receives the code digit 0, and is made up of the higher-frequency elements, the second receives the digit 1 and is made up of the lower-frequency elements. Then the process is applied to each of these subgroups, and then continually to the resulting subgroups until all the attributes have been isolated in single-attribute groups. This process is represented schematically by Fig. 6. The binary codings themselves are given in Tables 1 and 2.
 >
