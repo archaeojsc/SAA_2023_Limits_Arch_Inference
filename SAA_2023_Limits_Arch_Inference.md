@@ -408,6 +408,8 @@ Justeson refers to this as a "rather convenient result, since the design element
 
 #### "Information Distortion" and "System Dynamics"
 
+Now that we have established that a code exists...
+
 <!-- \[
     \begin{aligned}
     H' &= -\sum_{i=1}^k p(x_i) \log_2 p(x_i) \\
