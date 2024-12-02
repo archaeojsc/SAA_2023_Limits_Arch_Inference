@@ -32,14 +32,14 @@ for(i in 1:length(M)) {
 
 # Get t
 
-t <- c(1:M[0])
+t <- c(1:M[1])
 
 # Calculate L
 
 L <- c()
 
-for (t in 1:length(M)) {
-  L[t] <- sum(M[t:length(M)])
+for (i in 1:length(M)) {
+  L[i] <- sum(M[i:length(M)])
 }
 
 plot(t[1:55],
