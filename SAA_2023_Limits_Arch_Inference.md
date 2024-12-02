@@ -31,7 +31,7 @@ indent: false
 
 What is now known as "Information Theory" began with a paper written by Claude Shannon, titled "A Mathematical Theory of Communication" [-@Shannon1948], resulting from his work in cryptography at Bell Labs. At the heart of Shannon's theory was the idea that *information* is fundamentally tied to the reduction of *uncertainty*. Shannon approached information not in terms of meaning, but as a measure of the *reduction of uncertainty* within a system of communication.
 
-The influence of telecommunication and cryptography on Shannon's theories are obvious, but the underlying concepts quickly found new applications and implications in other fields of study. By linking information to uncertainty and statistical probabilities, Shannon's abstracted and highly generalized model of information and communication could be adapted to studying all manner of systems. It would not be too long after the theories described in Shannon's technical paper were expanded and republished in a book a year later as "The Mathematical Theory of Communication" [@Shannon1949] that they would begin to appear in disciplines ranging form physics to physiology -- and, of course, archaeology.
+The influence of telecommunication and cryptography on Shannon's theories will become obvious, but the underlying concepts quickly found new applications and implications in other fields of study. By linking information to uncertainty and statistical probabilities, Shannon's abstracted and highly generalized model of information and communication could be adapted to studying all manner of systems. It would not be too long after the theories described in Shannon's technical paper were greatly expanded and republished the following year as "The Mathematical Theory of Communication" [@Shannon1949] that they would begin to appear in disciplines ranging from physics to physiology -- and, of course, eventually finding their way into archaeology.
 
 ### Information, Entropy, and Surprisal
 
@@ -187,7 +187,7 @@ The memory of a discrete archaeological channel therefore requires a bit more co
 
 Instead, he suggests, the more appropriate channel type would be a discrete *decreasing-memory* channel, in which prior events have less influence over time. Channels with decreasing memory are often analyzed through the lens of *ergodic processes* and *Markov models*, which help in quantifying the rate at which the influence of the past diminishes. These models would be beneficial in applications where the channel environment evolves slowly over time, where the channel state may vary due to factors like mobility or environmental changes [@Cover2001]. Unless, however, the rate of decreasing memory is constant -- i.e., they are *stationary*, which Justeson notes is not an appropriate assumption for human behavior -- such models are highly complex and computationally difficult to analyze.
 
-That leaves the specification of what an archaeological *code* might look like, and it is here where Justeson *really* starts to take a deep dive into the mathematical details.[^fn06] The definition for a code that Justeson presents is derived from @Wolfowitz1961, which requires some explanation. A code has to conform to certain minimum requirements for it to be predictably encoded and decoded as a signal.
+That leaves the specification of what an archaeological *code* might look like, and it is here where Justeson *really* starts to take a deep dive into the mathematical details.[^fn06] The definitions for code and channel capacity that Justeson presents are derived from @Wolfowitz1961, which require some explanation. A code has to conform to certain minimum requirements for it to be predictably encoded and decoded as a signal.
 
 [^fn06]: This is also the point, we expect, that many people (including this chapter's authors) might originally have had some difficulty in following the logic of the article. It requires a certain level of comfort with mathematical and set notation, some basic understanding of set theory, background in statistical and graphical analysis, and a general familiarity with rhetorical style of how mathematical models and proofs are presented. John himself had been a dual-major in anthropology and probability theory as an undergraduate at U.C. Berkeley, so was already well-versed in the "language" so to speak.
 
@@ -210,7 +210,7 @@ The second requirement brings in the probabilistic aspect of information theory.
     P \left \lbrace v(u_i) \in A_i \right \rbrace \geqslant 1 - \lambda, \ i=1,\ldots,N
 \]
 
-where \(v(u_i)\) is what is *actually* received when \(u_i\) is sent, \(P \lbrace v(u_i) \in A_i \rbrace\) is the probability that \(v(u_i)\) matches the correct decoding \(A_i\), and \(1-\lambda \geq 0\) is the allowed range of probabilities (i.e., to be a probability at all, \(\lambda > 0\) and \(\leq 1\)).
+where \(v(u_i)\) is what is *actually* received when \(u_i\) is sent, \(P \lbrace v(u_i) \in A_i \rbrace\) is the probability that \(v(u_i)\) matches the correct decoding \(A_i\), and \(1-\lambda \geq 0\) is a constraint on the allowed range of probabilities (i.e., to be a probability at all, \(\lambda \geq 0\) and \(\leq 1\)).
 
 As long as those two requirements are both met, then it is a legitimate code with parameters \(n\) (the lengths of sequences), \(N\) (the number of sequences or messages), and \(\lambda\) (the measure of probabilities).
 
@@ -244,7 +244,7 @@ where \(\pi = (\pi_1, \ldots  ,\pi_k)\) is the probability distribution for each
 
 [^fn09]: The notation used for this equation may be somewhat confusing, in part because the notation is different from that used previously to describe codes. In the second equation, \(j\) would be the same as \(A_i\) and \(i\) would be \(u_i\). The expression \(\omega(j|i)\) is another way to express each probability in \(P \lbrace v(u_i) \in A_i \rbrace\).
 
-[^fn10]: It isn't really necessary to understand all of what is going on in this rather complex formula, only that it is an analytical way to calculate a specific value for capacity from the tabulation of observable probabilities.
+[^fn10]: It isn't really necessary to understand all of what is going on in this rather complex equation, only that it is an analytical way to calculate a specific value for capacity from the tabulation of observable probabilities.
 
 Advances in both the power of computers and the development of optimized methods for handling large systems of equations now make these calculations relatively straightforward matters, but we are left with our archaeological problem -- we do not have access to the source signals, only the outputs, so we do not know *what* was sent. We do now know what we are looking for in order to determine if our archaeological data is a legitimate and interpretable code and prove that the archaeological record constitutes a viable channel to transmit that code.
 
@@ -252,55 +252,134 @@ The second part of @Justeson1973 shows us how to go about finding it.
 
 ### "Part II -- Application of Information-Theoretic Measures"
 
-<!-- ## Applications
- -->
+By way of demonstration, the second part of @Justeson1973 applies the principles of information theory to a specific archaeological assemblage. This is essentially a "proof of concept" application of quantitative measures to see whether a real collection of artifacts can be shown to reflect an underlying "code" and "signal" under the formal definitions of information theory. He chose to analyze the design elements for a collection of pottery sherds, since differences in such design and decorative elements are typically considered to distinguish between particular systems of cultural traditions and practices. They should, therefore, be an ideal test case to see if they can be shown to be a coherent system for encoding behavioral information in the formal sense. The sample assemblage came from the 1970 excavations at the Joint Site in Arizona, a large 36-room pueblo occupied form roughly 1100 to 1300 A.D. [@Justeson1973, p. 136].
 
-<!-- #### Extrapolation of the Prehistoric Distribution of Design Elements -->
+If the theory holds, then analysis of the design elements should show that they constitute a coherent code by which to encode a signal. That, in turn, would prove that the archaeological record constitutes a viable channel for the transmission of such codes as  archaeological signals from past behavioral systems. If, however, no such code can be proven then one of those underlying assumptions is mistaken. In other words, archaeological interpretation is inherently limited by whether or not there is sufficient information in the observed elements or attributes of the archaeological data to identify the mere existence of a code a all. If not, then there is not enough information to discriminate patterns in the data -- without consistent patterns, no feasibly legitimate interpretations. Without a code, there is *nothing to decode*.
 
-<!-- > The first step in using this technique is to tabulate the values of \(N_t\), the number of attributes occurring exactly t times in the sample, where the values of \(t\) range from \(1\) to \(T\), and \(T\) is the maximum number of times any attribute occurs. Then \(M_t\), the number of attributes occurring at least \(t\) times, is calculated and tabulated. \(M_t\) can be calculated from the formula:  
->
+#### "Extrapolation of the Prehistoric Distribution of Design Elements"
+
+Before the existence of a code can be determined, though, we have to figure out how many symbols or tokens there are in the system that we suspect *could* be a code. In Justeson's example, that means finding a way to extrapolate how many distinct design elements of pottery there are. Archaeologically, we likely only have a sample or *subset* of the original array of design elements -- we can never be quite sure that we have examples of *all* of them. Instead, we need to *estimate* how many there were (i.e., the original "population" of elements) by extrapolating from the observable sample that we do have. Moreover, we need to also estimate how common each element was likely to occur. Estimating a population from a sample is, of course, a common statistical problem.
+
+Justeson adapted a method from Mackay's [-@Mackay1965] technique used to estimate the number of symbols there were in an unknown script from the characters found on the Phaistos Disc.[^fn11] It is simply based on how frequently each of the attributes occur in the sample (in this case, pottery design elements). This allows an extrapolation, from observed data, to estimate the number of total attributes in the source's system of codes. As an extrapolation, it does entail an initial assumption the the observable frequencies reflect a consistent and predictable underlying distribution.
+
+The estimates are based on the distribution of the *frequencies* rather than the attributes themselves. By adding up the *number* of elements \(N_t\) that occur exactly \(t\) times, we get the number of elements that occur *at least* \(t\) times (\(M_t\)) in the assemblage. This is expressed mathematically as:  
+
 \[
     M_t = \sum^{T}_{i=t} N_i
-\]
-> \(M_1\) is the number of different design elements occurring in the sample.
->
-> Finally, \(L_t\) is calculated and tabulated. Its formula is  
+\]  
+
+[^fn11]: This technique is simple to implement and provides quick and reasonably accurate estimates. The reason, statistically, is that it leverages a common (though not fully understood) attribute of rank-frequency distributions that they tend to follow an exponential or power law distribution -- e.g., Zipf's law or a Pareto distribution. Basically, if you made 100 observations of 20 attributes, all 20 would occur at least once but very few would be likely to occur all 100 times. There are more robust and accurate methods of estimating these sorts of distributions available now, but the basic principle still holds true -- if events or attributes are not random, their frequency of occurrence will decay exponentially.
+
+We do this for \(t=1\) (every element is observed at least once) up to the frequency of the most common element \(T\) (i.e., the largest count of any element). For \(t=1\), \(M_1\) will equal the total number of elements observed in the sample. What we are trying to extrapolate or estimate is a value for \(M_0\), or the expected total number of elements in the original *population* including the ones that we have not seen.
+
+![\(M_0\) extrapolation.](./plotM.png)
+
+Next, we want to calculate the total number of *observations* of elements that have occurred at least \(t\) times (\(L_t\)). This is a cumulative sum as well, so we add up every value of \(M\) from \(t\) to \(T\):  
+
 \[
     L_t = \sum^{T}_{i=t} M_i
 \]
-> \(L_t\) has no meaning except when \(t = 1\), at which point it is the number of occurrences of attributes in the sample.
->
-> From the curve obtained, a value at \(t = 0\) can be extrapolated to give \(M_0\), the number of attributes occurring at least \(0\) times in the sample -- the total number of attributes in the system. Since \(L_0 = M_0 + L_1\), the extrapolation of \(L_0\) provides an alternate check on \(M_0\). -->
 
-<!-- #### Noise Levels -->
+Again, \(L_1\) is equal to the total number of observations in the sample. In general, the exact value for \(L_t\) is interesting only inasmuch as it describes the overall distribution of observations. Technically, the value indicates the remaining number of observations if \(t - 1\) observations were removed from each of the \(N_i\) frequencies [from @Mackay1965, described above].
 
-<!-- calculate noise factor for each design element -->
+![\(L_0\) extrapolation.](./plotL.png)
 
-<!-- > To calculate the noise factor for each design element [\( \psi(r) \), where \(r\) is the rank by decreasing frequency of the design element and \(p(r)\) is the frequency of the element of rank \(r\)] (*sic*), let
+You will note that \(N_i\), \(M_t\), and \(L_t\) all remove any link or reference to the original attributes or encodings. Information theory is, by *design*, only concerned with the statistical and probabilistic  properties of signals and channels. It is, effectively, a *meaning-* or *content-free* analysis of the transfer of information between source and receiver, irrespective of the meaningful content of those signals and messages. The goal is, instead, to ascertain the mere *existence* of viable information and transfer. Justeson's goal was to show that a code and channel are viable and sufficient to transmit archaeological information -- i.e., to *reduce the uncertainty* regarding the past behaviors encoded by the archaeologic record.
+
+To those ends, the *frequency* of occurrences -- rather than the codes themselves -- are the object of the analysis. Empirical distributions of \(M\) and \(L\) form the basis from which to extrapolate \(M_0\) (the full systems number of feature attributes) to make reasonable inferences about the distribution of those attributes in the original (i.e., the unobserved) system. We are working towards estimating the parameters needed to calculate the overall channel capacity and determine the noise affecting the signal. Without the source signal's probabilities, we have to effectively "reverse engineer" the channel from the receiving end.
+
+The last thing we need then is to estimate the distribution of those frequencies across all of the system's elements. To do this we compare the ranking of those frequencies (\(r\)) -- ordered from highest frequency to lowest -- and the observed frequencies for each element \(p(r)\).[^fn12] We needed a value for \(M_0\) to be able to "fix" one end of the distribution of those frequencies with a point \(p(M_0+1)\) = 0 so that we can estimate the *ideal* or natural frequency distribution of the system \(p_E(r)\).[^fn13]
+
+[^fn12]: The frequencies of the elements were scaled by the overall minimum and maximum values to be between 0 and 1.
+
+[^fn13]: If we expect that there are \(M_0\) elements in the system, then the frequency of an element with a rank greater than \(M_0\) would logically have to be zero.
+
+![Rank-frequency graph.](./plot_rank_frequency.png)
+
+From here, it is a matter of fitting a curve to each of these empirical distributions to find the extrapolated values for \(M_0\) and \(L_0\). Once we have those, we can generate an estimate for the distribution of values in the source signal's rank-frequency distribution \(p_E(r)\).
+
+These days, it is a relatively straightforward matter to fit a curve or distribution to data points using statistical software on just about any available computer. At the time the article was written, however, it required manually fitting from a physical template of ideal curves, which would be laid over the points plotted onto graph paper to find the best fit. Arguably a bit subjective, but in practice nearly as accurate and (with a large enough sheet of graph paper) surprisingly precise.[^fn14]
+
+[^fn14]: To give a sense of the difficulties in analog graph curve fitting -- "The graph paper used was about 11 ft long, that scale allowing an extrapolation to five decimal places." [@Justeson1973, p.140]
+
+The goal of all of this effort was, in fact, to *find* that estimated distribution \(p_E(r)\). It represents our "best guess" as to what the original distribution of elements might have in the past, sight unseen. With that in hand, we now have a reasonable approximation for the *source* encoding and signal of the original archaeological deposition. That allows us to (finally) begin applying information theory proper to find out whether there is too much "noise" in the archaeological channel to transmit a reliable signal and if what we have is ultimately a feasible code.
+
+#### "Noise Levels"
+
+Now that we have an empirical estimate for the source code's rank-frequency distribution, we have the means to evaluate the *noise* incurred by passing the signal through our archaeological channel. To do so, we need to compare the ranked frequencies of the signal received \(p(r)\) with our extrapolation of the signal sent \(p_E(r)\). Noise is simply any interference between source and received signal, so all that we are doing is evaluating what proportion of what was observed to what we expect was sent. Justeson uses the definition for conditional probability, and a few simple and reasonable assumptions, to define a measure for the noise \(\psi(r)\) related to each ranked element \(r\).
+
 \[
     \begin{aligned}
         \psi(r) &= P(\text{receiving design element} \ r \ \text{given that} \ r \ \text{was sent})\\
         &=P(\text{receiving} \ r \ | \ r \ \text{was sent})
     \end{aligned}
-\]
->
-> But \( P(A|B) = P(A \ \text{and} \ B) \div P(B) \)[^fn05], so  
->
+\]  
+
+We don't actually know that probability of receiving what was sent yet, though. We only know that we received element \(r\), and (the simple assumption) we would not have *unless* \(r\) was sent (i.e., we have \(P(r \ \text{sent and} \ r \ \text{received})\)).[^fn15] It may seem a subtle distinction, but it actually does change the mathematics of the probabilities involved. Luckily, there is an easy solution provided by the following definition:  
+
+\[
+    P(A|B) = P(A \ \text{and} \ B) \div P(B)
+\]  
+
+[^fn15]: This is a logical assumption, "...since we do not expect to find different design elements in any instance than those that were applied by the prehistoric painter" [@Justeson1973, p. 140]. It is not a trivial one, though. It is conceivable that post-deposition processes might result in something that *appears* to be a design element, but is not in fact. While this scenario would be considered an effect of noise in the channel, its implications should also be considered in archaeological interpretations.
+
+This is known as the *conditional probability* of an event. In other words, it is the probability \(P\) of event \(A\) if we know event \(B\) has already happened (i.e., \(p(A|B)\) or "probability of \(A\) *given* \(B\)"). This is equal to the probability that \(A\) and \(B\) occur together (\(P(A \ \text{and} \ B)\) or \(P(A \cup B)\)) divided by the probability that \(B\) happens (\(P(B)\)). This means, by this definition for conditional probability, that:  
+
 \[
     \begin{aligned}
-    P(r \ \text{sent and} \ r \ \text{received}) &= P(r \ \text{sent} \ | \ r \ \text{received}) \cdot P(r \ \text{received}) \\
-    &= P(r \ \text{received} \ | \ r \ \text{sent}) \cdot P(r \ \text{sent}) \\
+    P(r \ \text{sent and} \ r \ \text{received}) &= P(r \ \text{sent} \ | \ r \ \text{received}) \times P(r \ \text{received}) \text{, or alternatively} \\
+    &= P(r \ \text{received} \ | \ r \ \text{sent}) \times P(r \ \text{sent}) \\
     \end{aligned}
-\]
->
-> But \(P(r \ \text{received} \ | \ r \ \text{sent}) = \psi(r)\); \(P(r \ \text{sent}) = p_E(r)\), the extrapolated frequency for the design
-element \(r\); \(P(r \ \text{sent} \ | \ r \ \text{received}) = 1\); and \(P(r \ \text{received}) = p(r)\). Thus, \(\psi(r) = p(r)/p_E(r)\). To find the parameter \(\lambda\) of our code we must find the minimum of the \(\psi(r)\) values,
->
+\]  
+
+The rather convenient result of this is that  
+
+\[
+    P(r \ \text{received} \ | \ r \ \text{sent}) \times P(r \ \text{sent}) = P(r \ \text{sent} \ | \ r \ \text{received}) \times P(r \ \text{received})
+\]  
+
+which means  
+
+\[
+    P(r \ \text{received} \ | \ r \ \text{sent}) = \frac{P(r \ \text{sent} \ | \ r \ \text{received}) \times P(r \ \text{received})}{P(r \ \text{sent})}
+\]  
+
+Justeson defined our noise factor \(\psi(r)\) as \(P(r \ \text{received} \ | \ r \ \text{sent})\), and we're making the assumption that we don't receive an element unless it was sent, so \(P(r \ \text{sent} \ | \ r \ \text{received})=1\). \(P(r \ \text{received})\) is our observed rank-frequency \(p(r)\), and \(P(r \ \text{sent})\) is just the extrapolated rank-frequency \(p_E(r)\). Substituting the terms leaves us with our measure for noise  
+
+\[
+    \psi(r) = \frac{p(r)}{p_E(r)}
+\]  
+
+You might be wondering, at this point, why it is necessary to go through so much trouble to measure noise. Remember that for something to constitute a valid code it has to have a reasonable chance to be *de*coded. In the earlier definition of a code, this is the parameter \(\lambda\). The probability of accurate decoding, \(p \lbrace v(u_i) \in A_i \rbrace \), has to be greater than or equal to \(1-\lambda\). The larger \(\lambda\), the less chance of accurate decoding. In our case, that means finding the smallest ratio of \(p(r)\) to \(p_E(r)\), or \(\min_r \psi(r)\), which basically represents the "worst" decoding in our observations.
+
+Since \(\psi(r)\) is equivalent to \(p \lbrace v(u_i) \in A_i \rbrace \), which must be \(\geq 1-\lambda\), then it must be that  
+
+\[
+    \lambda \leq 1 - \min_r \psi(r)
+\]  
+
+In other words, the bigger the difference between our observed frequencies at rank \(r\) and its estimated frequency the more noise has prevented accurate decoding. Like a chain, our potential code is only as good as its weakest link so the smallest (i.e., worst) value of \(\psi(r)\) is our benchmark.[^fn16] In the design element data for the Joint site, \(\min_r \psi(r) = 0.5059\) and so \(\lambda = 0.4941\).
+
+[^fn16]: @Justeson1973 provides a more rigorous proof of \(\min_r \psi(r) = 1-\lambda\), but we have opted for a more intuitive description of the logic.
+
+We now have an estimate for one of the parameters to determine if the archaeological sample constitutes a code. Actually, we have estimates for *two* of the parameters now. By extrapolating \(M_0=122\), the number of elements in the source's encoding, we have an estimate for the second parameter out of the three (\(n\)) as well.
+
+At this point, we are also able calculate the upper bound on our archaeological channel. Justeson referred to Helgert's [-@Helgert1967] method for finding the bound, but noted that it would take too much discussion to explain. That is true here as well, but in short the channel capacity \(C\) is equal to the sum of the probabilities that a code received was the one sent times the \(\log_2\) of the number of codes.[^fn17] The number of codes is simply our extrapolated \(M_0\), and the probability that we received what was sent is just \(\psi(r)\). This gives us a version of Helgert's method  
+
+\[
+    C \leq \left ( 1 - \sum_r \psi(r) \right ) \times \log_2(M_0)
+\]  
+
+In Justeson's sample, that works out to \(C \leq 6.6438\) providing us with a metric of the upper *limit* for the channel capacity (i.e., has to be "less than or equal to...").
+
+[^fn17]: Helgert's method is based in linear algebra and some special properties of matrices, which in this particular case greatly simplifies the calculations because of the way \(\psi(r)\) is defined.
+
+<!-- >
 \[
     \begin{aligned}
-    \min_r \ \psi(r) &= \min_r P(r \ \text{received} \ | \ r \ \text{sent}) \\
-    &= \min_r 1 - P(r \ \text{not received} \ | \ r \ \text{sent}) \\
-    &= \max_r P(r \ \text{not received} \ | \ r\ \text{sent}) \\
+    \min_r \ \psi(r) &= \min_r \biggl \lbrack P(r \ \text{received} \ | \ r \ \text{sent}) \biggr \rbrack \\
+    &= \min_r \biggl \lbrack 1 - P(r \ \text{not received} \ | \ r \ \text{sent}) \biggr \rbrack \\
+    &= \max_r \biggl \lbrack P(r \ \text{not received} \ | \ r\ \text{sent}) \biggr \rbrack\\
     &= 1- \lambda
     \end{aligned}
 \]
@@ -313,17 +392,21 @@ element \(r\); \(P(r \ \text{sent} \ | \ r \ \text{received}) = 1\); and \(P(r \
     &= \sum_r p_E(r) \left \lbrack p(r) \div p_E(r) \right \rbrack \\
     &= \sum_r p(r) = 1
     \end{aligned}
-\]
+\] -->
 
-[^fn05]: This is known as the *conditional probability* of an event. In other words, what is the probability of event \(A\) if we know event \(B\) has happened (i.e., \(p(A|B)\) or "probability of \(A\) *given* \(B\)"), which is equal to the probability that \(A\) and \(B\) occur together (\(P(A \ \text{and} \ B)\) or \(P(A \cup B)\)) divided by the probability the \(B\) happens (\(P(B)\)). -->
+#### "Existence of a Code"
 
-<!-- #### Existence of a Code -->
+This section is very brief but incredibly important to the paper's thesis. It succinctly presents a deceptively simple argument that even incomplete data may still constitute a viable encoding and signal to transmit information. We have now been able to extrapolate or estimate two of the code parameters (\(\lambda, n\)), estimates of both the rank-frequencies and noise factors (\(p_E(r), \psi(r)\)), and calculated the channel capacity \(C\). To determine whether or not our observed data represents a valid code, however, we still need the one remaining code parameter \(N\).
 
-<!-- > The value of \(C - \epsilon\) must be less than \(1\) to be at all restrictive, since \(2^n\) is the number of different combinations than can be gotten from \(n\) elements, so that there will always be at most \(2^n\) code words. Since the value of \(\epsilon\) must lie between \(0\) and \(C\), our range of values for \(N = 2^{n(C - \epsilon)}\) is not limited any further. There will, therefore, at least if \(C > 1\), be a value of \(\epsilon\) for which the actual value of \(N\) is achieved, so that a code does exist in this case. -->
+Here, we run into a bit of an archaeological dilemma due to the nature of the sample -- i.e., we don't have a way to extrapolate or estimate \(N\) directly. The sample of design elements from the Joint site come from pottery sherds rather than whole vessels, which means that each observation is *not* a complete sequence. Recall that \(N\) represents the number of \(n\)-length sequences available in the code, so the lack of complete sequences means that we do not have any way to even *estimate* \(N\). Justeson obviates the problem by reframing the question as whether there is a combination of values, given what we know, that would return a feasible value for \(N\).
 
-<!-- #### Information Distortion -->
+Wolfowitz's definition [-@Wolfowitz1961] of the relationship between \(n\) and \(N\) for a discrete finite-memory channel is that \(N=2^{n(C-\epsilon)}\). That relationship *must* hold true given the values for \(n\) and \(C\) that we have extrapolated from the received data, or it cannot be a valid code. In other words, the question we need to answer is whether there *can be* any value of \(\epsilon\), given \(n\) and \(C\), that would result in a feasible value for \(N\). Since this is a discrete channel, that means \(N\) has to be an integer \(\geq 1\) and \( \leq 2^n\) (the maximum number of possible combinations for \(n\) elements).
 
-<!-- #### System Dynamics -->
+For values of channel capacity \(C\) and \(\epsilon\) to reduce \(N\) below that \(2^n\) maximum (i.e., be "restrictive"), \((C-\epsilon)\) would have to be \(\geq 0\) and less than \(1\). That value of \(\epsilon\) has to be between \(0\) and \(C\) so, as long as \(C\) is greater than \(1\), all of the possible values for \(\epsilon\) could result in a valid potential value for a real (albeit unknown) \(N\) and we have a legitimate code. The calculated upper bound for our channel's capacity from the Joint site was \(6.6438\), so the design elements found on the pottery sherds qualify as a legitimate code and signal.
+
+Justeson refers to this as a "rather convenient result, since the design element tabulations were made from sherds, which did not allow a determination of this empirical \(N\)" [-@Justeson1973, p. 141]. This is something of an understatement -- it actually demonstrated that incomplete data, with a substantial error rate of decoding, and transmitted along a noisy channel may *still* convey sufficient information to constitute a signal that can be decoded and interpreted. That is a crucial result, considering the inherent nature of the archaeological record. It means that not only is the commonly fragmentary evidence of past behaviors susceptible to decoding, but that we have methods that can quantitatively evaluate the interpretive *capacity* of that evidence.
+
+#### "Information Distortion" and "System Dynamics"
 
 <!-- \[
     \begin{aligned}
