@@ -408,7 +408,9 @@ Justeson refers to this as a "rather convenient result, since the design element
 
 #### "Information Distortion" and "System Dynamics"
 
-Now that we have established that a code exists...
+Once we have established that a code exists, we can apply Shannon's concepts of entropy and surprisal to explore just how *much* information is available in our system. The existence of a code just means that a system is *interpretable*, but there still needs to be enough information represented *by* the code to have something to interpret. @Justeson1973 describes two such measures, which in combination characterize the quality and quantity of that information.
+
+The first is to see how whether and how much the information received has been *distorted* by the inherent noise in the channel. The second tells us how *informative* that information is by measuring whether the system encodes distinguishing features that can discriminate between uniquely identified aspects or attributes of the system. These, then, provide a way to measure the actual *limits* of our ability to interpret the information.
 
 <!-- \[
     \begin{aligned}
