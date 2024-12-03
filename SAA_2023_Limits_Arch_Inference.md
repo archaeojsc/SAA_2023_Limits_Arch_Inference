@@ -459,7 +459,11 @@ Doing so allows us to calculate a *new* entropy measure for the binary encoding 
     H^\ast = \sum_{i=1}^k p(x_i) b(x_i)
 \]
 
-where \(b(x_i)\) is the length of the binary code, \(k\) is the number of codes, and \(p(x_i)\) is the code's frequency. The *efficiency* of the coding system \( h^\ast\), then, is the entropy in the system of attributes (i.e., the same as we calculated for measuring distortion, above) to the entropy of the binary coding or \(h^\ast = H / H^\ast\). For the Joint site attributes this results in \(h^\ast = 99.21\%\) for the observed ranks and \(h_E^\ast = 97.12\%\) for the extrapolated rank frequencies, suggesting that the attribute typology used for the sample of pottery sherds was highly efficient. In other words, the attributes were categorized in a way that would likely have been recognizable to the people that created them.
+where \(b(x_i)\) is the length of the binary code, \(k\) is the number of codes, and \(p(x_i)\) is the code's frequency. The *efficiency* of the coding system \( h^\ast\), then, is the entropy in the system of attributes (i.e., the same as we calculated for measuring distortion, above) to the entropy of the binary coding or \(h^\ast = H / H^\ast\).
+
+For the Joint site attributes this results in \(h^\ast = 99.21\%\) for the observed ranks and \(h_E^\ast = 97.12\%\) for the extrapolated rank frequencies, suggesting that the attribute typology used for the sample of pottery sherds was highly efficient. In other words, the attributes were categorized in a way that would likely have been recognizable distinctions to the people that created them. 
+
+The implications of being able to *quantitatively* evaluate the efficiency and efficacy of our archaeological typologies to reflect actual perceptions and categories of past behavior are substantial. This allows us to not only measure the propriety of our analytical units, but also to directly compare between competing theoretical typologies for the same assemblages.
 
 ## Discussion
 
