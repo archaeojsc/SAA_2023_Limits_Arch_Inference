@@ -442,11 +442,22 @@ To find how much *redundancy* \(R\) exists in the attributes is just \(R = 1 - h
 
 The values for the Joint site's sample comes out to \(h=0.7990\) (\(R=0.2010\)) for the observed and \(h_E = 0.7956\) (\(R_E = 0.2044\)). The values are too low for a \(\chi^2\) test, but they are obviously quite close to each other. More importantly, redundancy is relatively low compared to the entropy values. This, in effect, means that the rank-frequency distribution reflects *differential* selection of attributes rather than random selection among them.
 
-Again, Justeson does not overly highlight the *implications* of that finding, but it is really quite significant. By applying these entropy measures, we can essentially quantify the degree of *intentionality* behind the distribution of attributes. This allows us to directly measure, evaluate, and compare the effects of of systematic choices and intentions -- i.e., *purpose* [@LoughmillerCardinal2020] -- within the diversity of an assemblage.
+Again, Justeson does not overly highlight the *implications* of that finding, but it is really quite significant. By applying these entropy measures, we can essentially quantify the degree of *intentionality* behind the distribution of attributes. This allows us to directly measure, evaluate, and compare the effects of of systematic choices and intentions -- i.e., an indicator of *purpose* [@LoughmillerCardinal2020] -- within the diversity of an assemblage.
 
-<!-- ##### Binary Coding and Its Applications
+#### "Binary Coding and Its Applications"
 
-> To set up the binary code for an attribute system, the attributes should first be ranked by frequency from highest to lowest; then the frequencies are divided into 2 groups with equal frequency totals, or with totals as nearly equal as is possible. The first group receives the code digit 0, and is made up of the higher-frequency elements, the second receives the digit 1 and is made up of the lower-frequency elements. Then the process is applied to each of these subgroups, and then continually to the resulting subgroups until all the attributes have been isolated in single-attribute groups. This process is represented schematically by Fig. 6. The binary codings themselves are given in Tables 1 and 2.
+The last section of the article deals with information entropy measures to evaluate the *efficiency* of the coding system itself. In archaeological terms, this allows a quantitative measure of how effectively our selection of specific attributes or features discriminates real patterns encoded by the intentional distinctions and selections made by the originating behaviors. This method gives archaeologists a way to ascertain if the patterns that *we* are seeing within the archaeological record, or the categories we are presuming existed, match up to the systematic patterns of behavior and categorical perceptions of people in the past. For example, we could apply these measures to see if functional or stylistic typologies would be *recognizable* to those past populations [@LoughmillerCardinal2020].
+
+
+
+![Binary coding schematics ["Fig. 6" in @Justeson1973, p.144].](./Justeson_1973_figure_6.png)
+
+## Discussion
+
+
+
+
+<!-- > To set up the binary code for an attribute system, the attributes should first be ranked by frequency from highest to lowest; then the frequencies are divided into 2 groups with equal frequency totals, or with totals as nearly equal as is possible. The first group receives the code digit 0, and is made up of the higher-frequency elements, the second receives the digit 1 and is made up of the lower-frequency elements. Then the process is applied to each of these subgroups, and then continually to the resulting subgroups until all the attributes have been isolated in single-attribute groups. This process is represented schematically by Fig. 6. The binary codings themselves are given in Tables 1 and 2.
 >
 > Given this data we compute \(H^*\), the information content of the system in terms of binary coding, or, in other words, the maximum information retrievable for a given frequency distribution, by the formula  
 \[
