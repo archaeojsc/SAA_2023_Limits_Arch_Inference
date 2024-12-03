@@ -455,6 +455,7 @@ To do this requires first converting the *rank* of attributes into a binary code
 ![Binary coding schematics ["Fig. 6" in @Justeson1973, p.144].](./Justeson_1973_figure_6.png){#figure:binary-code}
 
 Doing so allows us to calculate a *new* entropy measure for the binary encoding itself \(H^\ast\), which is given by  
+
 \[
     H^\ast = \sum_{i=1}^k p(x_i) b(x_i)
 \]
@@ -465,8 +466,11 @@ For the Joint site attributes this results in \(h^\ast = 99.21\%\) for the obser
 
 The implications of being able to *quantitatively* evaluate the efficiency and efficacy of our archaeological typologies to reflect actual perceptions and categories of past behavior are substantial. This allows us to not only measure the propriety of our analytical units, but also to directly compare between competing theoretical typologies for the same assemblages.
 
+It provides a set of measures by which to assess, with mathematical precision, what we can or cannot say about the past from the data that we have. In short, it *calculates* the limitations of archaeological interpretation.
+
 ## Discussion
 
+Justeson's article was just as theoretically dense as it was mathematically rigorous. He did not, however, dwell overmuch on the significance or methodological implications of the findings. Instead, he merely presents his reasoning and hypotheses then proves them with mathematical precision. It leaves it to the reader to follow those threads of argument, in the mathematical language of information theory, to their logical conclusions. While this may explain why the article has not achieved the same kind of reception or notoriety as other better-known works such as those of @Clarke1978, @Renfrew1983, or @Schiffer1987 it certainly does not detract from its significance. @Justeson1973 provides a wealth of theoretical and methodological insights addressing -- and arguably *answering* -- some of the most prominent theoretical debates in archaeology of the time.
 
 
 
