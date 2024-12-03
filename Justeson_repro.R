@@ -32,7 +32,7 @@ for(i in 1:length(M)) {
 
 # Get t
 
-t <- c(1:M[1])
+t <- c(1:length(M))
 
 # Calculate L
 
