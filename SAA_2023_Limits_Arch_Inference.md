@@ -29,7 +29,7 @@ indent: false
 
 ## Introduction
 
-...
+In the academic version of "... if a tree falls in the forest,..." there are many articles published that, unfortunately, do not easily find their audience. More so when such a publication pushes the boundaries of what people think they already know, or stretches into new territory of what can be done. In 1973, *American Antiquity* published an article that ambitiously tried to do both at the same time, and do so in a way that required relative fluency in mathematics and the logic of statistical and probabilistic systems. Even at the height of the "New" or "Processual" archaeology, ...
 
 <!-- * Quantitative approaches in archaeology beginning with Petrie's application of sequence dating (i.e., seriation) in 1899 [@Kendall1969].
 * It was not until the 1950s that formal statistical methods started to play a more substantial role in archaeological methodologies [@Ammerman1992]. Early work by archaeologists such as @Brainerd1951, @Spaulding1953, and @Heizer1956 foreshadowed an emergent *computational archaeology* [@Djindjian2015].
