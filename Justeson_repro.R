@@ -22,7 +22,7 @@ for (i in 2:length(M)) {
 # Zipf models
 library(zipfR)
 
-joint_site.tfl < zipfR::tfl(f = code_fq) # term frequency list
+joint_site.tfl <- zipfR::tfl(f = code_fq) # term frequency list
 joint_site.spc <- tfl2spc(joint_site.tfl) # frequency spectra
 
 #  Large-Number-of-Rare-Event (LNRE) model
