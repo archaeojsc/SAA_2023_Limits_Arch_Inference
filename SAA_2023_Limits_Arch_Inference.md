@@ -9,8 +9,8 @@ author:
     - James Scott Cardinal
     - Jennifer Ann Loughmiller-Cardinal
 
-abstract: |
-    Fifty years ago, what was arguably the most important paper ever written for modern work in quantitative archaeology was published in American Antiquity. Unfortunately for its author, and generations of archaeologists, few took notice of it at the time. With few citations, more than half of which have occurred in just the last few years, its elegance and mathematical precision went largely unappreciated -- even by the growing cohorts of computational and quantitative archaeologists whose work would have greatly benefited from it. In this paper, we demonstrate that John Justeson's 1973 article "Limitations of Archaeological Inference" was not only accurate and precise in its implications, but also very much still at the forefront of archaeological thought... even if the field at large doesn't yet realize it.
+# abstract: |
+#    Fifty years ago, what was arguably the most important paper ever written for modern work in quantitative archaeology was published in American Antiquity. Unfortunately for its author, and generations of archaeologists, few took notice of it at the time. With few citations, more than half of which have occurred in just the last few years, its elegance and mathematical precision went largely unappreciated -- even by the growing cohorts of computational and quantitative archaeologists whose work would have greatly benefited from it. In this paper, we demonstrate that John Justeson's 1973 article "Limitations of Archaeological Inference" was not only accurate and precise in its implications, but also very much still at the forefront of archaeological thought... even if the field at large doesn't yet realize it.
 
 bibliography: 2023_SAA.bib
 reference-section-title: "References Cited"
@@ -26,6 +26,42 @@ geometry: margin = 1in
 indent: false
 
 ---
+
+## Introduction
+
+...
+
+<!-- * Quantitative approaches in archaeology beginning with Petrie's application of sequence dating (i.e., seriation) in 1899 [@Kendall1969].
+* It was not until the 1950s that formal statistical methods started to play a more substantial role in archaeological methodologies [@Ammerman1992]. Early work by archaeologists such as @Brainerd1951, @Spaulding1953, and @Heizer1956 foreshadowed an emergent *computational archaeology* [@Djindjian2015].
+* By the 1970s
+* 
+
+Fifty years ago, what arguably could have been one of the most important papers written for modern work in quantitative archaeology was published in American Antiquity. Unfortunately for its author, and generations of archaeologists, it received relatively little attention at the time. With few citations, more than half of which have occurred in just the last few years, its elegance and mathematical precision went largely unappreciated.
+
+John Justeson's article "Limitations of archaeological inference: an information-theoretic approach with applications in methodology" [-@Justeson1973] was rather ambitious, as can be seen from its abstract:
+
+> "A framework is established for the application of information-theoretic concepts to the study of archaeological inference, ultimately to provide an estimate of the degree to which archaeologists, or anthropologists in general, can provide legitimate answers to the questions they investigate. Particular information-theoretic measures are applied to the design elements on the ceramics of a southwestern pueblo to show the methodological utility of information theory in helping to reach closer to that limit." [@Justeson1973]
+
+The premise was actually quite straightforward -- behavioral information is "encoded" in the material artifacts deposited within an archaeological site, and the archaeologist's goal is to "decode" that information on the other end. The novelty was that John saw this "encoding-decoding" process as an information flow that could be described by what was (at the time) a relatively esoteric set of mathematical tools known as *information theory*.
+
+The foundations of information theory were developed by Claude Shannon as a way to analyze the transmission of information *independently* of the content of a message.
+
+> "The fundamental problem of communication is that of reproducing at one point either exactly or approximately a message selected at another point. Frequently the messages have meaning; that is they refer to or are correlated according to some system with certain physical or conceptual entities." [@Shannon1948, p.1]
+
+Justeson saw that this approach might also be used to establish an "upper limit" for how interpretable archaeological data could be. Moreover, he demonstrated that we could reasonably calculate a quantifiable *measurement* for that upper limit from those data.
+
+> "If the empirically measured parameters are not consistent with the relationship between them that is required by the theory for a given material or behavioral system, then the data by which that system is to be interpreted cannot have a consistent susceptibility to decoding; that is, there will be no basis for deriving a coherent archaeological interpretation of the data that will accurately reflect the prehistoric situation." [@Justeson1973, p. 136]
+
+In other words, observed archaeological features or attributes should represent a coherent and systematic pattern of activities. If not, then there would be no viable and supportable interpretation for that data available to archaeologists.
+
+In particular, he was addressing two *inherent* limitations of the archaeological record:
+
+1. limitations imposed by the degree of preservation of culturally significant remains and by the skewing of their relationships through time until their recovery; and
+2. limitations on the interpretability of archaeological data for the cultural descriptions.
+
+The first limitation is analogous to degradation of a signal due to noise or interference affecting a transmission, and the second to the encoding and decoding of that signal between sender and receiver.
+
+@Schiffer1972 had previously elaborated on the distinction between *systemic* and *archaeological* contexts, differentiating between the cultural and taphonomic processes that create the observable archaeological record. It would not be until a decade later [@Schiffer1983; @Schiffer1987] that he would formalize these as *natural* versus *cultural* transformation processes (i.e., $n$-transforms and $c$-transforms). @Justeson1973 ... -->
 
 ## A Gentle Introduction to Information Theory
 
@@ -61,7 +97,7 @@ Surprisal is zero for events that are certain (i.e., the probability \(p(x)=1\))
 
 Entropy represents the *average* surprisal over all possible outcomes from a probability distribution.[^fn001] It quantifies the overall uncertainty or unpredictability of a system or source of information. The higher the entropy, the more information the system is capable of producing, since there is greater uncertainty about which outcome will occur.
 
-[^fn001]: 
+[^fn001]: One way to think about entropy, in terms of information theory, is that it is the information we *want* as opposed to the information we *have*.
 
 Entropy is highest when all outcomes are equally likely, and decreases as we gain more information to anticipate whether or not that event is likely to occur (Figure {#figure:entropy_example}). Information is therefore the reduction of that uncertainty or entropy when a new event is observed. We have learned more about the underlying probabilities for future events.
 
@@ -374,26 +410,6 @@ In Justeson's sample, that works out to \(C \leq 6.6438\) providing us with a me
 
 [^fn17]: Helgert's method is based in linear algebra and some special properties of matrices, which in this particular case greatly simplifies the calculations because of the way \(\psi(r)\) is defined.
 
-<!-- >
-\[
-    \begin{aligned}
-    \min_r \ \psi(r) &= \min_r \biggl \lbrack P(r \ \text{received} \ | \ r \ \text{sent}) \biggr \rbrack \\
-    &= \min_r \biggl \lbrack 1 - P(r \ \text{not received} \ | \ r \ \text{sent}) \biggr \rbrack \\
-    &= \max_r \biggl \lbrack P(r \ \text{not received} \ | \ r\ \text{sent}) \biggr \rbrack\\
-    &= 1- \lambda
-    \end{aligned}
-\]
->
-> ... the observed values should never be higher than the extrapolated, and that the mean value should be \(1\), since  
->
-\[
-    \begin{aligned}
-    \overline{\psi} &= \sum_r p_E(r) \psi(r) \\
-    &= \sum_r p_E(r) \left \lbrack p(r) \div p_E(r) \right \rbrack \\
-    &= \sum_r p(r) = 1
-    \end{aligned}
-\] -->
-
 #### "Existence of a Code"
 
 This section is very brief but incredibly important to the paper's thesis. It succinctly presents a deceptively simple argument that even incomplete data may still constitute a viable encoding and signal to transmit information. We have now been able to extrapolate or estimate two of the code parameters (\(\lambda, n\)), estimates of both the rank-frequencies and noise factors (\(p_E(r), \psi(r)\)), and calculated the channel capacity \(C\). To determine whether or not our observed data represents a valid code, however, we still need the one remaining code parameter \(N\).
@@ -462,7 +478,7 @@ Doing so allows us to calculate a *new* entropy measure for the binary encoding 
 
 where \(b(x_i)\) is the length of the binary code, \(k\) is the number of codes, and \(p(x_i)\) is the code's frequency. The *efficiency* of the coding system \( h^\ast\), then, is the entropy in the system of attributes (i.e., the same as we calculated for measuring distortion, above) to the entropy of the binary coding or \(h^\ast = H / H^\ast\).
 
-For the Joint site attributes this results in \(h^\ast = 99.21\%\) for the observed ranks and \(h_E^\ast = 97.12\%\) for the extrapolated rank frequencies, suggesting that the attribute typology used for the sample of pottery sherds was highly efficient. In other words, the attributes were categorized in a way that would likely have been recognizable distinctions to the people that created them. 
+For the Joint site attributes this results in \(h^\ast = 99.21\%\) for the observed ranks and \(h_E^\ast = 97.12\%\) for the extrapolated rank frequencies, suggesting that the attribute typology used for the sample of pottery sherds was highly efficient. In other words, the attributes were categorized in a way that would likely have been recognizable distinctions to the people that created them.
 
 The implications of being able to *quantitatively* evaluate the efficiency and efficacy of our archaeological typologies to reflect actual perceptions and categories of past behavior are substantial. This allows us to not only measure the propriety of our analytical units, but also to directly compare between competing theoretical typologies for the same assemblages.
 
@@ -479,48 +495,3 @@ Many of the methods Justeson applied are now much more robust and *accessible* t
 [^fn19]:  It would, in fact, be an interesting extension of Justeson's work to apply discrete *decreasing*-memory channel models to the problem (opposed to the finite-memory channel used in the article), which would have been nearly intractable to analyze in practice at that time. Modelling complex interactions such as variable finite memory channels is now quite feasible.
 
 @Justeson1973 provides a wealth of theoretical and methodological insights addressing -- and arguably *answering* -- some of the most prominent theoretical debates in archaeology. It was an ambitious work even for the lofty scientific aspirations of the "New" or "Processual" archaeology of the time. Even now, though, it still represents a significant foundation for quantitative or computational archaeologists. Justeson provided a full suite of quantitative measures by which to assess, with mathematical precision, what we can or cannot say about the past from the data that we have. In short, it allows archaeologists to *calculate* the exact limitations of archaeological inference.
-
-<!-- > To set up the binary code for an attribute system, the attributes should first be ranked by frequency from highest to lowest; then the frequencies are divided into 2 groups with equal frequency totals, or with totals as nearly equal as is possible. The first group receives the code digit 0, and is made up of the higher-frequency elements, the second receives the digit 1 and is made up of the lower-frequency elements. Then the process is applied to each of these subgroups, and then continually to the resulting subgroups until all the attributes have been isolated in single-attribute groups. This process is represented schematically by Fig. 6. The binary codings themselves are given in Tables 1 and 2.
->
-> Given this data we compute \(H^*\), the information content of the system in terms of binary coding, or, in other words, the maximum information retrievable for a given frequency distribution, by the formula  
-\[
-    H^* = \sum_{i=1}^k p(x_i) b(x_i)
-\]
-> where \( b(x_i) \) is the number of digits in the binary code for attribute xi, and the other quantities the formula are as in the last section. The ration \( h^* = H/H^* \) is then a measure of the coding efficiency.
-> -->
-
-<!-- ## Introduction
-
-...
-
-* Quantitative approaches in archaeology beginning with Petrie's application of sequence dating (i.e., seriation) in 1899 [@Kendall1969].
-* It was not until the 1950s that formal statistical methods started to play a more substantial role in archaeological methodologies [@Ammerman1992]. Early work by archaeologists such as @Brainerd1951, @Spaulding1953, and @Heizer1956 foreshadowed an emergent *computational archaeology* [@Djindjian2015].
-* By the 1970s
-* 
-
-Fifty years ago, what arguably could have been one of the most important papers written for modern work in quantitative archaeology was published in American Antiquity. Unfortunately for its author, and generations of archaeologists, it received relatively little attention at the time. With few citations, more than half of which have occurred in just the last few years, its elegance and mathematical precision went largely unappreciated.
-
-John Justeson's article "Limitations of archaeological inference: an information-theoretic approach with applications in methodology" [-@Justeson1973] was rather ambitious, as can be seen from its abstract:
-
-> "A framework is established for the application of information-theoretic concepts to the study of archaeological inference, ultimately to provide an estimate of the degree to which archaeologists, or anthropologists in general, can provide legitimate answers to the questions they investigate. Particular information-theoretic measures are applied to the design elements on the ceramics of a southwestern pueblo to show the methodological utility of information theory in helping to reach closer to that limit." [@Justeson1973]
-
-The premise was actually quite straightforward -- behavioral information is "encoded" in the material artifacts deposited within an archaeological site, and the archaeologist's goal is to "decode" that information on the other end. The novelty was that John saw this "encoding-decoding" process as an information flow that could be described by what was (at the time) a relatively esoteric set of mathematical tools known as *information theory*.
-
-The foundations of information theory were developed by Claude Shannon as a way to analyze the transmission of information *independently* of the content of a message.
-
-> "The fundamental problem of communication is that of reproducing at one point either exactly or approximately a message selected at another point. Frequently the messages have meaning; that is they refer to or are correlated according to some system with certain physical or conceptual entities." [@Shannon1948, p.1]
-
-Justeson saw that this approach might also be used to establish an "upper limit" for how interpretable archaeological data could be. Moreover, he demonstrated that we could reasonably calculate a quantifiable *measurement* for that upper limit from those data.
-
-> "If the empirically measured parameters are not consistent with the relationship between them that is required by the theory for a given material or behavioral system, then the data by which that system is to be interpreted cannot have a consistent susceptibility to decoding; that is, there will be no basis for deriving a coherent archaeological interpretation of the data that will accurately reflect the prehistoric situation." [@Justeson1973, p. 136]
-
-In other words, observed archaeological features or attributes should represent a coherent and systematic pattern of activities. If not, then there would be no viable and supportable interpretation for that data available to archaeologists.
-
-In particular, he was addressing two *inherent* limitations of the archaeological record:
-
-1. limitations imposed by the degree of preservation of culturally significant remains and by the skewing of their relationships through time until their recovery; and
-2. limitations on the interpretability of archaeological data for the cultural descriptions.
-
-The first limitation is analogous degradation of a signal due to noise or interference affecting a transmission, and the second to the encoding and decoding of that signal between sender and receiver.
-
-@Schiffer1972 had previously elaborated on the distinction between *systemic* and *archaeological* contexts, differentiating between the cultural and taphonomic processes that create the observable archaeological record. It would not be until a decade later [@Schiffer1983; @Schiffer1987] that he would formalize these as *natural* versus *cultural* transformation processes (i.e., $n$-transforms and $c$-transforms). @Justeson1973 ... -->
