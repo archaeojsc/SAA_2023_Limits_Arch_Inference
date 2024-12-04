@@ -25,22 +25,51 @@ library(zipfR)
 joint_site.tfl <- zipfR::tfl(f = code_fq) # term frequency list
 joint_site.spc <- tfl2spc(joint_site.tfl) # frequency spectra
 
+# Enable parallel threads
+library(parallel)
+
+cl <- makeCluster(4)
+
 #  Large-Number-of-Rare-Event (LNRE) model
 joint_site.fzm <- lnre(
   type = "fzm",
+  # type = "zm",
+  # type = "gigp",
   spc = joint_site.spc,
+  m.max = 50,
   # cost = "exact",
   cost = "linear",
   # cost = "smooth.linear",
   # cost = "gof",
-  bootstrap = 50,
-  method = "SANN"
+  exact = TRUE,
+  bootstrap = 100,
+  parallel = cl,
+  # method = "SANN"
   # method = "NLM"
   # method = "BFGS"
-  # method = "Nelder-Mead"
+  method = "Nelder-Mead"
 )
 
+summary(joint_site.fzm)
+
 joint_site.fzm.spc <- lnre.spc(joint_site.fzm)
+
+plot(joint_site.spc,
+     joint_site.fzm.spc,
+     m.max = 25,
+     bw = TRUE)
+
+plot(
+  joint_site.tfl,
+  joint_site.fzm,
+  log = "xy",
+  type = "s",
+  freq = FALSE,
+  ylab = "Relative Frequency",
+  bw = TRUE,
+  grid = TRUE,
+  legend = c("Observed", "Expected (fZM)")
+)
 
 # Feature scaling p(r)
 alpha <- 0.001
