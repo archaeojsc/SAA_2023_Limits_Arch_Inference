@@ -29,10 +29,15 @@ joint_site.spc <- tfl2spc(joint_site.tfl) # frequency spectra
 joint_site.fzm <- lnre(
   type = "fzm",
   spc = joint_site.spc,
-  cost = "exact",
-  bootstrap = 100,
-  method = "SANN",
-  parallel = 4
+  # cost = "exact",
+  cost = "linear",
+  # cost = "smooth.linear",
+  # cost = "gof",
+  bootstrap = 50,
+  method = "SANN"
+  # method = "NLM"
+  # method = "BFGS"
+  # method = "Nelder-Mead"
 )
 
 joint_site.fzm.spc <- lnre.spc(joint_site.fzm)
@@ -89,7 +94,7 @@ plot(
 # r <- rank(-code_fq_scaled, ties.method = "max")
 # r <- rank(-code_fq_scaled, ties.method = "average")
 r <- rank(-code_fq, ties.method = "random")
-# r <- rank(-code_fq_scaled, ties.method = "min")
+r_min <- rank(-code_fq, ties.method = "min")
 
 rank_freq <- data.frame(code = codes[1:99],
                         frequency = code_fq[1:99],
@@ -100,8 +105,8 @@ rlm3 <- lm(frequency ~ poly(rank, 3, raw = TRUE), data = rank_freq)
 rlm4 <- lm(frequency ~ poly(rank, 4, raw = TRUE), data = rank_freq)
 
 
-plot(c(0, code_fq_scaled[1:99]),
-     c(123, r[1:99]),
+plot(c(0, code_fq[1:99]),
+     c(123, r_min[1:99]),
      log = "y",
      # xlim = c(0,0.1),
      ylim = c(1,150),
