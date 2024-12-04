@@ -37,8 +37,6 @@ joint_site.fzm <- lnre(
 
 joint_site.fzm.spc <- lnre.spc(joint_site.fzm)
 
-
-
 # Feature scaling p(r)
 alpha <- 0.001
 code_fq_norm <- (code_fq - min(code_fq)) / (max(code_fq) - min(code_fq)) #+ alpha
