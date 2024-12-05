@@ -29,39 +29,19 @@ indent: false
 
 ## Introduction
 
-In the academic version of "... if a tree falls in the forest,..." there are many articles published that, unfortunately, do not easily find their audience. More so when such a publication pushes the boundaries of what people think they already know, or stretches into new territory of what can be done. In 1973, *American Antiquity* published an article that ambitiously tried to do both, and do so in a way that required fluency in mathematics and the logic of statistical and probabilistic systems. Even at the height of the "New" or "Processual" archaeology's explorations of quantitative methods, the article was a veritable monolith of mathematical notation and esoteric concepts of disciplines far removed from what was typically found in traditional archaeology.
+In the academic version of "... if a tree falls in the forest,..." there are many articles published that, unfortunately, do not easily find an audience. Their contributions get buried into the deep literature of specialized topics. Few, other then their authors and those familiar with their work, might recognize the significance of those contributions. More so when such a publication pushes the boundaries of what people think they already know, or stretches into new territory of what can be done.
 
-<!-- * Quantitative approaches in archaeology beginning with Petrie's application of sequence dating (i.e., seriation) in 1899 [@Kendall1969].
-* It was not until the 1950s that formal statistical methods started to play a more substantial role in archaeological methodologies [@Ammerman1992]. Early work by archaeologists such as @Brainerd1951, @Spaulding1953, and @Heizer1956 foreshadowed an emergent *computational archaeology* [@Djindjian2015].
-* By the 1970s
-* 
+In 1973, *American Antiquity* published an article that did both, and do so in a way that required fluency in mathematics and the logic of statistical and probabilistic systems. With few citations, more than half of which have occurred in just the last few years, its elegance and mathematical precision went largely unappreciated. Even at the height of the "New" or "Processual" archaeology's experiments with more quantitative methods, the article was a veritable wall of mathematical notation and esoteric concepts. It drew from disciplines far removed from what was typically found in traditional archaeology at the time, while tackling a problem with broad theoretical implications at the forefront of contemporary archaeological.
 
-Fifty years ago, what arguably could have been one of the most important papers written for modern work in quantitative archaeology was published in American Antiquity. Unfortunately for its author, and generations of archaeologists, it received relatively little attention at the time. With few citations, more than half of which have occurred in just the last few years, its elegance and mathematical precision went largely unappreciated.
+To say that John Justeson's article "Limitations of archaeological inference: an information-theoretic approach with applications in methodology" [-@Justeson1973] expects a lot from its readers would be an understatement. To follow its reasoning, let alone its applications, requires a fairly advanced understanding both of mathematical notation and proofs as well as a firm grasp of statistical probability. That effort is rewarded, however, by a surprisingly definitive answer to a question that is critical to the very premise of archaeology itself -- how much can we *know* about the past from archaeological evidence. The full theoretical scope of that question is plainly stated in the article's abstract.
 
-John Justeson's article "Limitations of archaeological inference: an information-theoretic approach with applications in methodology" [-@Justeson1973] was rather ambitious, as can be seen from its abstract:
+> "A framework is established for the application of information-theoretic concepts to the study of archaeological inference, ultimately to provide an estimate of the degree to which archaeologists, or anthropologists in general, can provide legitimate answers to the questions they investigate." [@Justeson1973]
 
-> "A framework is established for the application of information-theoretic concepts to the study of archaeological inference, ultimately to provide an estimate of the degree to which archaeologists, or anthropologists in general, can provide legitimate answers to the questions they investigate. Particular information-theoretic measures are applied to the design elements on the ceramics of a southwestern pueblo to show the methodological utility of information theory in helping to reach closer to that limit." [@Justeson1973]
+The premise was actually quite straightforward -- if behavioral information is "encoded" by the material artifacts deposited within an archaeological site, then the archaeologist's goal is to "decode" that information on the other end. The novelty was that John saw this "encoding-decoding" process as an information flow that could be described by what was (at the time) a relatively esoteric set of mathematical tools known as *information theory*.
 
-The premise was actually quite straightforward -- behavioral information is "encoded" in the material artifacts deposited within an archaeological site, and the archaeologist's goal is to "decode" that information on the other end. The novelty was that John saw this "encoding-decoding" process as an information flow that could be described by what was (at the time) a relatively esoteric set of mathematical tools known as *information theory*.
+The foundations of information theory were developed by Claude Shannon as a way to analyze the transmission of information *independently* of the content of a message. Justeson saw that this approach might also be used to establish an "upper limit" for how interpretable archaeological data could be. Moreover, he demonstrated that we could reasonably calculate a quantifiable *measurement* for that upper limit from those data. In other words, observed archaeological features or attributes should represent a coherent and systematic pattern of activities. If not, then there would be no viable and supportable interpretation of that data available to archaeologists.
 
-The foundations of information theory were developed by Claude Shannon as a way to analyze the transmission of information *independently* of the content of a message.
-
-> "The fundamental problem of communication is that of reproducing at one point either exactly or approximately a message selected at another point. Frequently the messages have meaning; that is they refer to or are correlated according to some system with certain physical or conceptual entities." [@Shannon1948, p.1]
-
-Justeson saw that this approach might also be used to establish an "upper limit" for how interpretable archaeological data could be. Moreover, he demonstrated that we could reasonably calculate a quantifiable *measurement* for that upper limit from those data.
-
-> "If the empirically measured parameters are not consistent with the relationship between them that is required by the theory for a given material or behavioral system, then the data by which that system is to be interpreted cannot have a consistent susceptibility to decoding; that is, there will be no basis for deriving a coherent archaeological interpretation of the data that will accurately reflect the prehistoric situation." [@Justeson1973, p. 136]
-
-In other words, observed archaeological features or attributes should represent a coherent and systematic pattern of activities. If not, then there would be no viable and supportable interpretation for that data available to archaeologists.
-
-In particular, he was addressing two *inherent* limitations of the archaeological record:
-
-1. limitations imposed by the degree of preservation of culturally significant remains and by the skewing of their relationships through time until their recovery; and
-2. limitations on the interpretability of archaeological data for the cultural descriptions.
-
-The first limitation is analogous to degradation of a signal due to noise or interference affecting a transmission, and the second to the encoding and decoding of that signal between sender and receiver.
-
-@Schiffer1972 had previously elaborated on the distinction between *systemic* and *archaeological* contexts, differentiating between the cultural and taphonomic processes that create the observable archaeological record. It would not be until a decade later [@Schiffer1983; @Schiffer1987] that he would formalize these as *natural* versus *cultural* transformation processes (i.e., $n$-transforms and $c$-transforms). @Justeson1973 ... -->
+Our goal in this chapter is to "unpack" the densely layered arguments in Justeson's article, providing the needed context and explanations along the way to make it more accessible to a larger audience. The original article is both precise and concise in its argument, but very ambitious in its scope. Given typical journal-length restrictions, few words were spent towards the sort of "background" explanations of the methods employed. Neither did it *explicitly* state the implications of its findings as it went, leaving it up to the reader to make the connections as Justeson had done. Thankfully we have more luxury of space to fill in  those blanks for the reader, and hopefully provide a "user friendly" path to reach Jusetson's remarkable conclusions.
 
 ## A Gentle Introduction to Information Theory
 
@@ -306,9 +286,9 @@ The estimates are based on the distribution of the *frequencies* rather than the
 
 [^fn11]: This technique is simple to implement and provides quick and reasonably accurate estimates. The reason, statistically, is that it leverages a common (though not fully understood) attribute of rank-frequency distributions that they tend to follow an exponential or power law distribution -- e.g., Zipf's law or a Pareto distribution. Basically, if you made 100 observations of 20 attributes, all 20 would occur at least once but very few would be likely to occur all 100 times. There are more robust and accurate methods of estimating these sorts of distributions available now, but the basic principle still holds true -- if events or attributes are not random, their frequency of occurrence will decay exponentially.
 
-We do this for \(t=1\) (every element is observed at least once) up to the frequency of the most common element \(T\) (i.e., the largest count of any element). For \(t=1\), \(M_1\) will equal the total number of elements observed in the sample. What we are trying to extrapolate or estimate is a value for \(M_0\), or the expected total number of elements in the original *population* including the ones that we have not seen.
+We do this for \(t=1\) (every element is observed at least once) up to the frequency of the most common element \(T\) (i.e., the largest count of any element). For \(t=1\), \(M_1\) will equal the total number of elements observed in the sample (Figure {figure:element-frequency}). What we are trying to extrapolate or estimate is a value for \(M_0\), or the expected total number of elements in the original *population* including the ones that we have not seen.
 
-![\(M_0\) extrapolation.](./plotM.png)
+![\(M_0\) extrapolation.](./plotM.png){figure:element-frequency}
 
 Next, we want to calculate the total number of *observations* of elements that have occurred at least \(t\) times (\(L_t\)). This is a cumulative sum as well, so we add up every value of \(M\) from \(t\) to \(T\):  
 
@@ -316,21 +296,21 @@ Next, we want to calculate the total number of *observations* of elements that h
     L_t = \sum^{T}_{i=t} M_i
 \]
 
-Again, \(L_1\) is equal to the total number of observations in the sample. In general, the exact value for \(L_t\) is interesting only inasmuch as it describes the overall distribution of observations. Technically, the value indicates the remaining number of observations if \(t - 1\) observations were removed from each of the \(N_i\) frequencies [from @Mackay1965, described above].
+Again, \(L_1\) is equal to the total number of observations in the sample (Figure {figure:observation-frequency}). In general, the exact value for \(L_t\) is interesting only inasmuch as it describes the overall distribution of observations. Technically, the value indicates the remaining number of observations if \(t - 1\) observations were removed from each of the \(N_i\) frequencies [from @Mackay1965, described above].
 
-![\(L_0\) extrapolation.](./plotL.png)
+![\(L_0\) extrapolation.](./plotL.png){figure:observation-frequency}
 
 You will note that \(N_i\), \(M_t\), and \(L_t\) all remove any link or reference to the original attributes or encodings. Information theory is, by *design*, only concerned with the statistical and probabilistic  properties of signals and channels. It is, effectively, a *meaning-* or *content-free* analysis of the transfer of information between source and receiver, irrespective of the meaningful content of those signals and messages. The goal is, instead, to ascertain the mere *existence* of viable information and transfer. Justeson's goal was to show that a code and channel are viable and sufficient to transmit archaeological information -- i.e., to *reduce the uncertainty* regarding the past behaviors encoded by the archaeologic record.
 
 To those ends, the *frequency* of occurrences -- rather than the codes themselves -- are the object of the analysis. Empirical distributions of \(M\) and \(L\) form the basis from which to extrapolate \(M_0\) (the full systems number of feature attributes) to make reasonable inferences about the distribution of those attributes in the original (i.e., the unobserved) system. We are working towards estimating the parameters needed to calculate the overall channel capacity and determine the noise affecting the signal. Without the source signal's probabilities, we have to effectively "reverse engineer" the channel from the receiving end.
 
-The last thing we need then is to estimate the distribution of those frequencies across all of the system's elements. To do this we compare the ranking of those frequencies (\(r\)) -- ordered from highest frequency to lowest -- and the observed frequencies for each element \(p(r)\).[^fn12] We needed a value for \(M_0\) to be able to "fix" one end of the distribution of those frequencies with a point \(p(M_0+1)\) = 0 so that we can estimate the *ideal* or natural frequency distribution of the system \(p_E(r)\).[^fn13]
+The last thing we need then is to estimate the distribution of those frequencies across all of the system's elements. To do this we compare the ranking of those frequencies (\(r\)) -- ordered from highest frequency to lowest -- and the observed frequencies for each element \(p(r)\) (Figure {figure:rank-frequency}).[^fn12] We needed a value for \(M_0\) to be able to "fix" one end of the distribution of those frequencies with a point \(p(M_0+1)\) = 0 so that we can estimate the *ideal* or natural frequency distribution of the system \(p_E(r)\).[^fn13]
 
 [^fn12]: The frequencies of the elements were scaled by the overall minimum and maximum values to be between 0 and 1.
 
 [^fn13]: If we expect that there are \(M_0\) elements in the system, then the frequency of an element with a rank greater than \(M_0\) would logically have to be zero.
 
-![Rank-frequency graph.](./plot_rank_frequency.png)
+![Rank-frequency graph.](./plot_rank_frequency.png){figure:rank-frequency}
 
 From here, it is a matter of fitting a curve to each of these empirical distributions to find the extrapolated values for \(M_0\) and \(L_0\). Once we have those, we can generate an estimate for the distribution of values in the source signal's rank-frequency distribution \(p_E(r)\).
 
