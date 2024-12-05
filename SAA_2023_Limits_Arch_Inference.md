@@ -54,14 +54,14 @@ The influence of telecommunication and cryptography on Shannon's theories will b
 Shannon proposed a particular relationship between information and uncertainty in terms of statistical probabilities. He derived a quantitative measure of that uncertainty derived from the concept of *entropy* used to describe disorder in the thermodynamics of physical systems. Shannon, however, repurposed entropy to refer to the average uncertainty contained in a system  given by the equation:  
 
 \[
-    H( \cal{X} ) = - \sum_{i=1}^{n} p(x_i) \ \log_2 \ p(x_i)
+    H(X) = - \sum_{i=1}^{n} p(x_i) \ \log_2 \ p(x_i)
 \]
 
-What this equation is describing is the total entropy \( H \) of some system \( \cal{X} \) that contains \(n\) discrete attributes or elements \( (x_{1}, x_{2}, \ldots x_{n}) \). The entropy is equal to the negative of the sum, over all \(n\) features, of each element's probability of occurrence \( p(x_i) \) times the \( \log_2 \)[^fn01] of that probability.
+What this equation is describing is the total entropy \( H \) of some system \( X \) that contains \(n\) discrete attributes or elements \( (x_{1}, x_{2}, \ldots x_{n}) \). The entropy is equal to the negative of the sum, over all \(n\) features, of each element's probability of occurrence \( p(x_i) \) times the \( \log_2 \)[^fn01] of that probability.
 
 [^fn01]: \( \log_2 \) refers to the base-2 logarithm.
 
-The higher the entropy of a system, indicated by a larger value for $H$, the more uncertainty or randomness there is to the elements of \(\cal{X}\). Somewhat counterintuitively, the more uncertain or random a system the more information it conveys. Remember that Shannon defines information as the reduction of uncertainty. The greater the uncertainty (i.e., high entropy), the more potential information the system is capable of producing because there is greater uncertainty to reduce.
+The higher the entropy of a system, indicated by a larger value for $H$, the more uncertainty or randomness there is to the elements of \(X\). Somewhat counterintuitively, the more uncertain or random a system the more information it conveys. Remember that Shannon defines information as the reduction of uncertainty. The greater the uncertainty (i.e., high entropy), the more potential information the system is capable of producing because there is greater uncertainty to reduce.
 
 To see how, we need to understand what Shannon defined as *surprisal*. Surprisal, also known as self-information, is a measure of how surprising or unexpected a specific event is based on its probability. In essence, surprisal measures the information content of a specific outcome -- i.e., rare events carry more information than common ones because they are less expected. Low probability events, those that occur infrequently, are highly surprising. Conversely, high probability events are not.
 
@@ -81,7 +81,7 @@ Entropy represents the *average* surprisal over all possible outcomes from a pro
 
 Entropy is highest when all outcomes are equally likely, and decreases as we gain more information to anticipate whether or not that event is likely to occur (Figure {@figure:entropy_example}). Information is therefore the reduction of that uncertainty or entropy when a new event is observed. We have learned more about the underlying probabilities for future events.
 
-![The overall system entropy \(H(\cal{X})\) for biased coin flips as the probability \(p(x)\) of landing "heads" ranges from 0 to 1. A "fair" coin with \(p(x)=0.5\) is the system with the most uncertainty, since either outcome ("heads" or "tails") is equally possible.](./shannon_entropy_plot.png){#figure:entropy_example}
+![The overall system entropy \(H(X)\) for biased coin flips as the probability \(p(x)\) of landing "heads" ranges from 0 to 1. A "fair" coin with \(p(x)=0.5\) is the system with the most uncertainty, since either outcome ("heads" or "tails") is equally possible.](./shannon_entropy_plot.png){#figure:entropy_example}
 
 For the first time, scientists had a way to *quantify* information. Shannon had defined information in a way that made it possible to measure and *analyze* it mathematically, based solely on its statistical structure and independently of its content or meaning.
 
@@ -408,10 +408,10 @@ Once we have established that a code exists, we can apply Shannon's concepts of 
 
 The first is to see how whether and how much the information received has been *distorted* by the inherent noise in the channel. The second tells us how *informative* that information is by measuring whether the system encodes distinguishing features that can discriminate between uniquely identified aspects or attributes of the system. These, then, provide a way to measure the actual *limits* of our ability to interpret the information. Both measures use Shannon's equation for system entropy.
 
-The measure of *information distortion* is just the ratio of entropy of the system as observed \(H\) to the entropy of the system as expected \(H_E\) (i.e., \(H \div H_E\)). Remember, Shannon's entropy equation provides a measure of the potential information content of the system \(\cal{X}\) given by  
+The measure of *information distortion* is just the ratio of entropy of the system as observed \(H\) to the entropy of the system as expected \(H_E\) (i.e., \(H \div H_E\)). Remember, Shannon's entropy equation provides a measure of the potential information content of the system \(X\) given by  
 
 \[
-    H( \cal{X} ) = - \sum_{i=1}^{n} p(x_i) \ \log_2 \ p(x_i)
+    H( X ) = - \sum_{i=1}^{n} p(x_i) \ \log_2 \ p(x_i)
 \]
 
 The observed system's entropy is calculated using \(p(r)\), and the expected entropy by \(p_E(r)\). If the ratio is less than \(1\), the the noise has resulted in an overall information loss. That would limit the ability of the observed information to support subsequent interpretations, but tells us how much we have lost in terms of the sample's representation of the original system. Conversely, a ratio greater than \(1\) says that signal loss has resulted in spurious patterns in the observed data.
