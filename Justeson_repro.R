@@ -19,11 +19,17 @@ for (i in 2:length(M)) {
   code_fq <- c(code_fq[1:(length(code_fq) - M[i])], code_fq[((length(code_fq) - M[i]) + 1):length(code_fq)] + 1)
 }
 
+# Normalize frequencies (0-1)
+library(caret)
+
+norm_scale <- preProcess(as.data.frame(code_fq), method = "range")
+code_fq_norm <- predict(norm_scale, as.data.frame(code_fq))
+
 # Zipf models
 library(zipfR)
 
-joint_site.tfl <- zipfR::tfl(f = code_fq) # term frequency list
-joint_site.spc <- tfl2spc(joint_site.tfl) # frequency spectra
+joint_site.tfl <- tfl(f = code_fq) # term frequency list
+joint_site.spc <- tfl2spc(joint_site.tfl) # term frequency spectra
 
 # Enable parallel threads
 
@@ -43,9 +49,10 @@ joint_site.fzm <- lnre(
   # cost = "smooth.linear",
   # cost = "gof",
   exact = TRUE,
+  # exact = FALSE,
   bootstrap = 100,
-  # parallel = cl, # if on Windows
-  parallel = 4, # if on linux
+  parallel = cl, # if on Windows
+  # parallel = 4, # if on linux
   # method = "SANN"
   # method = "NLM"
   # method = "BFGS"
@@ -54,12 +61,16 @@ joint_site.fzm <- lnre(
 
 summary(joint_site.fzm)
 
-joint_site.fzm.spc <- lnre.spc(joint_site.fzm)
+joint_site.fzm.spc <- lnre.spc(joint_site.fzm, N(joint_site.fzm))
 
-plot(joint_site.spc,
-     joint_site.fzm.spc,
-     m.max = 25,
-     bw = TRUE)
+plot(
+  joint_site.spc,
+  joint_site.fzm.spc,
+  log = "x",
+  m.max = 25,
+  bw = TRUE,
+  legend = c("Observed", "Expected (fZM")
+)
 
 plot(
   joint_site.tfl,
@@ -67,15 +78,10 @@ plot(
   log = "xy",
   type = "s",
   freq = FALSE,
-  ylab = "Relative Frequency",
   bw = TRUE,
   grid = TRUE,
   legend = c("Observed", "Expected (fZM)")
 )
-
-# Feature scaling p(r)
-alpha <- 0.001
-code_fq_norm <- (code_fq - min(code_fq)) / (max(code_fq) - min(code_fq)) #+ alpha
 
 # Extract N from code frequencies
 
@@ -124,11 +130,12 @@ plot(
 
 # r <- rank(-code_fq_scaled, ties.method = "max")
 # r <- rank(-code_fq_scaled, ties.method = "average")
-r <- rank(-code_fq, ties.method = "random")
-r_min <- rank(-code_fq, ties.method = "min")
+# r <- rank(-code_fq_norm, ties.method = "random")
+r <- rank(-code_fq_norm, ties.method = "min")
 
 rank_freq <- data.frame(code = codes[1:99],
                         frequency = code_fq[1:99],
+                        fq_norm = code_fq_norm[1:99,1],
                         rank = r[1:99])
 
 rlm2 <- lm(frequency ~ poly(rank, 2, raw = TRUE), data = rank_freq)
