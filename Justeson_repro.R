@@ -26,6 +26,7 @@ joint_site.tfl <- zipfR::tfl(f = code_fq) # term frequency list
 joint_site.spc <- tfl2spc(joint_site.tfl) # frequency spectra
 
 # Enable parallel threads
+
 library(parallel)
 
 cl <- makeCluster(4)
@@ -43,7 +44,8 @@ joint_site.fzm <- lnre(
   # cost = "gof",
   exact = TRUE,
   bootstrap = 100,
-  parallel = cl,
+  # parallel = cl, # if on Windows
+  parallel = 4, # if on linux
   # method = "SANN"
   # method = "NLM"
   # method = "BFGS"
@@ -141,6 +143,6 @@ plot(c(0, code_fq[1:99]),
      ylim = c(1,150),
      xlab = "p(r)",
      ylab = "r",
-     type = "o")
+     type = "s")
 
 
