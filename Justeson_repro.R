@@ -43,7 +43,7 @@ joint_site.fzm <- lnre(
   # type = "zm",
   # type = "gigp",
   spc = joint_site.spc,
-  m.max = 50,
+  m.max = 20,
   # cost = "exact",
   cost = "linear",
   # cost = "smooth.linear",
@@ -51,12 +51,12 @@ joint_site.fzm <- lnre(
   exact = TRUE,
   # exact = FALSE,
   bootstrap = 100,
-  parallel = cl, # if on Windows
-  # parallel = 4, # if on linux
-  # method = "SANN"
+  # parallel = cl, # if on Windows
+  parallel = 4, # if on linux
+  method = "SANN"
   # method = "NLM"
   # method = "BFGS"
-  method = "Nelder-Mead"
+  # method = "Nelder-Mead"
 )
 
 summary(joint_site.fzm)
@@ -106,7 +106,7 @@ for (i in 1:length(M)) {
 plot(
   t[1:55],
   M[1:55],
-  type = "o",
+  type = "s",
   log = "y",
   xlim = c(0, 55),
   ylim = c(1, 200),
@@ -117,7 +117,7 @@ plot(
 plot(
   t,
   L,
-  type = "o",
+  type = "s",
   log = "y",
   xlim = c(0, 70),
   ylim = c(500, 3000)
@@ -128,10 +128,10 @@ plot(
 
 # Frequency rank, from highest to lowest
 
-# r <- rank(-code_fq_scaled, ties.method = "max")
-# r <- rank(-code_fq_scaled, ties.method = "average")
+# r <- rank(-code_fq_norm, ties.method = "max")
+r <- rank(-code_fq_norm, ties.method = "average")
 # r <- rank(-code_fq_norm, ties.method = "random")
-r <- rank(-code_fq_norm, ties.method = "min")
+# r <- rank(-code_fq_norm, ties.method = "min")
 
 rank_freq <- data.frame(code = codes[1:99],
                         frequency = code_fq[1:99],
@@ -143,8 +143,8 @@ rlm3 <- lm(frequency ~ poly(rank, 3, raw = TRUE), data = rank_freq)
 rlm4 <- lm(frequency ~ poly(rank, 4, raw = TRUE), data = rank_freq)
 
 
-plot(c(0, code_fq[1:99]),
-     c(123, r_min[1:99]),
+plot(c(0, code_fq_norm[1:99,1]),
+     c(123, r[1:99]),
      log = "y",
      # xlim = c(0,0.1),
      ylim = c(1,150),
